@@ -1,0 +1,10 @@
+<details class="ngu-dropdown">
+  <summary class="ngu-dropdown-button"
+           [style.anchor-name]="anchorName()">
+    {{ label() }}
+  </summary>
+  <div class="ngu-dropdown-menu"
+       [style.position-anchor]="anchorName()">
+    <ng-content></ng-content>
+  </div>
+</details>

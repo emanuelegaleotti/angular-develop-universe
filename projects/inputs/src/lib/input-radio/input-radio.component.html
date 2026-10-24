@@ -1,0 +1,31 @@
+<fieldset class="ngu-input-radio">
+      <input type="radio"
+             [id]="id()"
+             [name]="name()"
+             [value]="radioValue()"
+             [autocomplete]="autocomplete()"
+             [attr.aria-labelledby]="id()+'-label'"
+             [attr.aria-label]="radioLabel()"
+             #input
+             (input)="setValue($event)"
+             [class.ngu-is-valid]="(control.statusChanges | async) === 'VALID' && successMsg() && control.dirty"
+             [class.ngu-is-invalid]="(control.statusChanges | async) === 'INVALID' && errorMsg() && control.dirty"
+             [class.ngu-show-help]="helpMsg()"
+      >
+  <label [htmlFor]="id()"
+         [id]="id()+'-visible-radio'"
+         class="ngu-visible-radio"></label>
+  @if (labelIsVisible()) {
+    <label [htmlFor]="id()"
+           [id]="id()+'-label'">
+      {{ radioLabel() | transloco }}
+    </label>
+  }
+  <div class="ngu-valid-feedback">{{ _successMsg() | transloco }}</div>
+  <div class="ngu-invalid-feedback">
+    @if (control.errors) {
+      {{ feature() + '.' + control.name + '.' + Object.keys(control.errors)[0] | transloco }}
+    }
+  </div>
+  <div class="ngu-help-feedback">{{ _helpMsg() | transloco }}</div>
+</fieldset>

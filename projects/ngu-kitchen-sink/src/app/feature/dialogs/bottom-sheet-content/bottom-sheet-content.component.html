@@ -1,0 +1,15 @@
+<div class="ngu-bottom-sheet-body">
+  <ul class="ngu-bottom-sheet-list">
+    @for (item of dialogData()?.['items']; track item) {
+      <li class="ngu-bottom-sheet-list-item" (click)="onSelectItem(item)">
+        {{ item }}
+      </li>
+    }
+  </ul>
+</div>
+
+<div class="ngu-bottom-sheet-footer">
+  <button class="ngu-button ngu-secondary" type="button" (click)="onClose()">
+    Chiudi
+  </button>
+</div>

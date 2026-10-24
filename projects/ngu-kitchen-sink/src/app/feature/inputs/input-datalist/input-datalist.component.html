@@ -1,0 +1,20 @@
+<section>
+  <h2>Input Datalist</h2>
+  <form [formGroup]="test">
+    <ngu-input-datalist
+      formControlName="datalist"
+      [id]="'datalist'"
+      [maxLength]="36"
+      [feature]="'input'"
+      [helpMsg]="true"
+      [successMsg]="true"
+      [errorMsg]="true"
+      [autocomplete]="'datalist'"
+      [options]="datalist"
+    ></ngu-input-datalist>
+  </form>
+  <dl>
+    <dt>Value:</dt>
+    <dd>{{ test.controls['datalist'].value }}</dd>
+  </dl>
+</section>

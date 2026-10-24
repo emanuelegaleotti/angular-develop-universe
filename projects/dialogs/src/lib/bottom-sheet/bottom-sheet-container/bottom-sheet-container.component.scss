@@ -1,0 +1,74 @@
+.ngu-bottom-sheet {
+  margin: auto auto 0;
+  inset: unset;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: var(--ngu-bottom-sheet-max-width, 600px);
+  max-height: var(--ngu-bottom-sheet-max-height, 85dvh);
+  overflow: hidden;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  background: var(--ngu-bottom-sheet-background, var(--ngu-dialog-background));
+  border: var(--ngu-bottom-sheet-border, var(--ngu-dialog-border));
+  border-radius: var(--ngu-bottom-sheet-border-radius, 16px 16px 0 0);
+  border-color: var(--ngu-bottom-sheet-border-color, var(--ngu-dialog-border-color));
+  padding: var(--ngu-bottom-sheet-padding, 0);
+
+  &::backdrop {
+    background: var(--ngu-bottom-sheet-backdrop-background, var(--ngu-dialog-backdrop-background));
+  }
+
+  .ngu-bottom-sheet-header {
+    flex-shrink: 0;
+    padding: var(--ngu-bottom-sheet-header-padding);
+    background: var(--ngu-bottom-sheet-header-background);
+    border-bottom: 1px solid var(--ngu-bottom-sheet-separator-color);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+
+    .ngu-bottom-sheet-handle {
+      grid-column: 1 / -1;
+      display: block;
+      width: var(--ngu-bottom-sheet-handle-width);
+      height: var(--ngu-bottom-sheet-handle-height);
+      background: var(--ngu-bottom-sheet-handle-color);
+      border-radius: var(--ngu-bottom-sheet-handle-border-radius);
+      margin: 0 auto var(--ngu-bottom-sheet-handle-margin-bottom);
+    }
+
+    h4 {
+      grid-column: 1;
+      font-size: var(--ngu-bottom-sheet-title-font-size);
+      font-weight: var(--ngu-bottom-sheet-title-font-weight);
+      color: var(--ngu-bottom-sheet-title-color);
+      margin: 0;
+    }
+
+    .ngu-bottom-sheet-close {
+      grid-column: 2;
+      background: var(--ngu-bottom-sheet-close-background);
+      border: var(--ngu-bottom-sheet-close-border);
+      border-color: var(--ngu-bottom-sheet-close-border-color);
+      padding: var(--ngu-bottom-sheet-close-padding);
+      line-height: var(--ngu-bottom-sheet-close-line-height);
+      color: var(--ngu-bottom-sheet-close-color);
+      cursor: pointer;
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: all .3s;
+      }
+
+      ::ng-deep svg {
+        width: var(--ngu-bottom-sheet-close-svg-width);
+        height: var(--ngu-bottom-sheet-close-svg-height);
+        fill: var(--ngu-bottom-sheet-close-svg-color);
+      }
+    }
+  }
+}

@@ -1,0 +1,202 @@
+.ngu-carousel {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  container-type: inline-size scroll-state;
+  anchor-name: var(--ngu-carousel-anchor-name);
+
+  width: var(--ngu-carousel-width, 100%);
+  padding: var(--ngu-carousel-padding, 3rem);
+
+  ::ng-deep .ngu-carousel-item {
+    margin-right: calc(calc(var(--ngu-carousel-padding) * 2) / var(--ngu-carousel-slides-per-view));
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/*
+ * CONTAINER
+ */
+.container {
+  border: var(--ngu-carousel-border, 1px solid);
+  border-color: var(--ngu-carousel-border-color);
+  border-radius: var(--ngu-carousel-border-radius, 1.125rem);
+}
+
+/*
+ * BUTTONS
+ */
+.ngu-carousel--scroll-buttons {
+  &::scroll-button(*) {
+    cursor: pointer;
+    position: fixed;
+    position-anchor: var(--ngu-carousel-anchor-name);
+    position-visibility: always;
+    font-size: var(--ngu-scroll-buttons-font-size, 1.125rem);
+    height: var(--ngu-scroll-buttons-height, 3.75rem);
+    width: var(--ngu-scroll-buttons-width, 1.875rem);
+    opacity: var(--ngu-scroll-buttons-opacity, 0.7);
+    inline-size: 44px;
+    line-height: 1;
+    display: flex;
+    place-items: center;
+    place-content: center;
+    aspect-ratio: 1;
+    background: var(--ngu-scroll-buttons-background-color);
+    color: var(--ngu-scroll-buttons-color);
+    border: var(--ngu-scroll-buttons-border, 2px solid);
+    border-color: var(--ngu-scroll-buttons-border-color);
+    border-radius: var(--ngu-scroll-buttons-border-radius, 0px);
+    margin: var(--ngu-scroll-buttons-margin, -50px);
+  }
+
+  &::scroll-button(*) {
+    &:not(:disabled):hover {
+      opacity: var(--ngu-scroll-buttons-hover-opacity, 1);
+    }
+  }
+
+  &::scroll-button(*) {
+    &:disabled {
+      opacity: var(--ngu-scroll-buttons-disabled-opacity, 0);
+    }
+  }
+
+
+  &::scroll-button(right) {
+    position-area: inline-end center;
+    content: "►" / 'Next';
+  }
+
+  &::scroll-button(left) {
+    position-area: inline-start center;
+    content: "◄" / 'Previous';
+  }
+}
+
+/*
+ * SCROLL-MARKER
+ */
+.ngu-carousel--scroll-marker {
+  scroll-marker-group: after;
+
+  &::scroll-marker-group {
+    position: fixed;
+    position-anchor: var(--ngu-carousel-anchor-name);
+    position-area: block-end;
+    position-visibility: always;
+    margin-block-start: var(--ngu-scroll-marker-margin-block-start, 1rem);
+    display: grid;
+    grid-auto-columns: var(--ngu-scroll-marker-auto-columns, 1rem);
+    grid-auto-flow: column;
+    gap: var(--ngu-scroll-marker-gap, 1rem);
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/*
+ * INERT
+ */
+.ngu-carousel--inert {
+  ::ng-deep .ngu-carousel-item {
+    > * {
+      @container not scroll-state(snapped) {
+        interactivity: inert;
+        opacity: var(--ngu-inert-opacity, 0.25);
+      }
+    }
+  }
+}
+
+/*
+ * NO PAGES
+ */
+.ngu-carousel--no-pages {
+  ::ng-deep .ngu-carousel-item {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    flex: 0 0 calc(100% / var(--ngu-carousel-slides-per-view));
+    container-type: scroll-state;
+    height: var(--ngu-carousel-item-height, 10rem)
+  }
+}
+
+/*
+ * PAGES
+ */
+.ngu-carousel--pages {
+  columns: 1;
+  block-size: var(--ngu-carousel-column-block-size, 41rem);
+  resize: vertical;
+  text-align: center;
+
+  ::ng-deep .ngu-carousel-item {
+    display: inline-block;
+    height: var(--ngu-carousel-item-pages-height, 85%);
+    aspect-ratio: var(--ngu-carousel-item-pages-aspect-ratio, 4/3);
+    margin: var(--ngu-carousel-item-pages-margin, 0.5rem);
+  }
+
+  &::column {
+    scroll-snap-align: center;
+  }
+}
+
+/*
+ * SCROLL-MARKER NO PAGES
+ */
+.ngu-carousel--scroll-marker-no-pages {
+  ::ng-deep > .ngu-carousel-item {
+    &::scroll-marker {
+      content: '';
+      display: block;
+      width: var(--ngu-scroll-marker-item-width, 0.75rem);
+      height: var(--ngu-scroll-marker-item-height, 0.75rem);
+      border: var(--ngu-scroll-marker-item-border, 2px solid);
+      border-color: var(--ngu-scroll-marker-item-border-color);
+      border-radius: var(--ngu-scroll-marker-item-border-radius, 1.875rem);
+      background: var(--ngu-scroll-marker-item-background, transparent);
+      cursor: pointer;
+      aspect-ratio: 1;
+    }
+
+    &::scroll-marker:target-current {
+      background: var(--ngu-scroll-marker-item-background-target-current);
+    }
+  }
+}
+
+/*
+ * SCROLL-MARKER PAGES
+ */
+.ngu-carousel--scroll-marker-pages {
+  &::column::scroll-marker {
+    content: '';
+    display: block;
+    width: var(--ngu-scroll-marker-item-width, 0.75rem);
+    height: var(--ngu-scroll-marker-item-height, 0.75rem);
+    border: var(--ngu-scroll-marker-item-border, 2px solid);
+    border-color: var(--ngu-scroll-marker-item-border-color);
+    border-radius: var(--ngu-scroll-marker-item-border-radius, 1.875rem);
+    background: var(--ngu-scroll-marker-item-background, transparent);
+    cursor: pointer;
+  }
+
+  &::column::scroll-marker:target-current {
+    background: var(--ngu-scroll-marker-item-background-target-current);
+  }
+}

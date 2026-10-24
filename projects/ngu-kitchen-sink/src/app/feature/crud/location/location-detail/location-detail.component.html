@@ -1,0 +1,45 @@
+<article class="ngu-offcanvas-body">
+  @if (locationStore.selectedLocation(); as loc) {
+    <hgroup id="offcanvas-location-title">
+      <p>#{{ loc.id }}</p>
+      <h3>{{ getLocalName(loc) }}</h3>
+    </hgroup>
+
+    <section id="info-location-section">
+      <dl id="info-location">
+        <div class="info-location">
+          <dt>Name</dt>
+          <dd>{{ loc.name }}</dd>
+        </div>
+        @if (loc.region) {
+          <div class="info-location">
+            <dt>Region</dt>
+            <dd>{{ loc.region.name }}</dd>
+          </div>
+        }
+      </dl>
+    </section>
+
+    @if (loc.areas.length > 0) {
+      <section id="location-areas">
+        <h3>Areas ({{ loc.areas.length }})</h3>
+        <ul>
+          @for (area of loc.areas; track area.name) {
+            <li>{{ area.name }}</li>
+          }
+        </ul>
+      </section>
+    }
+
+    @if (loc.game_indices.length > 0) {
+      <section id="location-games">
+        <h3>Game appearances</h3>
+        <ul>
+          @for (gi of loc.game_indices; track gi.generation.name) {
+            <li>{{ gi.generation.name }} — index {{ gi.game_index }}</li>
+          }
+        </ul>
+      </section>
+    }
+  }
+</article>

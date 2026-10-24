@@ -1,0 +1,50 @@
+<section class="ngu-grid-main">
+  <hgroup>
+    <h2>{{ title() }}</h2>
+    <p>
+      @if (isCreateMode()) {
+        Esempio di creazione di una specie tramite <strong>reactive form</strong>. La chiamata al servizio è uno stub.
+      } @else {
+        Esempio di modifica di una specie tramite <strong>reactive form</strong>. La chiamata al servizio è uno stub.
+      }
+    </p>
+  </hgroup>
+  <form [formGroup]="editForm"
+        (ngSubmit)="onSubmit()">
+    <ngu-input-text
+      formControlName="name"
+      [id]="'name'"
+      [feature]="'crud'"
+      [errorMsg]="true"
+    />
+    <ngu-input-number
+      formControlName="capture_rate"
+      [id]="'capture_rate'"
+      [feature]="'crud'"
+      [errorMsg]="true"
+    />
+    <ngu-input-number
+      formControlName="base_happiness"
+      [id]="'base_happiness'"
+      [feature]="'crud'"
+    />
+    <ngu-input-number
+      formControlName="gender_rate"
+      [id]="'gender_rate'"
+      [feature]="'crud'"
+      [errorMsg]="true"
+    />
+    <fieldset class="form-actions">
+      <button class="ngu-button ngu-light"
+              type="button"
+              [routerLink]="['/crud/pokemon-species']">
+        Annulla
+      </button>
+      <button class="ngu-button ngu-primary"
+              type="submit"
+              [disabled]="editForm.invalid">
+        {{ isCreateMode() ? 'Crea' : 'Salva' }}
+      </button>
+    </fieldset>
+  </form>
+</section>

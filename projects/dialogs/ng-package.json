@@ -1,0 +1,7 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/angular-develop-universe/dialogs",
+  "lib": {
+       "entryFile": "./index.ts"
+  }
+}

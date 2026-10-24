@@ -1,0 +1,38 @@
+.ngu-pager {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto 2fr auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ngu-pager-gap, 1rem);
+
+  h4 {
+    grid-column: 1/6;
+  }
+
+  .pagination {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding-inline: 40px;
+    justify-content: space-between;
+    gap: var(--ngu-page-pagination-gap, 1rem);
+
+    li {
+      display: inline-block;
+      font-size: var(--ngu-pager-li-font-size, 1rem);
+      font-family: var(--ngu-pager-font-family);
+      padding: var(--ngu-pager-li-padding, 0.5rem);
+      border: 1px solid var(--ngu-pager-li-border-color);
+      &.active {
+        background-color: var(--ngu-pager-li-active-background);
+      }
+    }
+  }
+
+  button {
+    &:disabled {
+      opacity: var(--ngu-pager-disabled-button);
+    }
+  }
+}

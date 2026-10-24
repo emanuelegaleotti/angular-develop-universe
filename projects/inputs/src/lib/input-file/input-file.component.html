@@ -1,0 +1,65 @@
+<fieldset class="ngu-input-file">
+  <label [htmlFor]="id()"
+         [id]="id()+'-label'">
+    {{ _label() | transloco }}
+    @if(control.errors && control.errors['required']){*}
+  </label>
+  <div class="ngu-input-file-drop-zone" (dragover)="dragOverHandler($event)"
+       (drop)="dropHandler($event)">
+    <p>{{_dropZoneMessage() | transloco }}</p>
+    <button type="button" class="ngu-button ngu-add"
+            (click)="input.click()">
+      <ng-content select="[add-btn]"></ng-content>
+    </button>
+    <ul>
+      @for (file of files(); track trackFile($index); let idx=$index) {
+        <li>
+          {{ file.name }}
+          <button type="button"
+                  class="ngu-remove"
+                  (click)="removeFileAtIndex(idx)">
+            <ng-container
+              *ngTemplateOutlet="removeIcon">
+            </ng-container>
+            </button>
+        </li>
+      }
+    </ul>
+  </div>
+  <input type="file"
+         [multiple]="multiple()"
+         [id]="id()"
+         [name]="control.name"
+         [autocomplete]="autocomplete()"
+         [autofocus]="autofocus()"
+         [accept]="accept()"
+         #input
+         (change)="addFile($event)"
+         [class.ngu-is-valid]="(control.statusChanges | async) === 'VALID' && successMsg()"
+         [class.ngu-is-invalid]="(control.statusChanges | async) === 'INVALID' && errorMsg()"
+         [class.ngu-show-help]="helpMsg()"
+         [class.is-dragging]="_isDragging()"
+         [attr.aria-describedby]="id()+'-help-feedback'"
+         [attr.aria-disabled]="input.disabled"
+         [attr.aria-invalid]="(control.statusChanges | async) === 'INVALID'"
+         [attr.aria-errormessage]="id()+'-error-feedback'"
+         aria-autocomplete="inline"
+  >
+  @if (helpMsg()){
+    <div class="ngu-help-feedback" [id]="id()+'-help-feedback'">{{ _helpMsg() | transloco }}</div>
+  }
+
+  @if (successMsg()) {
+    <div class="ngu-valid-feedback">{{ _successMsg() | transloco }}</div>
+  }
+
+  @if (errorMsg()) {
+    <div class="ngu-invalid-feedback" [id]="id()+'-error-feedback'">
+      @if (control.errors) {
+        {{ feature() + '.' + control.name + '.' + Object.keys(control.errors)[0] | transloco }}
+      }
+    </div>
+  }
+
+</fieldset>
+

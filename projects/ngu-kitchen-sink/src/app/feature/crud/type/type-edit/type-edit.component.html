@@ -1,0 +1,33 @@
+<section class="ngu-grid-main">
+  <hgroup>
+    <h2>{{ title() }}</h2>
+    <p>
+      @if (isCreateMode()) {
+        Esempio di creazione di un tipo tramite <strong>reactive form</strong>. La chiamata al servizio è uno stub.
+      } @else {
+        Esempio di modifica di un tipo tramite <strong>reactive form</strong>. La chiamata al servizio è uno stub.
+      }
+    </p>
+  </hgroup>
+  <form [formGroup]="editForm"
+        (ngSubmit)="onSubmit()">
+    <ngu-input-text
+      formControlName="name"
+      [id]="'name'"
+      [feature]="'crud'"
+      [errorMsg]="true"
+    />
+    <fieldset class="form-actions">
+      <button class="ngu-button ngu-light"
+              type="button"
+              [routerLink]="['/crud/type']">
+        Annulla
+      </button>
+      <button class="ngu-button ngu-primary"
+              type="submit"
+              [disabled]="editForm.invalid">
+        {{ isCreateMode() ? 'Crea' : 'Salva' }}
+      </button>
+    </fieldset>
+  </form>
+</section>

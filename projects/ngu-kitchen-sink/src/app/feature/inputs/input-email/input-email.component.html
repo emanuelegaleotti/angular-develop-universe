@@ -1,0 +1,15 @@
+<section>
+  <h2>Input email</h2>
+  <form [formGroup]="test">
+    <ngu-input-email
+      formControlName="email"
+      [id]="'email'"
+      [feature]="'input'"
+      [helpMsg]="true"
+      [successMsg]="true"
+      [errorMsg]="true"
+      [autocomplete]="'email'"
+      [maxLength]="30"
+    ></ngu-input-email>
+  </form>
+</section>

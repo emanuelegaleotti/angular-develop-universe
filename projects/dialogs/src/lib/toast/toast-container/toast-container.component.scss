@@ -1,0 +1,136 @@
+// Stili globali per i container di posizione (ViewEncapsulation.None)
+ngu-toast-stack {
+  position: fixed;
+  z-index: var(--ngu-toast-stack-z-index, 9999);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ngu-toast-stack-gap);
+  padding: var(--ngu-toast-stack-padding);
+  pointer-events: none;
+  max-width: var(--ngu-toast-stack-max-width);
+
+  > ngu-toast-host {
+    pointer-events: auto;
+  }
+
+  &.ngu-toast-stack-top-left {
+    top: 0;
+    left: 0;
+  }
+
+  &.ngu-toast-stack-top-right {
+    top: 0;
+    right: 0;
+  }
+
+  &.ngu-toast-stack-top-center {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.ngu-toast-stack-bottom-left {
+    bottom: 0;
+    left: 0;
+    flex-direction: column-reverse;
+  }
+
+  &.ngu-toast-stack-bottom-right {
+    bottom: 0;
+    right: 0;
+    flex-direction: column-reverse;
+  }
+
+  &.ngu-toast-stack-bottom-center {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column-reverse;
+  }
+}
+
+
+.ngu-toast {
+  // Override UA default positioning — il dialogo scorre nel container di posizione
+  position: relative;
+  inset: unset;
+  margin: 0;
+  max-width: var(--ngu-toast-max-width);
+  background: var(--ngu-toast-background);
+  border: var(--ngu-toast-border);
+  border-radius: var(--ngu-toast-border-radius);
+  border-color: var(--ngu-toast-border-color);
+  padding: var(--ngu-toast-padding);
+  box-shadow: var(--ngu-toast-box-shadow);
+  overflow: hidden;
+
+  .ngu-toast-content {
+    display: flex;
+    flex-direction: column;
+
+    .ngu-toast-header {
+      display: flex;
+      align-items: center;
+      gap: var(--ngu-toast-header-gap);
+      padding: var(--ngu-toast-header-padding);
+      background: var(--ngu-toast-header-background);
+
+      .ngu-toast-icon {
+        flex-shrink: 0;
+        line-height: 0;
+
+        svg {
+          width: var(--ngu-toast-icon-size);
+          height: var(--ngu-toast-icon-size);
+          fill: var(--ngu-toast-icon-color);
+        }
+      }
+
+      .ngu-toast-title {
+        flex: 1;
+        margin: 0;
+        font-size: var(--ngu-toast-title-font-size);
+        font-family: var(--ngu-toast-title-font-family);
+        font-weight: var(--ngu-toast-title-font-weight);
+        color: var(--ngu-toast-title-color);
+      }
+
+      .ngu-toast-close {
+        background: var(--ngu-toast-close-background);
+        border: var(--ngu-toast-close-border);
+        border-color: var(--ngu-toast-close-border-color);
+        border-radius: var(--ngu-toast-close-border-radius);
+        padding: var(--ngu-toast-close-padding);
+        cursor: pointer;
+        line-height: 0;
+        flex-shrink: 0;
+
+        @media (prefers-reduced-motion: no-preference) {
+          transition: all .3s;
+        }
+
+        svg {
+          width: var(--ngu-toast-close-svg-width);
+          height: var(--ngu-toast-close-svg-height);
+          fill: var(--ngu-toast-close-svg-color);
+        }
+      }
+    }
+
+    .ngu-toast-message {
+      margin: 0;
+      padding: var(--ngu-toast-message-padding);
+      font-size: var(--ngu-toast-message-font-size);
+      font-family: var(--ngu-toast-message-font-family);
+      color: var(--ngu-toast-message-color);
+      line-height: var(--ngu-toast-message-line-height);
+    }
+
+    .ngu-toast-datetime {
+      display: block;
+      padding: var(--ngu-toast-datetime-padding);
+      font-size: var(--ngu-toast-datetime-font-size);
+      color: var(--ngu-toast-datetime-color);
+    }
+  }
+}

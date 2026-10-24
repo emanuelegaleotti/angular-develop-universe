@@ -1,0 +1,59 @@
+@use '../sass/abstract/breakpoints' as breakpoints;
+@use '../sass/base/grid' as grid;
+@use '../sass/abstract/variables' as variables;
+@use 'sass:map';
+
+main {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-areas:
+    'h h h h'
+    'm m m m';
+  @include breakpoints.media-breakpoint-up(sm) {
+    grid-template-areas:
+    'h h h h h h h h'
+    'a a m m m m m m';
+  }
+  @include breakpoints.media-breakpoint-up(md) {
+    grid-template-areas:
+    'h h h h h h h h h h h h'
+    'a a m m m m m m m m m m';
+  }
+
+  @include grid.grid-columns;
+  @include grid.column-gap;
+}
+
+ngu-kitchensink-header {
+  grid-area: h;
+}
+
+ngu-kitchensink-aside {
+  grid-area: a;
+  display: none;
+  @include breakpoints.media-breakpoint-up(sm) {
+    display: block;
+  }
+}
+
+#ngu-kitchensink-wrapper {
+  grid-area: m;
+  min-height: calc(100vh - var(--ngu-header-height-xs));
+  @include breakpoints.media-breakpoint-up(sm) {
+    min-height: calc(100vh - var(--ngu-header-height-sm));
+  }
+  @include breakpoints.media-breakpoint-up(md) {
+    min-height: calc(100vh - var(--ngu-header-height-md));
+  }
+  @include breakpoints.media-breakpoint-up(lg) {
+    min-height: calc(100vh - var(--ngu-header-height-lg));
+  }
+  @include breakpoints.media-breakpoint-up(xl) {
+    min-height: calc(100vh - var(--ngu-header-height-xl));
+  }
+  @include breakpoints.media-breakpoint-up('2xl') {
+    min-height: calc(100vh - var(--ngu-header-height-2xl));
+  }
+}

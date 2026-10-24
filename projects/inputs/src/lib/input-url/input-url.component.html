@@ -1,0 +1,35 @@
+<fieldset class="ngu-input-url">
+  <label [htmlFor]="id()"
+         [id]="id()+'-label'">
+    {{ _label() | transloco }}
+    @if(control.errors && control.errors['required']){*}
+  </label>
+  <input type="url"
+         [id]="id()"
+         [name]="name()"
+         [autocomplete]="autocomplete()"
+         [pattern]="pattern()"
+         #input
+         (input)="setValue($event)"
+         [class.ngu-is-valid]="(control.statusChanges | async) === 'VALID' && successMsg() && control.dirty"
+         [class.ngu-is-invalid]="(control.statusChanges | async) === 'INVALID' && errorMsg() && control.dirty"
+         [class.ngu-show-help]="helpMsg()"
+  >
+
+  @if (successMsg()) {
+    <div class="ngu-valid-feedback">{{ _successMsg() | transloco }}</div>
+  }
+
+  @if(errorMsg()){
+    <div class="ngu-invalid-feedback">
+      @if (control.errors) {
+        {{ feature() + '.' + control.name + '.' + Object.keys(control.errors)[0] | transloco }}
+      }
+    </div>
+  }
+
+  @if (helpMsg()) {
+    <div class="ngu-help-feedback">{{ _helpMsg() | transloco }}</div>
+  }
+
+</fieldset>

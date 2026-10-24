@@ -1,0 +1,27 @@
+<section>
+  <h2>Input text</h2>
+  <form [formGroup]="test">
+    <ngu-input-text
+      formControlName="text"
+      [id]="'text'"
+      [maxLength]="36"
+      [feature]="'input'"
+      [helpMsg]="true"
+      [successMsg]="true"
+      [errorMsg]="true"
+      [autocomplete]="'username'"
+      [autofocus]="true"
+    ></ngu-input-text>
+  </form>
+  <article>
+  <dl>
+    <dt>Value:</dt>
+    <dd>{{ test.controls['text'].value }}</dd>
+    <dt>Valid:</dt>
+    <dd>{{ test.controls['text'].valid }}</dd>
+    <dt>Invalid:</dt>
+    <dd>{{ test.controls['text'].invalid }}</dd>
+  </dl>
+  <button class="ngu-button ngu-primary" type="button" (click)="disable()">Disable</button>
+  </article>
+</section>

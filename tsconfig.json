@@ -1,0 +1,125 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "paths": {
+      "root": [
+        "dist/angular-develop-universe"
+      ],
+      "angular-develop-universe": [
+        "dist/angular-develop-universe"
+      ],
+      "inputs": [
+        "dist/angular-develop-universe/inputs"
+      ],
+      "angular-develop-universe/inputs": [
+        "dist/angular-develop-universe/inputs"
+      ],
+      "angular-develop-universe/inputs/*": [
+        "projects/inputs/*"
+      ],
+      "cognito": [
+        "dist/angular-develop-universe/cognito"
+      ],
+      "angular-develop-universe/cognito": [
+        "dist/angular-develop-universe/cognito"
+      ],
+      "angular-develop-universe/cognito/*": [
+        "projects/cognito/*"
+      ],
+      "azure": [
+        "dist/angular-develop-universe/azure"
+      ],
+      "angular-develop-universe/azure": [
+        "dist/angular-develop-universe/azure"
+      ],
+      "angular-develop-universe/azure/*": [
+        "projects/azure/*"
+      ],
+      "utility": [
+        "dist/angular-develop-universe/utility"
+      ],
+      "angular-develop-universe/utility": [
+        "dist/angular-develop-universe/utility"
+      ],
+      "angular-develop-universe/utility/*": [
+        "projects/utility/*"
+      ],
+      "components": [
+        "dist/angular-develop-universe/components"
+      ],
+      "angular-develop-universe/components": [
+        "dist/angular-develop-universe/components"
+      ],
+      "angular-develop-universe/components/*": [
+        "projects/components/*"
+      ],
+      "dialogs": [
+        "dist/angular-develop-universe/dialogs"
+      ],
+      "angular-develop-universe/dialogs": [
+        "dist/angular-develop-universe/dialogs"
+      ],
+      "angular-develop-universe/dialogs/*": [
+        "projects/dialogs/*"
+      ],
+      "chats": [
+        "dist/angular-develop-universe/chats"
+      ],
+      "angular-develop-universe/chats": [
+        "dist/angular-develop-universe/chats"
+      ],
+      "angular-develop-universe/chats/*": [
+        "projects/chats/*"
+      ],
+      "keycloak": [
+        "dist/angular-develop-universe/keycloak"
+      ],
+      "angular-develop-universe/keycloak": [
+        "dist/angular-develop-universe/keycloak"
+      ],
+      "angular-develop-universe/keycloak/*": [
+        "projects/keycloak/*"
+      ],
+      "release": [
+        "./dist/release"
+      ]
+    },
+    "baseUrl": "./",
+    "ignoreDeprecations": "6.0",
+    "outDir": "./dist/out-tsc",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "bundler",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "useDefineForClassFields": false,
+    "lib": [
+      "ES2022",
+      "dom"
+    ]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "references": [
+    {
+      "path": "./projects/azure/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/azure/tsconfig.spec.json"
+    }
+  ]
+}

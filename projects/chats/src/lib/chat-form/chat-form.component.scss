@@ -1,0 +1,95 @@
+.ngu-chat-form {
+  display: flex;
+  align-items: flex-start;
+  background: var(--ngu-chat-form-background);
+  padding: var(--ngu-chat-form-padding, 1rem);
+  border: var(--ngu-chat-form-border);
+  border-color: var(--ngu-chat-form-border-color);
+  border-radius: var(--ngu-chat-form-border-radius);
+  box-shadow: var(--ngu-chat-form-box-shadow);
+  margin-bottom: var(--ngu-chat-form-margin-bottom, 1rem);
+  gap: var(--ngu-chat-form-gap, 1rem);
+
+  div {
+    flex-basis: 100%;
+
+    #ngu-chat-form-textarea {
+      width: 100%;
+      resize: vertical;
+      background: var(--ngu-chat-form-textarea-background);
+      color: var(--ngu-chat-form-textarea-color);
+      padding: var(--ngu-chat-form-textarea-padding);
+      border: var(--ngu-chat-form-textarea-border);
+      border-color: var(--ngu-chat-form-textarea-border-color);
+      border-radius: var(--ngu-chat-form-textarea-border-radius, 0);
+      font-size: var(--ngu-chat-form-textarea-font-size, 1rem);
+      line-height: var(--ngu-chat-form-textarea-line-height, 1.5);
+      font-weight: var(--ngu-chat-form-textarea-font-weight, normal);
+      font-family: var(--ngu-chat-form-textarea-font-family);
+      min-height: var(--ngu-chat-form-textarea-min-height);
+      @supports (field-sizing: content) {
+        field-sizing: content;
+      }
+    }
+
+    .invalid-feedback {
+    }
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: var(--ngu-chat-form--button-gap, .5rem);
+    background: var(--ngu-chat-form-button-background);
+    color: var(--ngu-chat-form-button-color);
+    padding: var(--ngu-chat-form-button-padding);
+    border: var(--ngu-chat-form-button-border);
+    border-color: var(--ngu-chat-form-button-border-color);
+    border-radius: var(--ngu-chat-form-button-border-radius);
+    font-size: var(--ngu-chat-form-button-font-size, 1rem);
+    line-height: var(--ngu-chat-form-button-line-height, 1.5);
+    font-weight: var(--ngu-chat-form-button-font-weight, normal);
+    @media (prefers-reduced-motion: no-preference) {
+      transition: all .3s;
+    }
+
+    ::ng-deep svg {
+      width: var(--ngu-chat-form-button-icon-width);
+      height: var(--ngu-chat-form-button-icon-height);
+      fill: var(--ngu-chat-form-button-color);
+    }
+
+    #ngu-chat-form-spinner {
+      display: inline-block;
+      line-height: 0;
+      animation: var(--ngu-chat-form-spinner-animation);
+      transform-origin: var(--ngu-chat-form-spinner-transform-origin, center center);
+    }
+
+    span {
+      display: var(--ngu-chat-form-button-text-display, inline-block);
+    }
+
+    &:hover {
+      background: var(--ngu-chat-form-button-hover-background);
+      color: var(--ngu-chat-form-button-hover-color);
+      border-color: var(--ngu-chat-form-button-hover-border-color);
+    }
+
+    &:disabled {
+      background: var(--ngu-chat-form-button-disabled-background);
+      color: var(--ngu-chat-form-button-disabled-color);
+      border-color: var(--ngu-chat-form-button-disabled-border-color);
+
+      ::ng-deep svg {
+        fill: var(--ngu-chat-form-button-disabled-color);
+      }
+    }
+
+    &:focus {
+      background: var(--ngu-chat-form-button-focus-background);
+      color: var(--ngu-chat-form-button-focus-color);
+      border-color: var(--ngu-chat-form-button-focus-border-color);
+    }
+  }
+}

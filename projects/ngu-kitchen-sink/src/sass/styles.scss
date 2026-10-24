@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@use "abstract/breakpoints" as breakpoints;
+@use "abstract/functions" as functions;
+@use "base/grid" as grid;
+@use "base/spaces" as spaces;
+@use "base/palette" as palette;
+@use "base/paddings" as paddings;
+@use "base/margins" as margins;
+@use "base/typography" as typography;
+@use "base/reset" as reset;
+@use "layouts/root" as root;
+@use "layouts/body" as body;
+
+
+@use "components/radios" as radios;
+@use "components/checkboxes" as checkboxes;
+@use "components/buttons" as buttons;
+@use "components/inputs" as inputs;
+@use "components/carousel" as carousel;
+@use "components/offcanvas" as offcanvas;
+@use "components/tables" as tables;
+@use "components/pager" as pager;
+@use "components/titles" as titles;
+@use "components/dialogs" as dialogs;
+@use "components/bottomSheet" as bottomSheet;
+@use "components/chats" as chats;
+@use "components/toast" as toast;
+@use "components/popover" as popover;
+
+@use "./themes/universe" as universe;

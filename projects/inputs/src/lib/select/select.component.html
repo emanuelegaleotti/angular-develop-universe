@@ -1,0 +1,42 @@
+<fieldset class="ngu-select">
+  <label [htmlFor]="id()"
+         [id]="id()+'-label'">
+    {{ _label() | transloco }}
+    @if(control.errors && control.errors['required']){*}
+  </label>
+  <select [id]="id()"
+          [name]="control.name"
+          [attr.autocomplete]="autocomplete()"
+          [autofocus]="autofocus()"
+          (input)="setValue($event)"
+          [class.ngu-is-valid]="(control.statusChanges | async) === 'VALID' && successMsg() && control.dirty"
+          [class.ngu-is-invalid]="(control.statusChanges | async) === 'INVALID' && errorMsg() && control.dirty"
+          [class.ngu-show-help]="helpMsg()"
+          [attr.aria-describedby]="id()+'-help-feedback'"
+          [attr.aria-disabled]="input.disabled"
+          [attr.aria-invalid]="(control.statusChanges | async) === 'INVALID' && control.dirty"
+          [attr.aria-errormessage]="id()+'-error-feedback'"
+          [attr.aria-required]="control.errors && control.errors['required']"
+          aria-autocomplete="inline"
+          #input
+  >
+    <option [value]="null"
+            [ngValue]="null"
+            [selected]="!control.value"
+    ></option>
+    @for (o of options(); track $index) {
+      <option [value]="o"
+              [selected]="control.value === o"
+              [ngValue]="o">
+        {{ o }}
+      </option>
+    }
+  </select>
+  <div class="ngu-valid-feedback">{{ _successMsg() | transloco }}</div>
+  <div class="ngu-invalid-feedback" [id]="id()+'-error-feedback'">
+    @if (control.errors) {
+      {{ feature() + '.' + control.name + '.' + Object.keys(control.errors)[0] | transloco }}
+    }
+  </div>
+  <div class="ngu-help-feedback" [id]="id()+'-help-feedback'">{{ _helpMsg() | transloco }}</div>
+</fieldset>

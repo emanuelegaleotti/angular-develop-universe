@@ -1,0 +1,41 @@
+<form [formGroup]="knowledgeForm"
+      class="ngu-chat-knowledge-base"
+      *transloco="let t">
+  <fieldset>
+    <label [htmlFor]="'ngu-knowledge-base-select'">
+      {{ t('ngu.chat-knowledge-base.label') }}
+    </label>
+    <select [id]="'ngu-knowledge-base-select'"
+            formControlName="base"
+            [ngClass]="(!selectedKnowledgeBase().length  ? 'ngu-is-invalid' : '')"
+    >
+      <option [value]="null"
+              [ngValue]="null"
+      ></option>
+      @for (k of filtersKnowledgeBase(); track $index) {
+        <option [ngValue]="k.contextId">{{ k.displayName }}
+        </option>
+      }
+    </select>
+    @if (!selectedKnowledgeBase().length) {
+      <div class="ngu-invalid-feedback">
+        {{t('ngu.chat-knowledge-base.required')}}
+      </div>
+    }
+  </fieldset>
+  <menu>
+    @for (kb of selectedKnowledgeBase(); track $index) {
+      <li>
+        <div class="ngu-chat-knowledge-base-chips">
+          {{ getBaseChip(kb) }}
+          <button
+            type="button"
+            (click)="handleRemove(kb)">
+            <ng-container *ngTemplateOutlet="closeTemplateRef()"></ng-container>
+          </button>
+        </div>
+      </li>
+    }
+
+  </menu>
+</form>

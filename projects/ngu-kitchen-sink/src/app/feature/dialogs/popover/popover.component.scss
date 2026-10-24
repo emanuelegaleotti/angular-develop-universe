@@ -1,0 +1,15 @@
+.ngu-grid-main > * {
+  grid-column: 1 / -1;
+}
+
+.popover-demo {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 3rem 8rem;
+}
+
+.popover-bottom {
+  margin-top: 70vh;
+  margin-bottom: 1rem;
+}

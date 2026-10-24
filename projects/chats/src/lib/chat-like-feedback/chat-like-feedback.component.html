@@ -1,0 +1,33 @@
+<form [formGroup]="feedbackForm"
+      class="ngu-chat-like-feedback"
+      *transloco="let t"
+      (ngSubmit)="sendFeedback()">
+  <div class='ngu-alert'>
+    {{ t('ngu.chat-like-feedback.alert') }}
+    <button type="button" (click)="whenClose.emit()">
+      <ng-content select="[close-icon]"></ng-content>
+    </button>
+  </div>
+  <div>
+    <label [htmlFor]="'like-feedback'">{{ t('ngu.chat-like-feedback.label') }}</label>
+    <textarea [id]="'like-feedback'"
+              name="like-feedback"
+              formControlName="feedback"
+              aria-autocomplete="inline"
+              aria-required="true"
+              minlength="0"
+              maxlength="256"
+              [class.ngu-is-invalid]="feedback.invalid"
+              [attr.aria-errormessage]="'like-feedback-error-feedback'"
+    ></textarea>
+  </div>
+  <button type="submit"
+          id="like-feedback-submit"
+          [disabled]="feedbackForm.invalid"
+          [title]="t('button.send')">
+    <span>
+      {{t('button.send')}}
+    </span>
+    <ng-content select="[send-icon]"></ng-content>
+  </button>
+</form>

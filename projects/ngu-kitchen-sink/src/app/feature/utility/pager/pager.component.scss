@@ -1,0 +1,15 @@
+.ngu-table {
+  grid-column: -1/1;
+  td {
+    text-align: center;
+  }
+}
+
+ngu-pager {
+  grid-column: 4/7;
+
+  svg {
+    height: 24px;
+    width: 24px;
+  }
+}

@@ -1,0 +1,101 @@
+@use '../../../sass/abstract/breakpoints' as breakpoints;
+
+header {
+  padding: var(--ngu-space-md) var(--ngu-space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ngu-space-xs);
+  background: var(--ngu-gray-100);
+  border-bottom: 1px solid var(--ngu-gray-300);
+  @include breakpoints.media-breakpoint-up(sm) {
+    justify-content: flex-start;
+  }
+
+
+  #ngu-header-menu {
+    display: inline-block;
+    @include breakpoints.media-breakpoint-up(sm) {
+      display: none;
+    }
+
+    svg {
+      height: 2rem;
+      width: auto;
+      fill: #151417;
+    }
+  }
+
+  #ngu-header-logo {
+    font-family: 'Inter Tight', Inter, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    background: var(--ngu-gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .ngu-header-user {
+    display: none;
+    position: relative;
+    @include breakpoints.media-breakpoint-up(sm) {
+      display: inline-block;
+      margin-left: auto;
+    }
+
+    summary {
+      border: 1px solid ;
+      border-color: var(--ngu-gray-600);
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      line-height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        height: 2rem;
+        width: auto;
+        fill: var(--ngu-gray-700);
+      }
+    }
+
+    menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      padding-left: 0;
+      border: 1px solid;
+      list-style: none;
+      background: var(--ngu-gray-100);
+
+      li {
+        padding: 1rem;
+      }
+    }
+  }
+
+  .separator {
+    width: 1px;
+    height: 3rem;
+    background: var(--ngu-gray-300);
+    display: inline-block;
+  }
+
+  .ngu-header-logout {
+    background: var(--ngu-gray-100);
+    border: 1px solid;
+    border-color: var(--ngu-gray-100);
+    padding: 0;
+
+    svg {
+      height: 2rem;
+      width: auto;
+      fill: var(--ngu-gray-700);
+    }
+  }
+}

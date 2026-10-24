@@ -1,0 +1,11 @@
+section {
+  h2 {
+    grid-column: 1/-1;
+  }
+  form {
+    grid-column: 1/4
+  }
+  article {
+    grid-column: 1/4;
+  }
+}

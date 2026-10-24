@@ -1,0 +1,41 @@
+@use '../base/palette' as palette;
+
+body {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(black, 0);
+  background: palette.$white;
+  color: palette.$primary-contrast;
+  font-family: Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+  &:has(dialog.ngu-bottom-sheet[open]),
+  &:has(.ngu-dialog) {
+    overflow: hidden;
+  }
+}
+
+a {
+  color: palette.$bright-blue;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color .3s ease;
+
+  &:hover {
+    color: palette.$electric-violet;
+  }
+}
+
+code,
+pre,
+kbd {
+  font-family: 'DM Mono', monospace;
+}
+
+:focus-visible {
+  outline: 2px solid palette.$electric-violet;
+  outline-offset: 2px;
+}
+
+::selection {
+  background: color-mix(in srgb, #{palette.$vivid-pink} 25%, #{palette.$white});
+}

@@ -1,0 +1,21 @@
+<section class="ngu-chat"
+         *transloco="let t"
+         [id]="id()">
+  <article class="ngu-chat-header">
+    <h4>{{chatTitle()}}</h4>
+  </article>
+  <article class="ngu-chat-messages">
+    @for ( m of messages(); track $index){
+      <ngu-chat-message
+        [message]="m"></ngu-chat-message>
+    }
+  </article>
+  <ngu-chat-form
+    [message]="chatStore.chats()[chatId()]?.message"
+    (whenSubmitted)="chatStore.storeMessage(chatId(), $event)">
+    <ng-container send-icon *ngTemplateOutlet="sendTemplateRef"></ng-container>
+  ></ngu-chat-form>
+  <article class="ngu-chat-ai-footer">
+    <p>{{ t('ngu.chat.help') }}</p>
+  </article>
+</section>

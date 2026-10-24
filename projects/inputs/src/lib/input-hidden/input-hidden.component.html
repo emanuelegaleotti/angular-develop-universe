@@ -1,0 +1,20 @@
+<fieldset class="ngu-input-hidden">
+  <input type="hidden"
+         [id]="id()"
+         [name]="control.name"
+         [autocomplete]="autocomplete()"
+         [minLength]="0"
+         [maxLength]="maxLength()"
+         #input
+         (input)="setValue($event)"
+         [class.is-valid]="(control.statusChanges | async) === 'VALID' && successMsg() && control.dirty"
+         [class.is-invalid]="(control.statusChanges | async) === 'INVALID' && errorMsg() && control.dirty"
+         [attr.aria-describedby]="id()+'-help-feedback'"
+         [attr.aria-disabled]="input.disabled"
+         [attr.aria-invalid]="(control.statusChanges | async) === 'INVALID' && control.dirty"
+         [attr.aria-errormessage]="id()+'-error-feedback'"
+         [attr.aria-hidden]="true"
+         aria-autocomplete="inline"
+  >
+</fieldset>
+

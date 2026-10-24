@@ -1,0 +1,137 @@
+.ngu-chat-dislike-feedback {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background: var(--ngu-chat-dislike-feedback-background);
+  padding: var(--ngu-chat-dislike-feedback-padding, 1rem);
+  border: var(--ngu-chat-dislike-feedback-border);
+  border-color: var(--ngu-chat-dislike-feedback-border-color);
+  border-radius: var(--ngu-chat-dislike-feedback-border-radius);
+  box-shadow: var(--ngu-chat-dislike-feedback-box-shadow);
+  margin-bottom: var(--ngu-chat-dislike-feedback-margin-bottom, 1rem);
+  gap: var(--ngu-chat-dislike-feedback-gap, 1rem);
+
+  .ngu-alert {
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--ngu-chat-dislike-feedback-alert-padding, 1rem);
+    border-radius: var(--ngu-chat-dislike-feedback-alert-border-radius);
+    border: var(--ngu-chat-dislike-feedback-alert-border);
+    border-color: var(--ngu-chat-dislike-feedback-alert-border-color);
+    font-size: var(--ngu-chat-dislike-feedback-alert-font-size, 1rem);
+    font-weight: var(--ngu-chat-dislike-feedback-alert-font-weight, normal);
+    font-family: var(--ngu-chat-dislike-feedback-alert-font-family);
+    line-height: var(--ngu-chat-dislike-feedback-alert-line-height);
+    letter-spacing: var(--ngu-chat-dislike-feedback-alert-letter-spacing);
+    background: var(--ngu-chat-dislike-feedback-alert-background);
+    color: var(--ngu-chat-dislike-feedback-alert-color);
+    margin-bottom: var(--ngu-chat-dislike-feedback-alert-margin-bottom);
+    button {
+      background: transparent;
+      border: 1px solid;
+      border-color: transparent;
+      padding: var(--ngu-chat-dislike-feedback-alert-button-padding);
+
+      ::ng-deep svg {
+        fill: var(--ngu-chat-dislike-feedback-alert-button-color);
+        width: var(--ngu-chat-dislike-feedback-alert-button-width);
+        height: var(--ngu-chat-dislike-feedback-alert-button-height);
+      }
+    }
+  }
+
+  div {
+    flex-basis: 100%;
+    margin-right: var(--ngu-chat-dislike-feedback-textarea-margin-right);
+
+    label {
+      display: inline-block;
+      color: var(--ngu-chat-dislike-feedback-label-color);
+      font-size: var(--ngu-chat-dislike-feedback-label-font-size, 1rem);
+      line-height: var(--ngu-chat-dislike-feedback-label-line-height, 1.5);
+      font-weight: var(--ngu-chat-dislike-feedback-label-font-weight, normal);
+      margin-bottom: var(--ngu-chat-dislike-feedback-label-margin-bottom);
+      font-family: var(--ngu-chat-dislike-feedback-label-font-family);
+    }
+
+    textarea {
+      resize: vertical;
+      width: 100%;
+      background: var(--ngu-chat-dislike-feedback-textarea-background);
+      color: var(--ngu-chat-dislike-feedback-textarea-color);
+      padding: var(--ngu-chat-dislike-feedback-textarea-padding);
+      min-height: var(--ngu-chat-dislike-feedback-textarea-min-height);
+      border: var(--ngu-chat-dislike-feedback-textarea-border);
+      border-color: var(--ngu-chat-dislike-feedback-textarea-border-color);
+      border-radius: var(--ngu-chat-dislike-feedback-textarea-border-radius, 0);
+      font-size: var(--ngu-chat-dislike-feedback-textarea-font-size, 1rem);
+      line-height: var(--ngu-chat-dislike-feedback-textarea-line-height, 1.5);
+      font-weight: var(--ngu-chat-dislike-feedback-textarea-font-weight, normal);
+      font-family: var(--ngu-chat-dislike-feedback-textarea-font-family);
+      @supports (field-sizing: content) {
+        field-sizing: content;
+      }
+    }
+
+    .ngu-invalid-feedback {
+      color: var(--ngu-chat-dislike-feedback-invalid-color);
+      padding: var(--ngu-chat-dislike-feedback-invalid-padding);
+      font-size: var(--ngu-chat-dislike-feedback-invalid-font-size, 1rem);
+      line-height: var(--ngu-chat-dislike-feedback-invalid-line-height, 1.5);
+      font-weight: var(--ngu-chat-dislike-feedback-invalid-font-weight, normal);
+      font-family: var(--ngu-chat-dislike-feedback-invalid-font-family);
+    }
+  }
+
+  #dislike-feedback-submit {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: var(--ngu-chat-dislike-feedback-button-gap, .5rem);
+    background: var(--ngu-chat-dislike-feedback-button-background);
+    color: var(--ngu-chat-dislike-feedback-button-color);
+    padding: var(--ngu-chat-dislike-feedback-button-padding);
+    border: var(--ngu-chat-dislike-feedback-button-border);
+    border-color: var(--ngu-chat-dislike-feedback-button-border-color);
+    border-radius: var(--ngu-chat-dislike-feedback-button-border-radius);
+    font-size: var(--ngu-chat-dislike-feedback-button-font-size, 1rem);
+    line-height: var(--ngu-chat-dislike-feedback-button-line-height, 1.5);
+    font-weight: var(--ngu-chat-dislike-feedback-button-font-weight, normal);
+    font-family: var(--ngu-chat-dislike-feedback-button-font-family);
+    @media (prefers-reduced-motion: no-preference) {
+      transition: all .3s;
+    }
+
+    ::ng-deep svg {
+      height: var(--ngu-chat-dislike-feedback-button-icon-height);
+      width: var(--ngu-chat-dislike-feedback-button-icon-width);
+      fill: var(--ngu-chat-dislike-feedback-button-color);
+    }
+
+    &:hover {
+      ::ng-deep svg {
+        fill: var(--ngu-chat-dislike-feedback-button-hover-color);
+      }
+      background: var(--ngu-chat-dislike-feedback-button-hover-background);
+      color: var(--ngu-chat-dislike-feedback-button-hover-color);
+      border-color: var(--ngu-chat-dislike-feedback-button-hover-border-color);
+    }
+
+    &:disabled {
+      ::ng-deep svg {
+        fill: var(--ngu-chat-dislike-feedback-button-disabled-color);
+      }
+      background: var(--ngu-chat-dislike-feedback-button-disabled-background);
+      color: var(--ngu-chat-dislike-feedback-button-disabled-color);
+      border-color: var(--ngu-chat-dislike-feedback-button-disabled-border-color);
+    }
+
+    &:focus {
+      background: var(--ngu-chat-dislike-feedback-button-focus-background);
+      color: var(--ngu-chat-dislike-feedback-button-focus-color);
+      border-color: var(--ngu-chat-dislike-feedback-button-focus-border-color);
+    }
+  }
+}

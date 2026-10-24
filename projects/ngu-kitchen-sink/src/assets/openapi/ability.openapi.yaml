@@ -1,0 +1,108 @@
+openapi: 3.0.3
+info:
+  title: PokéAPI - Ability
+  version: 2.0.0
+  description: PokéAPI endpoints for Ability resource
+servers:
+  - url: https://pokeapi.co/api/v2
+paths:
+  /ability:
+    get:
+      summary: List Abilities
+      operationId: listAbilities
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: Paginated list of Abilities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AbilityPage'
+  /ability/{name}:
+    get:
+      summary: Get Ability by name or id
+      operationId: getAbility
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Ability details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ability'
+components:
+  schemas:
+    NamedApiResource:
+      type: object
+      properties:
+        name:
+          type: string
+        url:
+          type: string
+    AbilityPage:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/NamedApiResource'
+    EffectEntry:
+      type: object
+      properties:
+        effect:
+          type: string
+        short_effect:
+          type: string
+        language:
+          $ref: '#/components/schemas/NamedApiResource'
+    AbilityPokemon:
+      type: object
+      properties:
+        is_hidden:
+          type: boolean
+        slot:
+          type: integer
+        pokemon:
+          $ref: '#/components/schemas/NamedApiResource'
+    Ability:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        is_main_series:
+          type: boolean
+        generation:
+          $ref: '#/components/schemas/NamedApiResource'
+        effect_entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/EffectEntry'
+        pokemon:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbilityPokemon'

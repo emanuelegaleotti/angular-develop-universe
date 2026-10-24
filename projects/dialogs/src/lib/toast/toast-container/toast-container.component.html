@@ -1,0 +1,27 @@
+<dialog #toast
+        [ngClass]="toastConfig()?.className"
+        [id]="toastConfig()?.id"
+        class="ngu-toast">
+  <div class="ngu-toast-content">
+    <div class="ngu-toast-header">
+      @if (toastConfig()?.toastIcon) {
+        <span class="ngu-toast-icon" [innerHTML]="toastIcon()"></span>
+      }
+      @if (toastConfig()?.toastTitle) {
+        <h4 class="ngu-toast-title">{{ toastConfig()?.toastTitle }}</h4>
+      }
+      <button class="ngu-toast-close"
+              type="button"
+              (click)="hide()"
+              [innerHTML]="closeIcon()">
+      </button>
+    </div>
+    @if (toastConfig()?.toastMessage) {
+      <p class="ngu-toast-message">{{ toastConfig()?.toastMessage }}</p>
+    }
+    @if (toastConfig()?.toastDateTime) {
+      <time class="ngu-toast-datetime">{{ toastConfig()?.toastDateTime | date:'dd/MM/yyyy HH:mm' }}</time>
+    }
+  </div>
+</dialog>
+

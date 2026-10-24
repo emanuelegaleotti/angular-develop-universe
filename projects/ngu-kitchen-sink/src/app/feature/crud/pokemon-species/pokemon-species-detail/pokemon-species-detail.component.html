@@ -1,0 +1,59 @@
+<article class="ngu-offcanvas-body">
+  @if (species(); as s) {
+    <hgroup id="offcanvas-species-title">
+      <p>#{{ s.id }}</p>
+      <h3>{{ s.name }}</h3>
+    </hgroup>
+
+    <section id="info-pokemon-species-section">
+      <dl id="info-pokemon-species">
+        <div class="info-pokemon">
+          <dt>Color</dt>
+          <dd>{{ s.color.name }}</dd>
+        </div>
+        <div class="info-pokemon">
+          <dt>Habitat</dt>
+          <dd>{{ s.habitat?.name ?? 'None' }}</dd>
+        </div>
+        <div class="info-pokemon">
+          <dt>Capture Rate</dt>
+          <dd>{{ s.capture_rate }}</dd>
+        </div>
+        <div class="info-pokemon">
+          <dt>Base Happiness</dt>
+          <dd>{{ s.base_happiness }}</dd>
+        </div>
+        <div class="info-pokemon">
+          <dt>Gender Rate</dt>
+          <dd>{{ s.gender_rate }}</dd>
+        </div>
+        <div class="info-pokemon">
+          <dt>Is Legendary</dt>
+          <dd>{{ s.is_legendary }}</dd>
+        </div>
+        <div class="info-pokemon">
+          <dt>Is Mythical</dt>
+          <dd>{{ s.is_mythical }}</dd>
+        </div>
+        <div class="info-pokemon">
+          <dt>Evolves From</dt>
+          <dd>{{ s.evolves_from_species?.name ?? 'None' }}</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section id="egg-groups">
+      <h3>Egg Groups</h3>
+      <ul>
+        @for (eg of s.egg_groups; track eg.name) {
+          <li>{{ eg.name }}</li>
+        }
+      </ul>
+    </section>
+
+    @if (s.flavor_text_entries.length > 0) {
+      <blockquote>{{ s.flavor_text_entries[0].flavor_text }}</blockquote>
+    }
+  }
+</article>
+

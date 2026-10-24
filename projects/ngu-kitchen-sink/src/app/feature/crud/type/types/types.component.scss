@@ -1,0 +1,79 @@
+@use 'sass:map';
+@use '../../../../../sass/base/spaces' as spaces;
+
+section {
+  grid-template-rows: repeat(4, min-content);
+
+  #header-types {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: map.get(spaces.$spaces, 'md');
+
+    hgroup {
+      flex: 1;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  search {
+    grid-column: 1 / -1;
+    form {
+      display: flex;
+      gap: map.get(spaces.$spaces, 'md');
+      align-items: flex-end;
+      flex-wrap: nowrap;
+      ngu-input-search {
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  .ngu-table {
+    th {
+      font-size: 2rem;
+      text-align: start;
+    }
+    td {
+      font-size: 1.5rem;
+      text-align: start;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  figure {
+    grid-column: 1 / -1;
+  }
+
+  ngu-pager {
+    grid-column: 4 / 7;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  #pageSizeForm {
+    grid-column: 9 / 11;
+  }
+}
+

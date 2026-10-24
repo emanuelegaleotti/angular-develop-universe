@@ -1,0 +1,16 @@
+<section class="ngu-grid-fluid">
+<h2>Textarea</h2>
+  <form [formGroup]="test">
+    <ngu-textarea
+      formControlName="textarea"
+      [id]="'text'"
+      [feature]="'input'"
+      [maxLength]="256"
+      [cols]="5"
+      [rows]="5"
+      [helpMsg]="true"
+      [successMsg]="true"
+      [errorMsg]="true"
+    ></ngu-textarea>
+  </form>
+</section>

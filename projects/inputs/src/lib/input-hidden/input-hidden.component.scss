@@ -1,0 +1,103 @@
+.ngu-input-hidden {
+  label {
+    display: inline-block;
+    margin-bottom: var(--ngu-input-label-margin-bottom);
+    font-size: var(--ngu-input-label-font-size, 1rem);
+    line-height: var(--ngu-input-label-line-height, 1.5);
+    font-weight: var(--ngu-input-label-font-weight, normal);
+    font-style: var(--ngu-input-label-font-style, normal);
+    letter-spacing: var(--ngu-input-label-letter-spacing);
+    color: var(--ngu-input-label-color);
+    font-family: var(--ngu-input-label-font-family);
+    @media (prefers-reduced-motion: no-preference) {
+      transition: all 0.3s;
+    }
+  }
+
+  input[type="hidden"] {
+    width: 100%;
+    font-size: var(--ngu-input-font-size, 1rem);
+    line-height: var(--ngu-input-line-height, 1.5);
+    font-weight: var(--ngu-input-font-weight, normal);
+    font-style: var(--ngu-input-font-style, normal);
+    letter-spacing: var(--ngu-input-letter-spacing);
+    font-family: var(--ngu-input-font-family);
+    background: var(--ngu-input-background);
+    border: var(--ngu-input-border);
+    border-color: var(--ngu-input-border-color);
+    border-radius: var(--ngu-input-border-radius);
+    padding: var(--ngu-input-padding, 0.5rem);
+    color: var(--ngu-input-color, inherit);
+    @media (prefers-reduced-motion: no-preference) {
+      transition: all 0.3s;
+    }
+
+    &.ngu-show-help {
+      & ~ .ngu-help-feedback {
+        display: block;
+      }
+    }
+
+    &.ngu-is-valid {
+      & ~ .ngu-valid-feedback {
+        display: block;
+      }
+
+      & ~ ngu-invalid-feedback {
+        display: none;
+      }
+
+      & ~ .ngu-help-feedback {
+        display: none;
+      }
+    }
+
+    &.ngu-is-invalid {
+      & ~ .ngu-valid-feedback {
+        display: none;
+      }
+
+      & ~ .ngu-invalid-feedback {
+        display: block;
+      }
+
+      & ~ .ngu-help-feedback {
+        display: none;
+      }
+    }
+  }
+
+  .ngu-valid-feedback {
+    display: none;
+    font-size: var(--ngu-input-valid-feedback-font-size, 1rem);
+    line-height: var(--ngu-input-valid-feedback-line-height, 1.5);
+    font-weight: var(--ngu-input-valid-feedback-font-weight, normal);
+    font-style: var(--ngu-input-valid-feedback-font-style, normal);
+    letter-spacing: var(--ngu-input-valid-feedback-letter-spacing);
+    font-family: var(--ngu-input-valid-feedback-font-family);
+    color: var(--ngu-input-valid-feedback-color);
+  }
+
+  .ngu-invalid-feedback {
+    display: none;
+    font-size: var(--ngu-input-invalid-feedback-font-size, 1rem);
+    line-height: var(--ngu-input-invalid-feedback-line-height, 1.5);
+    font-weight: var(--ngu-input-invalid-feedback-font-weight, normal);
+    font-style: var(--ngu-input-invalid-feedback-font-style, normal);
+    letter-spacing: var(--ngu-input-invalid-feedback-letter-spacing);
+    font-family: var(--ngu-input-invalid-feedback-font-family);
+    color: var(--ngu-input-invalid-feedback-color);
+  }
+
+  .ngu-help-feedback {
+    display: none;
+    font-size: var(--ngu-input-help-feedback-font-size, 1rem);
+    line-height: var(--ngu-input-help-feedback-line-height, 1.5);
+    font-weight: var(--ngu-input-help-feedback-font-weight, normal);
+    font-style: var(--ngu-input-help-feedback-font-style, normal);
+    letter-spacing: var(--ngu-input-help-feedback-letter-spacing);
+    font-family: var(--ngu-input-help-feedback-font-family);
+    color: var(--ngu-input-help-feedback-color);
+  }
+}
+

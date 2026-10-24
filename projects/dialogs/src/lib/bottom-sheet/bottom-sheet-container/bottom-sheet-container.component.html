@@ -1,0 +1,14 @@
+<dialog #bottomSheet
+        [ngClass]="bottomSheetConfig()?.className"
+        [id]="bottomSheetConfig()?.id"
+        class="ngu-bottom-sheet">
+  <header class="ngu-bottom-sheet-header">
+    <h4>{{ bottomSheetConfig()?.bottomSheetTitle }}</h4>
+    <button class="ngu-bottom-sheet-close"
+            type="button"
+            (click)="hide()"
+            [innerHTML]="closeIcon()">
+    </button>
+  </header>
+  <ng-container #container />
+</dialog>

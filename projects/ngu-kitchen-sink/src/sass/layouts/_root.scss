@@ -1,0 +1,26 @@
+@use "../base/spaces" as spaces;
+@use "../base/palette" as palette;
+@use "../abstract/variables" as variables;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  @each $size, $space in spaces.$spaces {
+    --ngu-space-#{$size}: #{$space};
+  }
+  @each $name, $color in palette.$palette {
+    --ngu-color-#{$name}: #{$color};
+  }
+  @each $name, $color in palette.$grays {
+    --ngu-gray-#{$name}: #{$color};
+  }
+  --ngu-gradient-brand: #{palette.$brand-gradient};
+  @each $name, $data in variables.$variables {
+    --ngu-#{$name}: #{$data};
+  }
+}
+
+

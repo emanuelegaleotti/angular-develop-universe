@@ -1,0 +1,72 @@
+#offcanvas-species-title {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.5rem;
+
+  p {
+    font-family: Inter, sans-serif;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+  }
+}
+
+article.ngu-offcanvas-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  section {
+    margin: 0;
+  }
+}
+
+#info-pokemon-species {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .info-pokemon {
+    display: flex;
+    flex-direction: column;
+
+    dt {
+      font-size: 1.5rem;
+      text-align: start;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    dd {
+      margin: 0;
+      font-size: 1.5rem;
+      text-align: start;
+    }
+  }
+}
+
+#egg-groups {
+  ul {
+    padding: 0;
+    li {
+      list-style: none;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+blockquote {
+  font-family: Inter, sans-serif;
+  font-size: 1.2rem;
+}

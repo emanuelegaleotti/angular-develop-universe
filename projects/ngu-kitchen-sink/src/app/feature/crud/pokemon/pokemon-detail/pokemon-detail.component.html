@@ -1,0 +1,74 @@
+<article class="ngu-offcanvas-body">
+    <hgroup id="offcanvas-pokemon-title">
+      <p>#{{ pokemon()?.id }}</p>
+      <h3>{{ pokemon()?.name }}</h3>
+    </hgroup>
+  @if (pokemon()?.sprites?.front_default) {
+    <figure>
+      <img [ngSrc]="pokemon()!.sprites!.front_default!"
+           loading="lazy"
+           [alt]="pokemon()?.name" width="96" height="96"/>
+      @if (pokemon()?.sprites?.front_shiny) {
+        <img [ngSrc]="pokemon()!.sprites!.front_shiny!"
+             loading="lazy"
+             [alt]="pokemon()?.name + ' shiny'" width="96" height="96"/>
+      }
+    </figure>
+  }
+  <section>
+    <dl id="info-pokemon-section">
+      <div class="info-pokemon">
+        <dt>Height</dt>
+        <dd>{{ pokemon()?.height ?? 0 / 10 }} m</dd>
+      </div>
+      <div class="info-pokemon">
+        <dt>Weight</dt>
+        <dd>{{ pokemon()?.weight ?? 0 /10 }} kg</dd>
+      </div>
+      <div class="info-pokemon">
+        <dt>Base Experience</dt>
+        <dd>{{ pokemon()?.base_experience }}</dd>
+      </div>
+      <div class="info-pokemon">
+        <dt>Types</dt>
+        <dd>
+          {{ pokemon()?.types?.[0]?.type?.name }}
+          @if (pokemon()?.types?.[1]) {
+            / {{ pokemon()?.types?.[1]?.type?.name }}
+          }
+        </dd>
+      </div>
+    </dl>
+  </section>
+  <section id="stats">
+    <h3>Stats</h3>
+    <table class="ngu-table">
+      <thead>
+      <tr>
+        <th>Stat</th>
+        <th>Base</th>
+        <th>Effort</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (s of pokemon()?.stats; track s.stat.name) {
+          <tr>
+            <td>{{ s.stat.name }}</td>
+            <td>{{ s.base_stat }}</td>
+            <td>{{ s.effort }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </section>
+  <section id="abilities">
+    <h3>Abilities</h3>
+    <ul>
+      @for (a of pokemon()?.abilities; track a.ability.name) {
+        <li>{{ a.ability.name }}@if (a.is_hidden) {
+          (hidden)
+        }</li>
+      }
+    </ul>
+  </section>
+</article>

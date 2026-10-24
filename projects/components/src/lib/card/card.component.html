@@ -1,0 +1,15 @@
+<div class="ngu-card">
+  <div class="ngu-card-header"
+       #header
+       [hidden]="!header?.hasChildNodes()">
+    <ng-content select="[card-header]"></ng-content>
+  </div>
+  <div class="ngu-card-body">
+    <ng-content select="[card-body]"></ng-content>
+  </div>
+  <div class="ngu-card-footer"
+       #footer
+       [hidden]="!footer?.hasChildNodes()">
+    <ng-content select="[card-footer]"></ng-content>
+  </div>
+</div>

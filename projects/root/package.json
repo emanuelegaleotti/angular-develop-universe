@@ -1,0 +1,66 @@
+{
+  "name": "angular-develop-universe",
+  "version": "22.0.0",
+  "private": false,
+  "peerDependencies": {
+    "@angular/common": "^22.2.1",
+    "@angular/core": "^22.2.1"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "exports": {
+    "./inputs": {
+      "types": "./inputs/types/angular-develop-universe-inputs.d.ts",
+      "esm2022": "./inputs/esm2022/angular-develop-universe-inputs.mjs",
+      "esm": "./inputs/esm2022/angular-develop-universe-inputs.mjs",
+      "default": "./inputs/fesm2022/angular-develop-universe-inputs.mjs"
+    },
+    "./cognito": {
+      "types": "./cognito/types/angular-develop-universe-cognito.d.ts",
+      "esm2022": "./cognito/esm2022/angular-develop-universe-cognito.mjs",
+      "esm": "./cognito/esm2022/angular-develop-universe-cognito.mjs",
+      "default": "./cognito/fesm2022/angular-develop-universe-cognito.mjs"
+    },
+    "./azure": {
+      "types": "./azure/types/angular-develop-universe-azure.d.ts",
+      "esm2022": "./azure/esm2022/angular-develop-universe-azure.mjs",
+      "esm": "./azure/esm2022/angular-develop-universe-azure.mjs",
+      "default": "./azure/fesm2022/angular-develop-universe-azure.mjs"
+    },
+    "./utility": {
+      "types": "./utility/types/angular-develop-universe-utility.d.ts",
+      "esm2022": "./utility/esm2022/angular-develop-universe-utility.mjs",
+      "esm": "./utility/esm2022/angular-develop-universe-utility.mjs",
+      "default": "./utility/fesm2022/angular-develop-universe-utility.mjs"
+    },
+    "./components": {
+      "types": "./components/types/angular-develop-universe-components.d.ts",
+      "esm2022": "./components/esm2022/angular-develop-universe-components.mjs",
+      "esm": "./components/esm2022/angular-develop-universe-components.mjs",
+      "default": "./components/fesm2022/angular-develop-universe-components.mjs"
+    },
+    "./dialogs": {
+      "types": "./dialogs/types/angular-develop-universe-dialogs.d.ts",
+      "esm2022": "./dialogs/esm2022/angular-develop-universe-dialogs.mjs",
+      "esm": "./dialogs/esm2022/angular-develop-universe-dialogs.mjs",
+      "default": "./dialogs/fesm2022/angular-develop-universe-dialogs.mjs"
+    },
+    "./chats": {
+      "types": "./chats/types/angular-develop-universe-chats.d.ts",
+      "esm2022": "./chats/esm2022/angular-develop-universe-chats.mjs",
+      "esm": "./chats/esm2022/angular-develop-universe-chats.mjs",
+      "default": "./chats/fesm2022/angular-develop-universe-chats.mjs"
+    },
+    "./keycloak": {
+      "types": "./keycloak/types/angular-develop-universe-keycloak.d.ts",
+      "esm2022": "./keycloak/esm2022/angular-develop-universe-keycloak.mjs",
+      "esm": "./keycloak/esm2022/angular-develop-universe-keycloak.mjs",
+      "default": "./keycloak/fesm2022/angular-develop-universe-keycloak.mjs"
+    }
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}

@@ -1,0 +1,58 @@
+@use './functions' as functions;
+
+@mixin light-theme() {
+  @media (prefers-color-scheme: light) {
+    @content
+  }
+}
+
+@mixin dark-theme() {
+  @media (prefers-color-scheme: dark) {
+    @content
+  }
+}
+
+@mixin reduce-motion() {
+  @media (prefers-reduced-motion: no-preference) {
+    @content
+  }
+}
+
+@mixin more-contrast() {
+  @media (prefers-contrast: more) {
+    @content
+  }
+}
+
+@mixin less-contrast() {
+  @media (prefers-contrast: less) {
+    @content
+  }
+}
+
+@mixin force-color() {
+  @media (forced-colors: active) {
+    @content
+  }
+}
+
+@mixin placeholder($color) {
+  &::placeholder {
+    color: $color;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+
+  &::-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: functions.toRem($radius);
+  -moz-border-radius: functions.toRem($radius);
+  border-radius: functions.toRem($radius);
+}

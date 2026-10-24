@@ -1,0 +1,20 @@
+.ngu-offcanvas-body {
+  padding: var(--ngu-offcanvas-body-padding, 1rem);
+  background: var(--ngu-offcanvas-body-background);
+}
+
+.ngu-offcanvas-footer {
+  display: flex;
+  flex-direction: row;
+  padding: var(--ngu-offcanvas-footer-padding, 1rem);
+  background: var(--ngu-offcanvas-footer-background);
+  height: var(--ngu-offcanvas-footer-height);
+  align-items: center;
+  justify-content: space-between;
+
+  svg {
+    width: var(--ngu-offcanvas-button-close-svg-width);
+    height: var(--ngu-offcanvas-button-close-svg-height);
+    fill: var(--ngu-offcanvas-button-close-svg-color);
+  }
+}

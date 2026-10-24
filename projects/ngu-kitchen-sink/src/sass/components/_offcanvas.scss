@@ -1,0 +1,44 @@
+@use "sass:map";
+@use '../base/palette' as palette;
+@use '../base/spaces' as spaces;
+@use '../abstract/functions' as functions;
+
+.ngu-offcanvas {
+  --ngu-offcanvas-background: #ffffff;
+  --ngu-offcanvas-width: 20vw;
+  --ngu-offcanvas-backdrop-background: rgba(0, 0, 0, 0.1);
+  --ngu-offcanvas-header-padding: #{map.get(spaces.$spaces, md)};
+  --ngu-offcanvas-button-close-background: transparent;
+  --ngu-offcanvas-button-close-border: 1px solid;
+  --ngu-offcanvas-button-close-font-size: #{functions.toRem(16)};
+  --ngu-offcanvas-button-close-padding: #{map.get(spaces.$spaces, '3xs')};;
+  --ngu-offcanvas-button-close-border-color: #{map.get(palette.$palette, 900)};
+  --ngu-offcanvas-button-close-color: #{map.get(palette.$palette, 900)};
+  --ngu-offcanvas-button-close-svg-width: #{functions.toRem(24)};
+  --ngu-offcanvas-button-close-svg-height: #{functions.toRem(24)};
+  --ngu-offcanvas-button-close-line-height: 0;
+  --ngu-offcanvas-body-padding: #{map.get(spaces.$spaces, md)};
+  --ngu-offcanvas-header-title-font-size: #{functions.toRem(16)};
+  --ngu-offcanvas-header-title-line-height: normal;
+  --ngu-offcanvas-header-title-font-weight: 600;
+  --ngu-offcanvas-header-title-letter-spacing: normal;
+  --ngu-offcanvas-header-title-color: #{map.get(palette.$grays, 800)};
+  --ngu-offcanvas-header-title-font-family: Inter, sans-serif;
+
+  .ngu-offcanvas-content > :last-child {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+
+    .ngu-offcanvas-body {
+      height: 100%;
+      flex: 1;
+      overflow: auto;
+    }
+
+    .ngu-offcanvas-footer {
+      flex-shrink: 0;
+    }
+  }
+}

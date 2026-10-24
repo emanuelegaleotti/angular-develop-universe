@@ -1,0 +1,492 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngu-kitchen-sink": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ngu-kitchen-sink",
+      "sourceRoot": "projects/ngu-kitchen-sink/src",
+      "prefix": "ngu-kitchensink",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": {
+              "base": "dist/ngu-kitchen-sink"
+            },
+            "index": "projects/ngu-kitchen-sink/src/index.html",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/ngu-kitchen-sink/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ngu-kitchen-sink/src/favicon.ico",
+              "projects/ngu-kitchen-sink/src/assets",
+              "projects/ngu-kitchen-sink/src/manifest.webmanifest",
+              "projects/ngu-kitchen-sink/src/manifest.webmanifest"
+            ],
+            "styles": [
+              "projects/ngu-kitchen-sink/src/sass/styles.scss"
+            ],
+            "scripts": [
+            ],
+            "allowedCommonJsDependencies": [
+              "highcharts",
+              "plotly.js-dist-min",
+              "extend"
+            ],
+            "serviceWorker": "projects/ngu-kitchen-sink/ngsw-config.json",
+            "browser": "projects/ngu-kitchen-sink/src/main.ts"
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6mb",
+                  "maximumError": "8mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kb",
+                  "maximumError": "8kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngu-kitchen-sink/src/environments/environment.ts",
+                  "with": "projects/ngu-kitchen-sink/src/environments/environment.development.ts"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "ngu-kitchen-sink:build:production"
+            },
+            "development": {
+              "buildTarget": "ngu-kitchen-sink:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n",
+          "options": {
+            "buildTarget": "ngu-kitchen-sink:build"
+          }
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/ngu-kitchen-sink/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ngu-kitchen-sink/src/favicon.ico",
+              "projects/ngu-kitchen-sink/src/assets",
+              "projects/ngu-kitchen-sink/src/manifest.webmanifest",
+              "projects/ngu-kitchen-sink/src/manifest.webmanifest"
+            ],
+            "styles": [
+              "projects/ngu-kitchen-sink/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "root": {
+      "projectType": "library",
+      "root": "projects/root",
+      "sourceRoot": "projects/root/src",
+      "prefix": "ngu",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "projects/root/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/root/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/root/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/root/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "inputs": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/inputs",
+      "sourceRoot": "projects/inputs/src",
+      "prefix": "ngu",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "projects/inputs/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/inputs/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/inputs/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/inputs/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "components": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/components",
+      "sourceRoot": "projects/components/src",
+      "prefix": "ngu",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "projects/components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/components/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "dialogs": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/dialogs",
+      "sourceRoot": "projects/dialogs/src",
+      "prefix": "ngu",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "projects/dialogs/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/dialogs/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/dialogs/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/dialogs/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "keycloak": {
+      "projectType": "library",
+      "root": "projects/keycloak",
+      "sourceRoot": "projects/keycloak/src",
+      "prefix": "ngu",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "projects/keycloak/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/keycloak/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/keycloak/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/keycloak/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "utility": {
+      "projectType": "library",
+      "root": "projects/utility",
+      "sourceRoot": "projects/utility/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "projects/utility/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/utility/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/utility/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/utility/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "cognito": {
+      "projectType": "library",
+      "root": "projects/cognito",
+      "sourceRoot": "projects/cognito/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "projects/cognito/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/cognito/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/cognito/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/cognito/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "azure-old": {
+      "projectType": "library",
+      "root": "projects/azure",
+      "sourceRoot": "projects/azure/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "projects/azure/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/azure/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/azure/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/azure/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "chats": {
+      "projectType": "library",
+      "root": "projects/chats",
+      "sourceRoot": "projects/chats/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "projects/chats/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/chats/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/chats/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/chats/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "azure": {
+      "projectType": "library",
+      "root": "projects/azure",
+      "sourceRoot": "projects/azure/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/azure/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/azure/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/azure/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "1de73090-5c06-43f8-adb2-73db524321fe"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<div [id]=id()
+     class="ngu-carousel ngu-carousel--no-pages"
+     [class.container]="container()"
+     [class.ngu-carousel--scroll-buttons]="scrollButtons()"
+     [class.ngu-carousel--scroll-marker]="scrollMarker()"
+     [class.ngu-carousel--scroll-marker-no-pages]="scrollMarker()"
+     [class.ngu-carousel--inert]="inert()"
+     #carousel
+>
+  <ng-container *ngTemplateOutlet="contentCarousel"></ng-container>
+</div>

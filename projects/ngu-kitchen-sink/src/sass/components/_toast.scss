@@ -1,0 +1,62 @@
+@use "sass:map";
+@use '../base/palette' as palette;
+@use '../base/spaces' as spaces;
+@use '../abstract/functions' as functions;
+
+
+// Variabili CSS per lo stack container
+ngu-toast-stack {
+  --ngu-toast-stack-z-index: 9999;
+  --ngu-toast-stack-gap: #{map.get(spaces.$spaces, '3xs')};
+  --ngu-toast-stack-padding: #{map.get(spaces.$spaces, md)};
+  --ngu-toast-stack-max-width: calc(100vw - #{map.get(spaces.$spaces, xl)});
+}
+
+// Variabili CSS per la personalizzazione del toast
+.ngu-toast {
+  --ngu-toast-background: #{palette.$white};
+  --ngu-toast-border: 1px solid;
+  --ngu-toast-border-radius: #{functions.toRem(8)};
+  --ngu-toast-border-color: #{palette.$senary-contrast};
+  --ngu-toast-padding: 0;
+  --ngu-toast-max-width: #{functions.toRem(400)};
+  --ngu-toast-box-shadow: 0 #{functions.toRem(4)} #{functions.toRem(16)} rgba(0, 0, 0, 0.12);
+
+  // header
+  --ngu-toast-header-padding: #{map.get(spaces.$spaces, xs)} #{map.get(spaces.$spaces, md)};
+  --ngu-toast-header-background: transparent;
+  --ngu-toast-header-gap: #{map.get(spaces.$spaces, '3xs')};
+
+  // icon
+  --ngu-toast-icon-size: #{functions.toRem(20)};
+  --ngu-toast-icon-color: #{palette.$quaternary-contrast};
+
+  // title
+  --ngu-toast-title-font-size: #{functions.toRem(14)};
+  --ngu-toast-title-font-weight: 600;
+  --ngu-toast-title-color: #{palette.$tertiary-contrast};
+  --ngu-toast-title-font-family: Inter, sans-serif;
+
+  // close button
+  --ngu-toast-close-background: transparent;
+  --ngu-toast-close-border: none;
+  --ngu-toast-close-border-color: transparent;
+  --ngu-toast-close-border-radius: #{functions.toRem(4)};
+  --ngu-toast-close-padding: #{map.get(spaces.$spaces, '4xs')};
+  --ngu-toast-close-svg-width: #{functions.toRem(16)};
+  --ngu-toast-close-svg-height: #{functions.toRem(16)};
+  --ngu-toast-close-svg-color: #{palette.$quaternary-contrast};
+
+  // message
+  --ngu-toast-message-padding: 0 #{map.get(spaces.$spaces, md)} #{map.get(spaces.$spaces, xs)};
+  --ngu-toast-message-font-size: #{functions.toRem(13)};
+  --ngu-toast-message-font-family: Inter, sans-serif;
+  --ngu-toast-message-color: #{palette.$quaternary-contrast};
+  --ngu-toast-message-line-height: 1.4;
+
+  // datetime
+  --ngu-toast-datetime-padding: 0 #{map.get(spaces.$spaces, md)} #{map.get(spaces.$spaces, xs)};
+  --ngu-toast-datetime-font-size: #{functions.toRem(11)};
+  --ngu-toast-datetime-color: #{palette.$gray-unfilled};
+}
+

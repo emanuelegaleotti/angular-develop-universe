@@ -1,0 +1,110 @@
+@use "../base/spaces" as spaces;
+@use '../../../../utility/src/lib/styles/functions' as functions;
+@use "sass:map";
+
+:root {
+  // angular-develop-universe chat  component
+  --ngu-chat-ai-footer-font-size: .875rem;
+  --ngu-chat-ai-footer-font-family: Inter, sans-serif;
+  --ngu-chat-ai-footer-font-weight: normal;
+  --ngu-chat-ai-footer-line-height: 1.5;
+  --ngu-chat-ai-footer-text-align: center;
+  --ngu-chat-ai-footer-color: #413e46;
+  --ngu-chat-ai-header-padding: 0;
+
+  // angular-develop-universe chat message ai component
+  --ngu-chat-message-ai-button-padding: #{functions.toRem(4)};
+  --ngu-chat-message-ai-button-line-height: 1.5;
+  --ngu-chat-message-ai-button-background: transparent;
+  --ngu-chat-message-ai-button-border: 1px solid;
+  --ngu-chat-message-ai-button-border-color: transparent;
+
+  // angular-develop-universe chat knowledge base component
+  --ngu-chat-knowledge-base-background: #ffffff;
+  --ngu-chat-knowledge-base-padding: #{functions.toRem(16)} #{ functions.toRem(24)};
+  --ngu-chat-knowledge-base-border: 1px solid;
+  --ngu-chat-knowledge-base-border-color: #ffffff;
+  --ngu-chat-knowledge-base-border-radius: 0.5rem;
+  --ngu-chat-knowledge-base-margin-bottom: 1rem;
+  --ngu-chat-knowledge-base-label-color: #413e46;
+  --ngu-chat-knowledge-base-label-font-size: 1rem;
+  --ngu-chat-knowledge-base-label-font-weight: 500;
+  --ngu-chat-knowledge-base-label-margin-bottom: #{functions.toRem(4)};
+  --ngu-chat-knowledge-base-select-background: #ffffff;
+  --ngu-chat-knowledge-base-select-color: #413e46;
+  --ngu-chat-knowledge-base-select-padding: #{functions.toRem(12)} #{functions.toRem(24)};
+  --ngu-chat-knowledge-base-select-border: 1px solid;
+  --ngu-chat-knowledge-base-select-border-color: #413e46;
+  --ngu-chat-knowledge-base-select-border-radius: 0.25rem;
+  --ngu-chat-knowledge-base-select-font-size: 1rem;
+  --ngu-chat-knowledge-base-select-line-height: 1.5;
+  --ngu-chat-knowledge-base-select-font-weight: 500;
+  --ngu-chat-knowledge-base-select-width: 33%;
+
+  // angular-develop-universe chat form component
+  --ngu-chat-form-padding: #{functions.toRem(16)} #{functions.toRem(24)};
+  --ngu-chat-form-border-radius: 0.5rem;
+  --ngu-chat-form-background: #ffffff;
+  --ngu-chat-form-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);;
+  --ngu-chat-form-textarea-margin-right: #{functions.toRem(40)};
+  --ngu-chat-form-button-background: #8514f5;
+  --ngu-chat-form-button-color: #ffffff;
+  --ngu-chat-form-button-border: 1px solid;
+  --ngu-chat-form-button-border-color: #8514f5;
+  --ngu-chat-form-button-border-radius: 0.25rem;
+  --ngu-chat-form-button-font-size: #{functions.toRem(18)};
+  --ngu-chat-form-button-line-height: normal;
+  --ngu-chat-form-button-font-weight: 500;
+  --ngu-chat-form-button-padding: #{functions.toRem(10)} #{ functions.toRem(24)};
+  --ngu-chat-form-button-hover-background: #8514f5;
+  --ngu-chat-form-button-hover-color: #ffffff;
+  --ngu-chat-form-button-hover-border-color: #8514f5;
+  // angular-develop-universe card component
+  --ngu-card-border-color: #e4e3e6;
+  --ngu-card-border-radius: 0.5rem;
+  --ngu-card-padding: #{functions.toRem(16)} #{functions.toRem(24)};
+  --ngu-card-background: #ffffff;
+
+  // angular-develop-universe chat like feedback component
+  --ngu-chat-like-feedback-background: #ffffff;
+  --ngu-chat-like-feedback-padding: #{functions.toRem(16)} #{ functions.toRem(24)};
+  --ngu-chat-like-feedback-border: 1px solid;
+  --ngu-chat-like-feedback-border-color: #ffffff;
+  --ngu-chat-like-feedback-border-radius: 0.5rem;
+  --ngu-chat-like-feedback-label-color: #413e46;
+  --ngu-chat-like-feedback-label-font-size: 1rem;
+  --ngu-chat-like-feedback-label-font-weight: 500;
+  --ngu-chat-like-feedback-label-margin-bottom: #{functions.toRem(4)};
+  --ngu-chat-like-feedback-textarea-background: #ffffff;
+  --ngu-chat-like-feedback-textarea-color: #413e46;
+  --ngu-chat-like-feedback-textarea-padding: #{functions.toRem(12)} #{functions.toRem(24)};
+  --ngu-chat-like-feedback-textarea-border: 1px solid;
+  --ngu-chat-like-feedback-textarea-border-color: #ffffff;
+  --ngu-chat-like-feedback-textarea-border-radius: 0.25rem;
+  --ngu-chat-like-feedback-textarea-font-size: 1rem;
+  --ngu-chat-like-feedback-textarea-font-weight: 500;
+
+  // angular-develop-universe chat like feedback component
+  --ngu-chat-dislike-feedback-background: #ffffff;
+  --ngu-chat-dislike-feedback-padding: #{functions.toRem(16)} #{ functions.toRem(24)};
+  --ngu-chat-dislike-feedback-border: 1px solid;
+  --ngu-chat-dislike-feedback-border-color: #ffffff;
+  --ngu-chat-dislike-feedback-border-radius: 0.5rem;
+  --ngu-chat-dislike-feedback-label-color: #413e46;
+  --ngu-chat-dislike-feedback-label-font-size: 1rem;
+  --ngu-chat-dislike-feedback-label-font-weight: 500;
+  --ngu-chat-dislike-feedback-label-margin-bottom: #{functions.toRem(4)};
+  --ngu-chat-dislike-feedback-textarea-background: #ffffff;
+  --ngu-chat-dislike-feedback-textarea-color: #413e46;
+  --ngu-chat-dislike-feedback-textarea-padding: #{functions.toRem(12)} #{functions.toRem(24)};
+  --ngu-chat-dislike-feedback-textarea-border: 1px solid;
+  --ngu-chat-dislike-feedback-textarea-border-color: #ffffff;
+  --ngu-chat-dislike-feedback-textarea-border-radius: 0.25rem;
+  --ngu-chat-dislike-feedback-textarea-font-size: 1rem;
+  --ngu-chat-dislike-feedback-textarea-font-weight: 500;
+
+  // angular-develop-universe dialog
+  --ngu-dialog-background: #ffffff;
+
+  //--ngu-dialog-backdrop-background: #ffffff;
+}

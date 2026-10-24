@@ -1,0 +1,11 @@
+.ngu-dialog {
+  background: var(--ngu-dialog-background);
+  border: var(--ngu-dialog-border);
+  border-radius: var(--ngu-dialog-border-radius);
+  border-color: var(--ngu-dialog-border-color);
+  padding: var(--ngu-dialog-padding, 0);
+
+  &::backdrop {
+    background: var(--ngu-dialog-backdrop-background);
+  }
+}

@@ -1,0 +1,11 @@
+.ngu-chat {
+  .ngu-chat-header {
+    padding: var(--ngu-chat-header-padding, 1rem);
+  }
+
+  .ngu-chat-body {
+    height: var(--ngu-chat-body-height, 33vh);
+    overflow-y: scroll;
+    padding: var(--ngu-chat-body-padding, 1rem);
+  }
+}

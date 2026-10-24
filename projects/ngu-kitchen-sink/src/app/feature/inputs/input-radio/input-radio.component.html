@@ -1,0 +1,23 @@
+<section>
+  <h2>Input radio</h2>
+  <form [formGroup]="test">
+    @for (o of options; let i = $index; track i) {
+    <ngu-input-radio
+      formControlName="radio"
+      [id]="'text-'+i"
+      [name]="'radio'"
+      [radioLabel]="'label-'+i"
+      [radioValue]="'value-'+i"
+      [feature]="'input'"
+      [helpMsg]="true"
+      [successMsg]="true"
+      [errorMsg]="true"
+      [autocomplete]="'radio'"
+    ></ngu-input-radio>
+    }
+  </form>
+  <dl>
+    <dt>Value:</dt>
+    <dd>{{ test.controls['radio'].value }}</dd>
+  </dl>
+</section>

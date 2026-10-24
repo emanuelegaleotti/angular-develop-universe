@@ -1,0 +1,25 @@
+<section class="ngu-grid">
+  <h2>Input date</h2>
+  <form [formGroup]="test">
+    <ngu-input-date
+      formControlName="date"
+      [id]="'date'"
+      [feature]="'input'"
+      [helpMsg]="true"
+      [successMsg]="true"
+      [errorMsg]="true"
+      [autocomplete]="'bday'"
+    ></ngu-input-date>
+  </form>
+  <article>
+    <dl>
+      <dt>Value:</dt>
+      <dd>{{ test.controls['date'].value }}</dd>
+      <dt>Valid:</dt>
+      <dd>{{ test.controls['date'].valid }}</dd>
+      <dt>Invalid:</dt>
+      <dd>{{ test.controls['date'].invalid }}</dd>
+    </dl>
+    <button type="button" (click)="disable()">Disable</button>
+  </article>
+</section>

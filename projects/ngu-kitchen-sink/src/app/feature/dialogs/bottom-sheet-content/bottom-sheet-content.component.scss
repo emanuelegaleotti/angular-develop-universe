@@ -1,0 +1,35 @@
+.ngu-bottom-sheet-body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.ngu-bottom-sheet-footer {
+  flex-shrink: 0;
+  padding: var(--ngu-space-md);
+  border-top: 1px solid var(--ngu-gray-300);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ngu-bottom-sheet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ngu-bottom-sheet-list-item {
+  padding: var(--ngu-space-md);
+  cursor: pointer;
+  border-bottom: 1px solid var(--ngu-gray-300);
+  color: var(--ngu-gray-700);
+  transition: background-color 150ms ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: var(--ngu-gray-200);
+  }
+}

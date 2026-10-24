@@ -1,0 +1,26 @@
+<section class="ngu-grid">
+  <h2>Input date time</h2>
+  <form [formGroup]="test">
+    <ngu-input-datetime-local
+      formControlName="datetime"
+      [id]="'datetime'"
+      [feature]="'input'"
+      [helpMsg]="true"
+      [successMsg]="true"
+      [errorMsg]="true"
+      [autocomplete]="'bday'"
+    ></ngu-input-datetime-local>
+  </form>
+  <article>
+    <dl>
+      <dt>Value:</dt>
+      <dd>{{ test.controls['datetime'].value }}</dd>
+      <dt>Valid:</dt>
+      <dd>{{ test.controls['datetime'].valid }}</dd>
+      <dt>Invalid:</dt>
+      <dd>{{ test.controls['datetime'].invalid }}</dd>
+    </dl>
+    <button type="button" (click)="disable()">Disable</button>
+  </article>
+  <!--<input type="datetime-local" [max]="'2025-02-11T14:41:07+01:00'">-->
+</section>

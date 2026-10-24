@@ -1,0 +1,15 @@
+@use "sass:map";
+@use '../base/palette' as palette;
+@use '../base/spaces' as spaces;
+@use '../abstract/functions' as functions;
+
+.ngu-pager {
+  --ngu-pager-li-font-size: #{functions.toRem(24)};
+  --ngu-pager-font-family: Inter, sans-serif;
+  --ngu-pager-disabled-button: 0.7;
+  --ngu-pager-gap: #{functions.toRem(16)};
+  --ngu-page-pagination-gap: #{functions.toRem(16)};
+  --ngu-pager-li-active-background: #{palette.$electric-violet};
+  --ngu-pager-li-padding: 0.5rem;
+  --ngu-pager-li-border-color: #{palette.$primary-contrast}
+}

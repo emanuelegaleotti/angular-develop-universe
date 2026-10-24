@@ -1,0 +1,45 @@
+<article class="ngu-offcanvas-body">
+  @if (ability(); as a) {
+    <hgroup id="offcanvas-ability-title">
+      <p>#{{ a.id }}</p>
+      <h3>{{ a.name }}</h3>
+    </hgroup>
+
+    <section id="info-ability-section">
+      <dl id="info-ability">
+        <div class="info-ability">
+          <dt>Generation</dt>
+          <dd>{{ a.generation.name }}</dd>
+        </div>
+        <div class="info-ability">
+          <dt>Main Series</dt>
+          <dd>{{ a.is_main_series }}</dd>
+        </div>
+      </dl>
+    </section>
+
+    @if (a.effect_entries.length > 0) {
+      <section id="ability-effects">
+        <h3>Effects</h3>
+        @for (entry of a.effect_entries; track entry.language.name) {
+          @if (entry.language.name === 'en') {
+            <p><strong>Short:</strong> {{ entry.short_effect }}</p>
+            <p>{{ entry.effect }}</p>
+          }
+        }
+      </section>
+    }
+
+    <section id="pokemon-with-ability">
+      <h3>Pokémon with this ability ({{ a.pokemon.length }})</h3>
+      <ul>
+        @for (ap of a.pokemon.slice(0, 10); track ap.pokemon.name) {
+          <li>{{ ap.pokemon.name }}@if (ap.is_hidden) { (hidden)}</li>
+        }
+        @if (a.pokemon.length > 10) {
+          <li>... and {{ a.pokemon.length - 10 }} more</li>
+        }
+      </ul>
+    </section>
+  }
+</article>

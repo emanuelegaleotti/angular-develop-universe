@@ -1,0 +1,33 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/angular-develop-universe/inputs",
+  "deleteDestPath": false,
+  "lib": {
+    "entryFile": "./src/public-api.ts"
+  },
+  "assets": [
+    { "input": "src/lib/input-checkbox", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-color", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-datalist", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-datalist-object", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-date", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-datetime-local", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-email", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-file", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-hidden", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-month", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-number", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-password", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-radio", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-range", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-search", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-tel", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-text", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-time", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-url", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/input-week", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/select", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/select-object", "glob": "*.md", "output": "./docs" },
+    { "input": "src/lib/textarea", "glob": "*.md", "output": "./docs" }
+  ]
+}

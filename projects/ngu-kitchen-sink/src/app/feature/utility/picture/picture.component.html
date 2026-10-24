@@ -1,0 +1,50 @@
+<section>
+  <h2>Picture Component</h2>
+  <ngu-picture
+    id="picture1"
+    src="https://picsum.photos/100/100"
+    alt="picture1 text"
+    [width]="100"
+    [height]="100"
+
+    [sourceSm]="{
+      srcSet: 'https://picsum.photos/200/200',
+      srcSet2x: 'https://picsum.photos/300/300',
+      srcSet3x: 'https://picsum.photos/400/400',
+      width: 200,
+      height: 200
+    }"
+
+    [sourceMd]="{
+      srcSet: 'https://picsum.photos/300/300',
+      srcSet2x: 'https://picsum.photos/400/400',
+      srcSet3x: 'https://picsum.photos/500/500',
+      width: 300,
+      height: 300
+    }"
+
+    [sourceLg]="{
+      srcSet: 'https://picsum.photos/400/400',
+      srcSet2x: 'https://picsum.photos/500/500',
+      srcSet3x: 'https://picsum.photos/600/600',
+      width: 400,
+      height: 400
+    }"
+
+    [sourceXl]="{
+      srcSet: 'https://picsum.photos/500/500',
+      srcSet2x: 'https://picsum.photos/600/600',
+      srcSet3x: 'https://picsum.photos/700/700',
+      width: 500,
+      height: 500
+    }"
+
+    [source2xl]="{
+      srcSet: 'https://picsum.photos/600/600',
+      srcSet2x: 'https://picsum.photos/700/700',
+      srcSet3x: 'https://picsum.photos/800/800',
+      width: 600,
+      height: 600
+    }"
+  />
+</section>

@@ -1,0 +1,21 @@
+.ngu-card {
+  border: 1px solid var(--ngu-card-border-color);
+  border-radius: var(--ngu-card-border-radius);
+  padding: var(--ngu-card-padding);
+  background: var(--ngu-card-background);
+
+  .ngu-card-header {
+    padding: var(--ngu-card-header-padding);
+    background: var(--ngu-card-header-background);
+  }
+
+  .ngu-card-body {
+    padding: var(--ngu-card-body-padding);
+    background: var(--ngu-card-body-background);
+  }
+
+  .ngu-card-footer {
+    padding: var(--ngu-card-footer-padding);
+    background: var(--ngu-card-footer-background);
+  }
+}

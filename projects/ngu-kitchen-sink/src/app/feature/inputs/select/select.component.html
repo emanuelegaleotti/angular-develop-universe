@@ -1,0 +1,26 @@
+<section class="ks-grid">
+  <h2>Select</h2>
+  <form [formGroup]="test">
+    <ngu-select
+      formControlName="select"
+      [id]="'text'"
+      [feature]="'input'"
+      [helpMsg]="true"
+      [successMsg]="true"
+      [errorMsg]="true"
+      [autocomplete]="'username'"
+      [options]="options"
+    ></ngu-select>
+  </form>
+  <article>
+    <dl>
+      <dt>Value:</dt>
+      <dd>{{ test.controls['select'].value }}</dd>
+      <dt>Valid:</dt>
+      <dd>{{ test.controls['select'].valid }}</dd>
+      <dt>Invalid:</dt>
+      <dd>{{ test.controls['select'].invalid }}</dd>
+    </dl>
+    <button type="button" (click)="disable()">Disable</button>
+  </article>
+</section>

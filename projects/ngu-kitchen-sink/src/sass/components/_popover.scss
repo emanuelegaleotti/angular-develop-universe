@@ -1,0 +1,42 @@
+@use 'sass:map';
+@use '../base/palette' as palette;
+@use '../base/spaces' as spaces;
+@use '../abstract/functions' as functions;
+
+// angular-develop-universe popover directive (nguPopover)
+.ngu-popover {
+  --ngu-popover-offset: #{map.get(spaces.$spaces, '3xs')};
+  --ngu-popover-padding: #{map.get(spaces.$spaces, xs)};
+  --ngu-popover-border-color: #e4e3e6;
+  --ngu-popover-border-radius: #{functions.toRem(4)};
+  --ngu-popover-background: #{palette.$white};
+  --ngu-popover-color: inherit;
+  --ngu-popover-shadow: 0 #{functions.toRem(4)} #{functions.toRem(12)} rgb(0 0 0 / 15%);
+
+  // The trigger is the implicit anchor of the popover (popovertarget)
+  inset: auto;
+  margin: var(--ngu-popover-offset);
+  padding: var(--ngu-popover-padding);
+  border: 1px solid var(--ngu-popover-border-color);
+  border-radius: var(--ngu-popover-border-radius);
+  background: var(--ngu-popover-background);
+  color: var(--ngu-popover-color);
+  box-shadow: var(--ngu-popover-shadow);
+
+  position-area: block-end span-inline-end;
+  position-try-fallbacks: flip-block, flip-block flip-inline;
+
+  &[data-position='top'] {
+    position-area: block-start span-inline-end;
+  }
+
+  &[data-position='right'] {
+    position-area: inline-end span-block-end;
+    position-try-fallbacks: flip-inline, flip-block flip-inline;
+  }
+
+  &[data-position='left'] {
+    position-area: inline-start span-block-end;
+    position-try-fallbacks: flip-inline, flip-block flip-inline;
+  }
+}

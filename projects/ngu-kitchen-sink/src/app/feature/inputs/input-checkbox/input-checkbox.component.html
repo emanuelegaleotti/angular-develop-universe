@@ -1,0 +1,20 @@
+<section>
+  <h2>Input checkbox</h2>
+  <form [formGroup]="test">
+    <ngu-input-checkbox
+      formControlName="checkbox"
+      [id]="'checkbox'"
+      [feature]="'input'"
+      [helpMsg]="true"
+      [successMsg]="true"
+      [errorMsg]="true"
+      [autocomplete]="'checkbox'"
+    ></ngu-input-checkbox>
+  </form>
+  <dl>
+    <dt>Value:</dt>
+    <dd>
+      {{ test.controls['checkbox'].value }}
+    </dd>
+  </dl>
+</section>

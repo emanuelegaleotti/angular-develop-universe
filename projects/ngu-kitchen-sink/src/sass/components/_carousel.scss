@@ -1,0 +1,78 @@
+@use "sass:map";
+@use '../base/palette' as palette;
+@use '../base/spaces' as spaces;
+@use '../abstract/functions' as functions;
+@use '../abstract/breakpoints' as breakpoints;
+
+.ngu-carousel {
+  --ngu-carousel-width: 100%;
+  --ngu-carousel-items-gap: #{functions.toRem(48)};
+  --ngu-carousel-padding: #{functions.toRem(50)};
+
+  //Container carousel
+  --ngu-carousel-border: 1px solid;
+  --ngu-carousel-border-color: #{map.get(palette.$palette, 'primary')};
+  --ngu-carousel-border-radius: #{functions.toRem(8)};
+
+  //Scroll buttons carousel
+  --ngu-scroll-buttons-height: #{functions.toRem(60)};
+  --ngu-scroll-buttons-width: #{functions.toRem(30)};
+  --ngu-scroll-buttons-opacity: 0.7;
+  --ngu-scroll-buttons-color: #{palette.$white};
+  --ngu-scroll-buttons-background-color: #{map.get(palette.$palette, 'primary')};
+  --ngu-scroll-buttons-border: 2px solid;
+  --ngu-scroll-buttons-border-color: #{map.get(palette.$grays, 600)};
+  --ngu-scroll-buttons-border-radius: 0px;
+  --ngu-scroll-buttons-font-size: #{functions.toRem(18)};
+  --ngu-scroll-buttons-margin: -50px;
+
+  //Scroll buttons carousel disabled
+  --ngu-scroll-buttons-disabled-opacity: 0;
+
+  //Scroll buttons carousel hover
+  --ngu-scroll-buttons-hover-opacity: 1;
+
+  //Scroll Marker
+  --ngu-scroll-marker-margin: #{map.get(spaces.$spaces, lg)};
+  --ngu-scroll-marker-auto-columns: #{map.get(spaces.$spaces, md)};
+  --ngu-scroll-marker-gap: #{map.get(spaces.$spaces, md)};
+  --ngu-scroll-marker-margin-block-start: #{map.get(spaces.$spaces, md)};
+
+  //Scroll Marker item
+  --ngu-scroll-marker-item-width: #{functions.toRem(12)};
+  --ngu-scroll-marker-item-height: #{functions.toRem(12)};
+  --ngu-scroll-marker-item-border: 2px solid;
+  --ngu-scroll-marker-item-border-color: #{map.get(palette.$palette, 'primary')};
+  --ngu-scroll-marker-item-border-radius: 0.25rem;
+  --ngu-scroll-marker-item-background: transparent;
+
+  //Scroll marker item target current
+  --ngu-scroll-marker-item-background-target-current: #{map.get(palette.$palette, 'primary')};
+
+  //Inert
+  --ngu-inert-opacity: 0.75;
+
+  //Carousel item
+  --ngu-carousel-item-height: #{functions.toRem(300)};
+
+  //Pages
+  --ngu-carousel-column-block-size: 150px;
+  @include breakpoints.media-breakpoint-up(sm) {
+    --ngu-carousel-column-block-size: 250px;
+  }
+  @include breakpoints.media-breakpoint-up(md) {
+    --ngu-carousel-column-block-size: 350px;
+  }
+  @include breakpoints.media-breakpoint-up(lg) {
+    --ngu-carousel-column-block-size: 450px;
+  }
+  @include breakpoints.media-breakpoint-up(xl) {
+    --ngu-carousel-column-block-size: 550px;
+  }
+  @include breakpoints.media-breakpoint-up('2xl') {
+    --ngu-carousel-column-block-size: 650px;
+  }
+  --ngu-carousel-item-pages-height: 85%;
+  --ngu-carousel-item-pages-aspect-ratio: 4/3;
+  --ngu-carousel-item-pages-margin: #{map.get(spaces.$spaces, '3xs')};
+}

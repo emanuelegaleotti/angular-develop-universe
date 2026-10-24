@@ -1,0 +1,81 @@
+.ngu-offcanvas {
+  padding: var(--ngu-offcanvas-padding);
+  font-family: var(--ngu-offcanvas-font-family);
+  border: var(--ngu-offcanvas-border);
+  border-color: var(--ngu-offcanvas-border-color);
+  border-radius: var(--ngu-offcanvas-border-radius);
+  box-shadow: var(--ngu-offcanvas-box-shadow);
+  width: var(--ngu-offcanvas-width);
+  min-height: 100vh;
+  height: 100vh;
+
+  &::backdrop {
+    background: var(--ngu-offcanvas-backdrop-background);
+  }
+
+  &.ngu-left {
+    margin-left: 0;
+  }
+
+  &.ngu-right {
+    margin-right: 0;
+  }
+
+  .ngu-offcanvas-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .ngu-offcanvas-header {
+      padding: var(--ngu-offcanvas-header-padding);
+      background: var(--ngu-offcanvas-header-background);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+
+      h4 {
+        font-size: var(--ngu-offcanvas-header-title-font-size);
+        font-family: var(--ngu-offcanvas-header-title-font-family);
+        line-height: var(--ngu-offcanvas-header-title-line-height);
+        font-weight: var(--ngu-offcanvas-header-title-font-weight);
+        letter-spacing: var(--ngu-offcanvas-header-title-letter-spacing);
+        color: var(--ngu-offcanvas-header-title-color);
+        order: var(--ngu-offcanvas-header-title-order);
+      }
+
+      .ngu-offcanvas-button-close {
+        background: var(--ngu-offcanvas-button-close-background);
+        border: var(--ngu-offcanvas-button-close-border);
+        border-color: var(--ngu-offcanvas-button-close-border-color);
+        border-radius: var(--ngu-offcanvas-button-close-border-radius);
+        padding: var(--ngu-offcanvas-button-close-padding);
+        font-size: var(--ngu-offcanvas-button-close-font-size);
+        line-height: var(--ngu-offcanvas-button-close-line-height);
+        font-weight: var(--ngu-offcanvas-button-close-font-weight);
+        color: var(--ngu-offcanvas-button-close-color);
+        order: var(--ngu-offcanvas-button-close-order);
+        @media (prefers-reduced-motion: no-preference) {
+          transition: all .3s;
+        }
+
+        ::ng-deep svg {
+          width: var(--ngu-offcanvas-button-close-svg-width);
+          height: var(--ngu-offcanvas-button-close-svg-height);
+          fill: var(--ngu-offcanvas-button-close-svg-color);
+        }
+      }
+
+      &:hover {
+        background: var(--ngu-offcanvas-button-close-hover-background);
+        border-color: var(--ngu-offcanvas-button-close-hover-border-color);
+        color: var(--ngu-offcanvas-button-close-hover-color);
+
+        svg {
+          fill: var(--ngu-offcanvas-button-close-hover-svg-color);
+        }
+      }
+    }
+  }
+}

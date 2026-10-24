@@ -1,0 +1,21 @@
+<nav class="ngu-pager">
+  <button class="ngu-button ngu-primary" type="button" (click)="setPage(1)" [disabled]="_currentPage() === 1">
+    <ng-container *ngTemplateOutlet="firstPage"></ng-container>
+  </button>
+  <button class="ngu-button ngu-primary" type="button" (click)="setPage(_currentPage()-1)" [disabled]="_currentPage() === 1">
+    <ng-container *ngTemplateOutlet="prevPage"></ng-container>
+  </button>
+  <ul class="pagination">
+    @for (p of pages(); track trackLink($index, p)) {
+      <li [class.active]="p === _currentPage()">
+        <a (click)="setPage(p)">{{ p }}</a>
+      </li>
+    }
+  </ul>
+  <button class="ngu-button ngu-primary" type="button" (click)="setPage(_currentPage()+1)" [disabled]="_currentPage() === pagesLength()">
+    <ng-container *ngTemplateOutlet="nextPage"></ng-container>
+  </button>
+  <button class="ngu-button ngu-primary" type="button" (click)="setPage(pagesLength())" [disabled]="_currentPage() === pagesLength()">
+    <ng-container *ngTemplateOutlet="lastPage"></ng-container>
+  </button>
+</nav>

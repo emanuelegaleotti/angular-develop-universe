@@ -1,0 +1,7 @@
+.toast-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 12px;
+  width: fit-content;
+}
+

@@ -1,0 +1,25 @@
+<div [ngClass]="'ngu-chat-message-ai ' + (message()?.source === 'USER' ? 'right' : 'left')"  *transloco="let t">
+  <div [innerHTML]="_message()"></div>
+  @if (message()?.source !== 'USER' && message()?.messageId) {
+    <menu class="ngu-chat-message-ai-menu">
+      <button type="button"
+              [ngClass]="'ngu-chat-message-ai-button ' + (message()?.reaction === 'like' ? 'ngu-active' : '')"
+              (click)="whenLike.emit(message()?.messageId)"
+              [title]="t('ngu.chat-message-ai.like')">
+        <ng-content select="[like-icon]"></ng-content>
+      </button>
+      <button type="button"
+              [ngClass]="'ngu-chat-message-ai-button ' + (message()?.reaction === 'dislike' ? 'ngu-active' : '')"
+              (click)="whenDislike.emit(message()?.messageId)"
+              [title]="t('ngu.chat-message-ai.dislike')">
+        <ng-content select="[dislike-icon]"></ng-content>
+      </button>
+      <button type="button"
+              class="ngu-chat-message-ai-button"
+              (click)="whenAction.emit(message()?.messageId)"
+              [title]="t('ngu.chat-message-ai.action')">
+        <ng-content select="[action-icon]"></ng-content>
+      </button>
+    </menu>
+  }
+</div>

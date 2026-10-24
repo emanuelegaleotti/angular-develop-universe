@@ -1,0 +1,43 @@
+<section class="ngu-grid-main">
+  <h2>Popover</h2>
+
+  <div class="popover-demo">
+    <button class="ngu-button ngu-primary"
+            type="button"
+            nguPopoverId="popover-bottom"
+            [nguPopover]="bottom">Bottom (default)</button>
+    <ng-template #bottom>
+      <p>Popover sotto il trigger.</p>
+      <p>Si chiude con click fuori o Esc.</p>
+    </ng-template>
+
+    <button class="ngu-button ngu-secondary"
+            type="button"
+            nguPopoverId="popover-top"
+            [nguPopover]="top"
+            nguPopoverPosition="top">Top</button>
+    <ng-template #top>Popover sopra il trigger</ng-template>
+
+    <button class="ngu-button ngu-secondary"
+            type="button"
+            nguPopoverId="popover-right"
+            [nguPopover]="right"
+            nguPopoverPosition="right">Right</button>
+    <ng-template #right>Popover a destra</ng-template>
+
+    <button class="ngu-button ngu-secondary"
+            type="button"
+            nguPopoverId="popover-left"
+            [nguPopover]="left"
+            nguPopoverPosition="left">Left</button>
+    <ng-template #left>Popover a sinistra</ng-template>
+  </div>
+
+  <div class="popover-bottom">
+    <button class="ngu-button ngu-tertiary"
+            type="button"
+            nguPopoverId="popover-flip"
+            [nguPopover]="flip">Flip verso l'alto</button>
+    <ng-template #flip>Non c'è spazio sotto: il popover si ribalta sopra.</ng-template>
+  </div>
+</section>

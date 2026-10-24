@@ -1,0 +1,140 @@
+@use '../../../../utility/src/lib/styles/functions' as functions;
+@use '../../../../utility/src/lib/styles/mixins' as mixins;
+@use '../base/spaces' as spaces;
+@use '../base/palette' as palette;
+@use 'sass:map';
+
+@mixin solid($background, $color: palette.$white) {
+  background: $background;
+  border-color: $background;
+  color: $color;
+
+  &:hover,
+  &:focus-visible {
+    background: $background;
+    border-color: $background;
+    color: $color;
+    filter: brightness(1.12);
+  }
+
+  &:disabled {
+    background: $background;
+    border-color: $background;
+    color: $color;
+  }
+}
+
+.ngu-button {
+  padding: map.get(spaces.$spaces, xs) map.get(spaces.$spaces, lg);
+  border: 1px solid transparent;
+  border-radius: functions.toRem(4);
+  cursor: pointer;
+  font-family: Inter, sans-serif;
+  font-size: functions.toRem(14);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  @include mixins.reduce-motion {
+    transition: background .3s ease, filter .3s ease, box-shadow .3s ease;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
+
+  &.ngu-primary {
+    background-image: palette.$brand-gradient;
+    background-origin: border-box;
+    border-color: transparent;
+    color: palette.$white;
+
+    &:hover,
+    &:focus-visible {
+      background-image: palette.$brand-gradient;
+      color: palette.$white;
+      filter: brightness(1.1);
+      box-shadow: 0 #{functions.toRem(4)} #{functions.toRem(16)} rgb(133 20 245 / 35%);
+    }
+
+    &:disabled {
+      background-image: palette.$brand-gradient;
+      color: palette.$white;
+    }
+  }
+
+  &.ngu-secondary {
+    background: palette.$white;
+    border-color: palette.$senary-contrast;
+    color: palette.$primary-contrast;
+
+    &:hover,
+    &:focus-visible {
+      background: palette.$surface-tint;
+      border-color: palette.$quinary-contrast;
+      color: palette.$primary-contrast;
+    }
+
+    &:disabled {
+      background: palette.$white;
+      border-color: palette.$senary-contrast;
+      color: palette.$primary-contrast;
+    }
+  }
+
+  &.ngu-tertiary {
+    @include solid(palette.$bright-blue);
+  }
+
+  &.ngu-success {
+    @include solid(palette.$symbolic-cyan);
+  }
+
+  &.ngu-warning {
+    @include solid(palette.$orange-red);
+  }
+
+  &.ngu-error {
+    @include solid(palette.$hot-red);
+  }
+
+  &.ngu-info {
+    @include solid(palette.$bright-blue);
+  }
+
+  &.ngu-accent {
+    @include solid(palette.$vivid-pink);
+  }
+
+  &.ngu-light {
+    background: palette.$white;
+    color: palette.$quaternary-contrast;
+    border-color: palette.$senary-contrast;
+
+    &:hover,
+    &:focus-visible {
+      background: palette.$surface-tint;
+      border-color: palette.$quinary-contrast;
+    }
+
+    &:disabled {
+      background: palette.$white;
+      border-color: palette.$senary-contrast;
+    }
+  }
+
+  &.ngu-dark {
+    @include solid(palette.$primary-contrast);
+  }
+
+  &.ngu-small {
+  }
+
+  &.ngu-large {
+  }
+
+  &.ngu-icon {
+  }
+}

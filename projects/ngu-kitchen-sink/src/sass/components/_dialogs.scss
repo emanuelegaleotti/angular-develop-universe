@@ -1,0 +1,13 @@
+@use "sass:map";
+@use '../base/palette' as palette;
+@use '../base/spaces' as spaces;
+@use '../abstract/functions' as functions;
+
+.ngu-dialog {
+  --ngu-dialog-background: #{palette.$white};
+  --ngu-dialog-border: 1px solid;
+  --ngu-dialog-border-radius: #{functions.toRem(8)};
+  --ngu-dialog-border-color: #{palette.$primary-contrast};
+  --ngu-dialog-padding: #{functions.toRem(16)};
+  --ngu-dialog-backdrop-background: rgba(0, 0, 0, 0.1);
+}

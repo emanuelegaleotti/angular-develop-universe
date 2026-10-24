@@ -1,0 +1,25 @@
+@use '../../../sass/abstract/breakpoints' as breakpoints;
+
+aside {
+  padding: var(--ngu-space-md) var(--ngu-space-lg);
+  height: 100%;
+  background: var(--ngu-gray-100);
+  border-right: 1px solid var(--ngu-gray-300);
+
+  #ngu-aside-close {
+    display: inline-block;
+    @include breakpoints.media-breakpoint-up(ms) {
+      display: none;
+    }
+  }
+
+  menu {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+
+    menu {
+      padding-left: 1rem;
+    }
+  }
+}

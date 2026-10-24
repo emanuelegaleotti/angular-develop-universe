@@ -1,0 +1,64 @@
+<picture [id]="id()" *transloco="let t">
+  @if (source2xl(); as source2Xl) {
+    <source
+      [media]="BREAKPOINT_MAP['2xl']"
+      [srcset]="buildSrcSet(source2Xl)"
+      [attr.sizes]="source2Xl.sizes"
+      [attr.type]="source2Xl.type"
+      [attr.width]="source2Xl.width"
+      [attr.height]="source2Xl.height"
+    >
+  }
+  @if (sourceXl(); as sourceXl) {
+    <source
+      [media]="BREAKPOINT_MAP['xl']"
+      [srcset]="buildSrcSet(sourceXl)"
+      [attr.sizes]="sourceXl.sizes"
+      [attr.type]="sourceXl.type"
+      [attr.width]="sourceXl.width"
+      [attr.height]="sourceXl.height"
+    >
+  }
+  @if (sourceLg(); as sourceLg) {
+    <source
+      [media]="BREAKPOINT_MAP['lg']"
+      [srcset]="buildSrcSet(sourceLg)"
+      [attr.sizes]="sourceLg.sizes"
+      [attr.type]="sourceLg.type"
+      [attr.width]="sourceLg.width"
+      [attr.height]="sourceLg.height"
+    >
+  }
+  @if (sourceMd(); as sourceMd) {
+    <source
+      [media]="BREAKPOINT_MAP['md']"
+      [srcset]="buildSrcSet(sourceMd)"
+      [attr.sizes]="sourceMd.sizes"
+      [attr.type]="sourceMd.type"
+      [attr.width]="sourceMd.width"
+      [attr.height]="sourceMd.height"
+    >
+  }
+  @if (sourceSm(); as sourceSm) {
+    <source
+      [media]="BREAKPOINT_MAP['sm']"
+      [srcset]="buildSrcSet(sourceSm)"
+      [attr.sizes]="sourceSm.sizes"
+      [attr.type]="sourceSm.type"
+      [attr.width]="sourceSm.width"
+      [attr.height]="sourceSm.height"
+    >
+  }
+
+  <img
+    [src]="src()"
+    [alt]="alt()"
+    [attr.width]="width()"
+    [attr.height]="height()"
+    [attr.loading]="loading()"
+    [attr.crossOrigin]="crossorigin()"
+    [attr.decoding]="decoding()"
+    [attr.fetchpriority]="fetchpriority()"
+    [attr.referrerpolicy]="referrpolicy()"
+  >
+</picture>

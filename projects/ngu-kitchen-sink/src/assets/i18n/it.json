@@ -1,0 +1,45 @@
+{
+  "button": {
+    "send": "Invia"
+  },
+  "crud": {
+    "name": {
+      "label": "Nome",
+      "placeholder": "es. bulbasaur",
+      "required": "Il nome è obbligatorio"
+    },
+    "height": {
+      "label": "Altezza (dm)",
+      "placeholder": "es. 7",
+      "required": "L'altezza è obbligatoria",
+      "min": "L'altezza deve essere almeno 1"
+    },
+    "weight": {
+      "label": "Peso (hg)",
+      "placeholder": "es. 69",
+      "required": "Il peso è obbligatorio",
+      "min": "Il peso deve essere almeno 1"
+    },
+    "base_experience": {
+      "label": "Esperienza base",
+      "placeholder": "es. 64",
+      "required": "L'esperienza base è obbligatoria",
+      "min": "L'esperienza base deve essere almeno 0"
+    },
+    "capture_rate": {
+      "label": "Tasso di cattura",
+      "placeholder": "es. 45",
+      "required": "Il tasso di cattura è obbligatorio",
+      "min": "Il tasso di cattura deve essere almeno 0"
+    },
+    "base_happiness": {
+      "label": "Felicità base",
+      "placeholder": "es. 70"
+    },
+    "gender_rate": {
+      "label": "Tasso di genere",
+      "placeholder": "es. 4",
+      "required": "Il tasso di genere è obbligatorio"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<section>
+  <h2>Input number</h2>
+  <form [formGroup]="test">
+    <ngu-input-number
+      formControlName="number"
+      [id]="'number'"
+      [feature]="'input'"
+      [helpMsg]="true"
+      [successMsg]="true"
+      [errorMsg]="true"
+      [autocomplete]="'age'"
+      [max]="15"
+    ></ngu-input-number>
+  </form>
+</section>

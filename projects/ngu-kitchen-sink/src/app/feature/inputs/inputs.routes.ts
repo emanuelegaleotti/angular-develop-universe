@@ -1,0 +1,50 @@
+import { Routes } from '@angular/router'
+import { InputTextDemoComponent } from './input-text/input-text.component'
+import { InputNumberDemoComponent } from './input-number/input-number.component'
+import { InputEmailDemoComponent } from './input-email/input-email.component'
+import { InputSearchDemoComponent } from './input-search/input-search.component'
+import { InputPasswordDemoComponent } from './input-password/input-password.component'
+import { InputTelDemoComponent } from './input-tel/input-tel.component'
+import { InputTimeDemoComponent } from './input-time/input-time.component'
+import { InputDateDemoComponent } from './input-date/input-date.component'
+import { InputDatetimeLocalDemoComponent } from './input-datetime-local/input-datetime-local.component'
+import { InputRangeDemoComponent } from './input-range/input-range.component'
+import { InputUrlDemoComponent } from './input-url/input-url.component'
+import { InputHiddenDemoComponent } from './input-hidden/input-hidden.component'
+import { InputColorDemoComponent } from './input-color/input-color.component'
+import { InputDatalistDemoComponent } from './input-datalist/input-datalist.component'
+import { InputFileDemoComponent } from './input-file/input-file.component'
+import { SelectDemoComponent } from './select/select.component'
+import { SelectObjectDemoComponent } from './select-object/select-object.component'
+import { TextareaDemoComponent } from './textarea/textarea.component'
+import { InputDatalistObjectDemoComponent } from './input-datalist-object/input-datalist-object.component'
+import { InputCheckboxDemoComponent } from './input-checkbox/input-checkbox.component'
+import { InputRadioDemoComponent } from './input-radio/input-radio.component'
+import { InputMonthDemoComponent } from './input-month/input-month.component'
+import { InputWeekDemoComponent } from './input-week/input-week.component'
+
+export const inputsRoutes: Routes = [
+  { path: 'text', component: InputTextDemoComponent },
+  { path: 'number', component: InputNumberDemoComponent },
+  { path: 'email', component: InputEmailDemoComponent },
+  { path: 'password', component: InputPasswordDemoComponent },
+  { path: 'search', component: InputSearchDemoComponent },
+  { path: 'tel', component: InputTelDemoComponent },
+  { path: 'time', component: InputTimeDemoComponent },
+  { path: 'date', component: InputDateDemoComponent },
+  { path: 'datetime', component: InputDatetimeLocalDemoComponent },
+  { path: 'url', component: InputUrlDemoComponent },
+  { path: 'range', component: InputRangeDemoComponent },
+  { path: 'hidden', component: InputHiddenDemoComponent },
+  { path: 'color', component: InputColorDemoComponent },
+  { path: 'datalist', component: InputDatalistDemoComponent },
+  { path: 'datalist-object', component: InputDatalistObjectDemoComponent },
+  { path: 'file', component: InputFileDemoComponent },
+  { path: 'select', component: SelectDemoComponent },
+  { path: 'select-object', component: SelectObjectDemoComponent },
+  { path: 'textarea', component: TextareaDemoComponent },
+  { path: 'checkbox', component: InputCheckboxDemoComponent },
+  { path: 'radio', component: InputRadioDemoComponent },
+  { path: 'month', component: InputMonthDemoComponent },
+  { path: 'week', component: InputWeekDemoComponent },
+]

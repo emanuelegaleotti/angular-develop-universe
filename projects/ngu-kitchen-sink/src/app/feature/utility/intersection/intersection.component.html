@@ -1,0 +1,16 @@
+<section>
+  <h2>Intersection observer</h2>
+  <article>
+    <ul>
+      @for (i of list; track $index) {
+        <li>
+          <h1 iotIntersection
+              (whenItemIn)="log($index, 'in')"
+              (whenItemOut)="log($index, 'out')">
+            {{ $index }}
+          </h1>
+        </li>
+      }
+    </ul>
+  </article>
+</section>

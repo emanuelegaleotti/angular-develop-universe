@@ -1,0 +1,52 @@
+<section class="ngu-grid-main">
+  <h2>Toast</h2>
+
+  <article>
+    <h3>Posizioni</h3>
+    <p>Il toast può comparire in sei posizioni differenti sullo schermo. Può essere temporizzato (scompare automaticamente) oppure persistente (si chiude solo con il pulsante ×).</p>
+
+    <div class="toast-demo-grid">
+      <button class="ngu-button ngu-primary" type="button" (click)="showTopLeft()">
+        ↖ Top Left (4s)
+      </button>
+      <button class="ngu-button ngu-primary" type="button" (click)="showTopCenter()">
+        ↑ Top Center (3s)
+      </button>
+      <button class="ngu-button ngu-primary" type="button" (click)="showTopRight()">
+        ↗ Top Right (4s)
+      </button>
+      <button class="ngu-button ngu-primary" type="button" (click)="showBottomLeft()">
+        ↙ Bottom Left (persistente)
+      </button>
+      <button class="ngu-button ngu-primary" type="button" (click)="showBottomCenter()">
+        ↓ Bottom Center (3s)
+      </button>
+      <button class="ngu-button ngu-primary" type="button" (click)="showBottomRight()">
+        ↘ Bottom Right (5s)
+      </button>
+    </div>
+  </article>
+
+
+
+  <article>
+    <h3>Controlli</h3>
+    <button class="ngu-button" type="button" (click)="hideAll()">
+      Chiudi il Toast attivo
+    </button>
+  </article>
+
+  <article>
+    <h3>Caratteristiche</h3>
+    <ul>
+      <li>Basato sul tag HTML nativo <code>&lt;dialog&gt;</code> (non-modal)</li>
+      <li>Sei posizioni: angoli e centri superiore/inferiore</li>
+      <li>Un solo toast visibile alla volta — il nuovo sostituisce il precedente</li>
+      <li>Pulsante di chiusura sempre presente</li>
+      <li>Titolo, icona, messaggio e data/ora configurabili</li>
+      <li>Timer di auto-chiusura opzionale (in millisecondi)</li>
+      <li>Toast persistente impostando <code>duration: null</code></li>
+    </ul>
+  </article>
+</section>
+

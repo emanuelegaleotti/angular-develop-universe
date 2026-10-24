@@ -1,0 +1,21 @@
+<dialog #offcanvas
+        [ngClass]="offcanvasConfig()?.className"
+        [class.ngu-left]="offcanvasConfig()?.position === 'left'"
+        [class.ngu-right]="offcanvasConfig()?.position === 'right'"
+        [id]="offcanvasConfig()?.id"
+        class="ngu-offcanvas">
+  <div class="ngu-offcanvas-content">
+    <div class="ngu-offcanvas-header">
+      <h4>{{ offcanvasConfig()?.offcanvasTitle }}</h4>
+
+      <button
+        class="ngu-offcanvas-button-close"
+        id="button-close"
+        (click)="hide()"
+        [innerHTML]="closeIcon()"
+      >
+      </button>
+    </div>
+    <ng-container #container/>
+  </div>
+</dialog>

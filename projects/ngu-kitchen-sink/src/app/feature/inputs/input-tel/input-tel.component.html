@@ -1,0 +1,15 @@
+<section>
+  <h2>Input tel</h2>
+  <form [formGroup]="test">
+    <ngu-input-tel
+      formControlName="tel"
+      [id]="'tel'"
+      [maxLength]="36"
+      [feature]="'input'"
+      [helpMsg]="true"
+      [successMsg]="true"
+      [errorMsg]="true"
+      [autocomplete]="'tel'"
+    ></ngu-input-tel>
+  </form>
+</section>

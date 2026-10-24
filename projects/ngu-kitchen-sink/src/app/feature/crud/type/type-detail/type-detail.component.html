@@ -1,0 +1,74 @@
+<article class="ngu-offcanvas-body">
+  @if (type(); as t) {
+    <hgroup id="offcanvas-type-title">
+      <p>#{{ t.id }}</p>
+      <h3>{{ t.name }}</h3>
+    </hgroup>
+
+    <section id="info-type">
+      <p>Generation: <strong>{{ t.generation.name }}</strong></p>
+      <p>Pokémon with this type: <strong>{{ t.pokemon.length }}</strong></p>
+    </section>
+
+    <section id="damage-relations">
+      <h3>Damage Relations</h3>
+      <dl>
+        <div class="info-type">
+          <dt>Double damage to</dt>
+          <dd>
+            @for (r of t.damage_relations.double_damage_to; track r.name) {
+              <span>{{ r.name }}</span>
+            }
+            @if (t.damage_relations.double_damage_to.length === 0) { None }
+          </dd>
+        </div>
+        <div class="info-type">
+          <dt>Double damage from</dt>
+          <dd>
+            @for (r of t.damage_relations.double_damage_from; track r.name) {
+              <span>{{ r.name }}</span>
+            }
+            @if (t.damage_relations.double_damage_from.length === 0) { None }
+          </dd>
+        </div>
+        <div class="info-type">
+          <dt>Half damage to</dt>
+          <dd>
+            @for (r of t.damage_relations.half_damage_to; track r.name) {
+              <span>{{ r.name }}</span>
+            }
+            @if (t.damage_relations.half_damage_to.length === 0) { None }
+          </dd>
+        </div>
+        <div class="info-type">
+          <dt>Half damage from</dt>
+          <dd>
+            @for (r of t.damage_relations.half_damage_from; track r.name) {
+              <span>{{ r.name }}</span>
+            }
+            @if (t.damage_relations.half_damage_from.length === 0) { None }
+          </dd>
+        </div>
+        <div class="info-type">
+          <dt>No damage to</dt>
+          <dd>
+            @for (r of t.damage_relations.no_damage_to; track r.name) {
+              <span>{{ r.name }}</span>
+            }
+            @if (t.damage_relations.no_damage_to.length === 0) { None }
+          </dd>
+        </div>
+        <div class="info-type">
+          <dt>No damage from</dt>
+          <dd>
+            @for (r of t.damage_relations.no_damage_from; track r.name) {
+              <span>{{ r.name }}</span>
+            }
+            @if (t.damage_relations.no_damage_from.length === 0) { None }
+          </dd>
+        </div>
+      </dl>
+    </section>
+  }
+</article>
+

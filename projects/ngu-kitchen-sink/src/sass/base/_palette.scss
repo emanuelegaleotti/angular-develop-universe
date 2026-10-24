@@ -1,0 +1,50 @@
+@use "sass:color";
+
+// Angular brand colors (angular.dev design tokens, light mode)
+$orange-red: #fa2c05;
+$hot-red: #f11653;
+$vivid-pink: #f637e3;
+$electric-violet: #8514f5;
+$bright-blue: #0546ff;
+$super-green: #00e76a;
+$symbolic-cyan: #00ad9a;
+
+// Angular neutral scale
+$white: #ffffff;
+$senary-contrast: #e4e3e6;
+$quinary-contrast: #ccc9cf;
+$gray-unfilled: #a39fa9;
+$quaternary-contrast: #746e7c;
+$tertiary-contrast: #413e46;
+$secondary-contrast: #232125;
+$primary-contrast: #151417;
+
+// Faint tint used for surfaces, same approach as angular.dev
+$surface-tint: color.mix($electric-violet, $white, 5%);
+
+$brand-gradient: linear-gradient(90deg, $orange-red 0%, $vivid-pink 50%, $electric-violet 100%);
+
+$palette: (
+  primary: $electric-violet,
+  secondary: #ffffff,
+  tertiary: $bright-blue,
+  success: $symbolic-cyan,
+  error: $hot-red,
+  warning: $orange-red,
+  info: $bright-blue,
+  accent: $vivid-pink,
+  light: #ffffff,
+  dark: $primary-contrast
+) !default;
+
+$grays: (
+  100: $white,
+  200: $surface-tint,
+  300: $senary-contrast,
+  400: $quinary-contrast,
+  500: $gray-unfilled,
+  600: $quaternary-contrast,
+  700: $tertiary-contrast,
+  800: $secondary-contrast,
+  900: $primary-contrast,
+) !default;

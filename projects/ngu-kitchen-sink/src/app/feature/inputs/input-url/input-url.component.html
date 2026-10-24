@@ -1,0 +1,14 @@
+<section>
+  <h2>Input url</h2>
+  <form [formGroup]="test">
+    <ngu-input-url
+      formControlName="url"
+      [id]="'url'"
+      [feature]="'input'"
+      [helpMsg]="true"
+      [successMsg]="true"
+      [errorMsg]="true"
+      [autocomplete]="'url'"
+    ></ngu-input-url>
+  </form>
+</section>

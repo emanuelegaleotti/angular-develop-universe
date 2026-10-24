@@ -1,0 +1,136 @@
+@use "./palette" as palette;
+@use '../../../../utility/src/lib/styles/functions' as functions;
+
+$font-url: "../assets/fonts/";
+
+@font-face {
+  font-family: 'Inter';
+  src: url($font-url + "Inter-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url($font-url + "Inter-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url($font-url + "Inter-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url($font-url + "Inter-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url($font-url + "Inter-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url($font-url + "InterTight-Variable.woff2") format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Mono';
+  src: url($font-url + "DMMono-400.woff2") format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Mono';
+  src: url($font-url + "DMMono-500.woff2") format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@mixin color-utility {
+  @each $name, $color in palette.$palette {
+    &-text-#{$name} {
+      color: $color;
+    }
+  }
+  @each $name, $color in palette.$palette {
+    &-fill-#{$name} {
+      fill: $color;
+    }
+  }
+}
+
+@mixin gray-utility {
+  @each $name, $color in palette.$grays {
+    &-text-#{$name} {
+      color: $color;
+    }
+  }
+  @each $name, $color in palette.$grays {
+    &-fill-#{$name} {
+      fill: $color;
+    }
+  }
+}
+
+
+.ngu {
+  @include color-utility;
+  @include gray-utility;
+}
+
+.ngu-text-1 {
+  font-family: Inter, sans-serif;
+  font-size: functions.toRem(16);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.ngu-text-2 {
+  font-family: Inter, sans-serif;
+  font-size: functions.toRem(14);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.ngu-text-3 {
+  font-family: Inter, sans-serif;
+  font-size: functions.toRem(14);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.ngu-text-4 {
+  font-family: Inter, sans-serif;
+  font-size: functions.toRem(18);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+

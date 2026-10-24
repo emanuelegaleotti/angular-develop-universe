@@ -1,0 +1,41 @@
+@use '../abstract/functions' as functions;
+
+h2 {
+  font-family: 'Inter Tight', Inter, sans-serif;
+  font-size: functions.toRem(32);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+}
+
+h3 {
+  font-family: 'Inter Tight', Inter, sans-serif;
+  font-size: functions.toRem(24);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+}
+
+h4 {
+  font-family: 'Inter Tight', Inter, sans-serif;
+  font-size: functions.toRem(20);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+}
+
+h5 {
+  font-family: 'Inter Tight', Inter, sans-serif;
+  font-size: functions.toRem(16);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+}

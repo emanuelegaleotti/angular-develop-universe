@@ -1,0 +1,19 @@
+<div class="ngu-dialog-header">
+  <h4>Elimina Type</h4>
+</div>
+<div class="ngu-dialog-body">
+  <p>Sei sicuro di voler eliminare <strong>{{ name }}</strong>?</p>
+  <p>Questa operazione non può essere annullata.</p>
+</div>
+<div class="ngu-dialog-footer">
+  <button class="ngu-button ngu-light"
+          type="button"
+          (click)="onCancel()">
+    Annulla
+  </button>
+  <button class="ngu-button ngu-primary"
+          type="button"
+          (click)="onDelete()">
+    Elimina
+  </button>
+</div>

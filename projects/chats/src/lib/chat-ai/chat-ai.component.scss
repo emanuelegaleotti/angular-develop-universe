@@ -1,0 +1,43 @@
+.ngu-chat-ai {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  .ngu-chat-ai-header {
+    padding: var(--ngu-chat-ai-header-padding, 1rem);
+
+    h4 {
+      font-size: var(--ngu-chat-ai-header-font-size, 1rem);
+      font-family: var(--ngu-chat-ai-header-font-family);
+      font-weight: var(--ngu-chat-ai-header-font-weight, normal);
+      line-height: var(--ngu-chat-ai-header-line-height, 1.5);
+      text-align: var(--ngu-chat-ai-header-text-align);
+      color: var(--ngu-chat-ai-header-color);
+    }
+  }
+
+  .ngu-chat-ai-body {
+    height: 100%;
+    overflow-y: scroll;
+    padding: var(--ngu-chat-ai-body-padding, 1rem);
+    margin-bottom: var(--ngu-chat-ai-body-margin-bottom, 1rem);
+  }
+  ngu-chat-empty {
+    height: 100%;
+  }
+
+  .ngu-chat-ai-footer {
+    padding: var(--ngu-chat-ai-footer-padding);
+
+    p {
+      font-size: var(--ngu-chat-ai-footer-font-size, 1rem);
+      font-family: var(--ngu-chat-ai-footer-font-family);
+      font-weight: var(--ngu-chat-ai-footer-font-weight, normal);
+      line-height: var(--ngu-chat-ai-footer-line-height, 1.5);
+      text-align: var(--ngu-chat-ai-footer-text-align);
+      color: var(--ngu-chat-ai-footer-color);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}

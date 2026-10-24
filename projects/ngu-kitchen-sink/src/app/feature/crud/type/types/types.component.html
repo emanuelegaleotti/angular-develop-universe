@@ -1,0 +1,111 @@
+<section class="ngu-grid-main">
+  <div id="header-types">
+    <hgroup>
+      <h2>Types</h2>
+      <p>Esempio di CRUD con <strong>NgRx Store + Effects</strong>. Tutto lo stato del componente (paginazione, risultati, selezione, ricerca) è nel feature store NgRx. Gli Effects gestiscono le chiamate HTTP in modo reattivo, mantenendo il componente completamente privo di logica asincrona.</p>
+    </hgroup>
+    <button class="ngu-button ngu-primary"
+            [routerLink]="['/crud/type', 'create']">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+        <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
+      </svg>
+      Crea
+    </button>
+  </div>
+  <search>
+    <form [formGroup]="searchForm"
+          (submit)="searchTypes()"
+          role="search">
+      <ngu-input-search
+        formControlName="search"
+        [id]="'search'"
+        [feature]="'crud'"
+      />
+      <button class="ngu-button ngu-primary"
+              type="submit"
+              title="Search"
+              [disabled]="searchForm.invalid">
+        Search
+      </button>
+    </form>
+  </search>
+  <figure>
+    <table class="ngu-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of results(); track item.name) {
+          <tr>
+            <td>{{ $index + 1 + (page() - 1) * pageSize() }}</td>
+            <td>{{ item.name }}</td>
+            <td>
+              <button class="ngu-button ngu-link"
+                      title="View"
+                      (click)="onView(item)">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                  <path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Z"/>
+                </svg>
+              </button>
+              <button class="ngu-button ngu-link"
+                      title="Edit"
+                      [routerLink]="['/crud/type', item.name]">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                  <path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/>
+                </svg>
+              </button>
+              <button class="ngu-button ngu-link"
+                      title="Delete"
+                      (click)="onDelete(item)">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                  <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                </svg>
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <figcaption>{{ count() }} totali</figcaption>
+  </figure>
+  <ngu-pager
+    [pageIndex]="page()"
+    [totalItems]="count()"
+    [pageSize]="pageSize()"
+    (whenPageSelected)="onPageSelected($event)">
+    <ng-template #pagerPrevPageIcon>
+      <svg class="ngu-fill-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+        <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/>
+      </svg>
+    </ng-template>
+    <ng-template #pagerFirstPageIcon>
+      <svg class="ngu-fill-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+        <path d="M240-240v-480h80v480h-80Zm440 0L440-480l240-240 56 56-184 184 184 184-56 56Z"/>
+      </svg>
+    </ng-template>
+    <ng-template #pagerNextPageIcon>
+      <svg class="ngu-fill-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+        <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
+      </svg>
+    </ng-template>
+    <ng-template #pagerLastPageIcon>
+      <svg class="ngu-fill-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+        <path d="m280-240-56-56 184-184-184-184 56-56 240 240-240 240Zm360 0v-480h80v480h-80Z"/>
+      </svg>
+    </ng-template>
+  </ngu-pager>
+  <form [formGroup]="pageForm"
+        id="pageSizeForm">
+    <ngu-select
+      formControlName="pageSize"
+      [id]="'pageSize'"
+      [feature]="'crud'"
+      [options]="pageSizeOptions"
+    />
+  </form>
+</section>
+

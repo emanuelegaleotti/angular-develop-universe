@@ -1,0 +1,47 @@
+<form [formGroup]="messageForm"
+      *transloco="let t"
+      (ngSubmit)="sendMessage()"
+      class="ngu-chat-form">
+  <div>
+  <textarea
+    id="ngu-chat-form-textarea"
+    formControlName="messageToSend"
+    [minLength]="0"
+    [maxLength]="256"
+    [rows]="5"
+    [cols]="12"
+    [name]="'message'"
+    [autofocus]="true"
+    [attr.aria-disabled]="messageForm.controls['messageToSend'].disabled"
+    [attr.aria-placeholder]="t('ngu.chat-form.textarea.placeholder')"
+    [attr.aria-label]="t('ngu.chat-form.textarea.label')"
+    aria-autocomplete="inline"
+    #input
+  ></textarea>
+    @if (messageForm.controls['messageToSend'].errors && messageForm.controls['messageToSend'].dirty) {
+      <div class="invalid-feedback">
+
+      </div>
+    }
+  </div>
+  <button
+    type="submit"
+    [title]="t('button.send')"
+    id="ngu-chat-form-button"
+    [disabled]="messageForm.controls['messageToSend'].dirty ? (!messageForm.controls['messageToSend'].valid) || disabled() : true">
+    <span>
+    {{ t('button.send') }}
+    </span>
+    @if (isReceiving()) {
+      <span
+        id="ngu-chat-form-spinner"
+        role="status"
+      >
+        <ng-content select="[spin-icon]"></ng-content>
+      </span>
+    } @else {
+      <ng-content select="[send-icon]"></ng-content>
+    }
+
+  </button>
+</form>
