@@ -11,6 +11,7 @@
 
   &::backdrop {
     background: var(--ngu-offcanvas-backdrop-background);
+    backdrop-filter: var(--ngu-offcanvas-backdrop-filter, none);
   }
 
   &.ngu-left {
@@ -30,6 +31,7 @@
     .ngu-offcanvas-header {
       padding: var(--ngu-offcanvas-header-padding);
       background: var(--ngu-offcanvas-header-background);
+      border-bottom: var(--ngu-offcanvas-header-border-bottom, none);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -65,17 +67,41 @@
           height: var(--ngu-offcanvas-button-close-svg-height);
           fill: var(--ngu-offcanvas-button-close-svg-color);
         }
-      }
 
-      &:hover {
-        background: var(--ngu-offcanvas-button-close-hover-background);
-        border-color: var(--ngu-offcanvas-button-close-hover-border-color);
-        color: var(--ngu-offcanvas-button-close-hover-color);
-
-        svg {
-          fill: var(--ngu-offcanvas-button-close-hover-svg-color);
+        &:hover {
+          background: var(--ngu-offcanvas-button-close-hover-background);
+          border-color: var(--ngu-offcanvas-button-close-hover-border-color);
+          color: var(--ngu-offcanvas-button-close-hover-color);
         }
       }
     }
+  }
+}
+
+.ngu-offcanvas ::ng-deep {
+  .ngu-offcanvas-content > :last-child {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .ngu-offcanvas-body {
+    flex: 1;
+    height: 100%;
+    overflow: auto;
+    padding: var(--ngu-offcanvas-body-padding, 1rem);
+    background: var(--ngu-offcanvas-body-background);
+  }
+
+  .ngu-offcanvas-footer {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: var(--ngu-offcanvas-footer-justify, flex-end);
+    align-items: center;
+    gap: var(--ngu-offcanvas-footer-gap, 0.5rem);
+    padding: var(--ngu-offcanvas-footer-padding, 1rem);
+    border-top: var(--ngu-offcanvas-footer-border-top, none);
+    background: var(--ngu-offcanvas-footer-background);
   }
 }

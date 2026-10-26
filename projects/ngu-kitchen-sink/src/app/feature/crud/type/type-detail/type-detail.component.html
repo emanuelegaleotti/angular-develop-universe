@@ -1,74 +1,41 @@
-<article class="ngu-offcanvas-body">
+<article class="ks-detail" id="type-detail">
   @if (type(); as t) {
-    <hgroup id="offcanvas-type-title">
-      <p>#{{ t.id }}</p>
-      <h3>{{ t.name }}</h3>
-    </hgroup>
+    <header class="ks-detail-hero">
+      <div>
+        <p>#{{ t.id }}</p>
+        <h3>{{ t.name }}</h3>
+      </div>
+    </header>
 
-    <section id="info-type">
-      <p>Generation: <strong>{{ t.generation.name }}</strong></p>
-      <p>Pokémon with this type: <strong>{{ t.pokemon.length }}</strong></p>
-    </section>
+    <dl class="ks-detail-facts">
+      <div>
+        <dt>Generazione</dt>
+        <dd>{{ t.generation.name }}</dd>
+      </div>
+      <div>
+        <dt>Pokémon</dt>
+        <dd>{{ t.pokemon.length }}</dd>
+      </div>
+    </dl>
 
-    <section id="damage-relations">
-      <h3>Damage Relations</h3>
-      <dl>
-        <div class="info-type">
-          <dt>Double damage to</dt>
-          <dd>
-            @for (r of t.damage_relations.double_damage_to; track r.name) {
-              <span>{{ r.name }}</span>
-            }
-            @if (t.damage_relations.double_damage_to.length === 0) { None }
-          </dd>
-        </div>
-        <div class="info-type">
-          <dt>Double damage from</dt>
-          <dd>
-            @for (r of t.damage_relations.double_damage_from; track r.name) {
-              <span>{{ r.name }}</span>
-            }
-            @if (t.damage_relations.double_damage_from.length === 0) { None }
-          </dd>
-        </div>
-        <div class="info-type">
-          <dt>Half damage to</dt>
-          <dd>
-            @for (r of t.damage_relations.half_damage_to; track r.name) {
-              <span>{{ r.name }}</span>
-            }
-            @if (t.damage_relations.half_damage_to.length === 0) { None }
-          </dd>
-        </div>
-        <div class="info-type">
-          <dt>Half damage from</dt>
-          <dd>
-            @for (r of t.damage_relations.half_damage_from; track r.name) {
-              <span>{{ r.name }}</span>
-            }
-            @if (t.damage_relations.half_damage_from.length === 0) { None }
-          </dd>
-        </div>
-        <div class="info-type">
-          <dt>No damage to</dt>
-          <dd>
-            @for (r of t.damage_relations.no_damage_to; track r.name) {
-              <span>{{ r.name }}</span>
-            }
-            @if (t.damage_relations.no_damage_to.length === 0) { None }
-          </dd>
-        </div>
-        <div class="info-type">
-          <dt>No damage from</dt>
-          <dd>
-            @for (r of t.damage_relations.no_damage_from; track r.name) {
-              <span>{{ r.name }}</span>
-            }
-            @if (t.damage_relations.no_damage_from.length === 0) { None }
-          </dd>
-        </div>
-      </dl>
-    </section>
+    @for (rel of [
+      { label: 'Danno doppio verso', items: t.damage_relations.double_damage_to },
+      { label: 'Danno doppio da', items: t.damage_relations.double_damage_from },
+      { label: 'Danno dimezzato verso', items: t.damage_relations.half_damage_to },
+      { label: 'Danno dimezzato da', items: t.damage_relations.half_damage_from },
+      { label: 'Nessun danno verso', items: t.damage_relations.no_damage_to },
+      { label: 'Nessun danno da', items: t.damage_relations.no_damage_from }
+    ]; track rel.label) {
+      <section>
+        <h4>{{ rel.label }}</h4>
+        <ul class="ks-detail-chips">
+          @for (r of rel.items; track r.name) {
+            <li>{{ r.name }}</li>
+          } @empty {
+            <li>—</li>
+          }
+        </ul>
+      </section>
+    }
   }
 </article>
-

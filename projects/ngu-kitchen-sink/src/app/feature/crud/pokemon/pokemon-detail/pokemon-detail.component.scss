@@ -1,88 +1,65 @@
-#offcanvas-pokemon-title {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  gap: 0.5rem;
-
-  p {
-    font-family: Inter, sans-serif;
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: bold;
+#pokemon-detail {
+  .ks-detail-hero img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+    image-rendering: pixelated;
   }
 
-  h3 {
-    margin: 0;
-    font-size: 1.5rem;
+  .ks-detail-sprites {
+    display: flex;
+    gap: var(--ngu-space-xs);
+    margin-inline-start: auto;
+  }
+
+  .ks-detail-facts dd small {
+    font-size: .8125rem;
+    font-weight: 500;
+    text-transform: none;
+  }
+
+  .ks-detail-list {
+    display: grid;
+    gap: var(--ngu-space-2xs);
+  }
+
+  .ks-detail-stat {
+    display: grid;
+    grid-template-columns: 8rem 2.5rem 1fr;
+    align-items: center;
+    gap: var(--ngu-space-xs);
+    font-size: .875rem;
     text-transform: capitalize;
-  }
-}
 
-article.ngu-offcanvas-body {
-  flex: 1;
-  overflow-y: auto;
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-
-  figure {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    justify-content: center;
-    margin: 0;
-  }
-
-  section {
-    margin: 0;
-  }
-}
-
-#info-pokemon-section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
-
-  .info-pokemon {
-    display: flex;
-    flex-direction: column;
-
-    dt {
-      font-size: 1.5rem;
-      text-align: start;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+    output {
+      font-family: 'DM Mono', monospace;
+      text-align: end;
     }
 
-    dd {
-      margin: 0;
-      font-size: 1.5rem;
-      text-align: start;
+    meter {
+      width: 100%;
+      height: .5rem;
+      border-radius: 999px;
+      accent-color: #8514f5;
+
+      &::-webkit-meter-bar {
+        height: .5rem;
+        border: 0;
+        border-radius: 999px;
+        background: var(--ngu-gray-300);
+      }
+
+      &::-webkit-meter-optimum-value,
+      &::-webkit-meter-suboptimum-value,
+      &::-webkit-meter-even-less-good-value {
+        border-radius: 999px;
+        background: linear-gradient(90deg, #f11653, #8514f5);
+      }
+
+      &::-moz-meter-bar {
+        border-radius: 999px;
+        background: #8514f5;
+      }
     }
   }
 }
-
-.ngu-table {
-  th {
-    font-size: 1.5rem;
-    text-align: start;
-  }
-  td {
-    padding-top: 0.5rem;
-    font-size: 1.5rem;
-    text-align: start;
-  }
-}
-
-#abilities {
-  ul {
-    padding: 0;
-    li {
-      list-style: none;
-      font-size: 1.2rem;
-    }
-  }
-}
-

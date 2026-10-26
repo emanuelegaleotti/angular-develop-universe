@@ -3,6 +3,7 @@
 @use '../base/spaces' as spaces;
 @use '../base/palette' as palette;
 @use 'sass:map';
+@use 'sass:color';
 
 @mixin solid($background, $color: palette.$white) {
   background: $background;
@@ -84,10 +85,6 @@
     }
   }
 
-  &.ngu-tertiary {
-    @include solid(palette.$bright-blue);
-  }
-
   &.ngu-success {
     @include solid(palette.$symbolic-cyan);
   }
@@ -129,12 +126,98 @@
     @include solid(palette.$primary-contrast);
   }
 
+  &.ngu-tertiary {
+    background: palette.$surface-tint;
+    border-color: color.mix(palette.$electric-violet, palette.$white, 20%);
+    color: palette.$electric-violet;
+
+    &:hover,
+    &:focus-visible {
+      background: color.mix(palette.$electric-violet, palette.$white, 12%);
+      border-color: palette.$electric-violet;
+      color: palette.$electric-violet;
+    }
+
+    &:disabled {
+      background: palette.$surface-tint;
+      border-color: color.mix(palette.$electric-violet, palette.$white, 20%);
+      color: palette.$electric-violet;
+    }
+  }
+
+  &.ngu-ghost {
+    background: transparent;
+    border-color: transparent;
+    color: palette.$tertiary-contrast;
+
+    &:hover,
+    &:focus-visible {
+      background: palette.$senary-contrast;
+      color: palette.$primary-contrast;
+    }
+
+    &:disabled {
+      background: transparent;
+    }
+  }
+
+  &.ngu-link {
+    padding-inline: 0;
+    background: transparent;
+    border-color: transparent;
+    color: palette.$electric-violet;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+
+    &:hover,
+    &:focus-visible {
+      background: transparent;
+      color: palette.$vivid-pink;
+    }
+
+    &:disabled {
+      background: transparent;
+      color: palette.$electric-violet;
+    }
+  }
+
   &.ngu-small {
+    padding: map.get(spaces.$spaces, '4xs') map.get(spaces.$spaces, sm);
+    font-size: functions.toRem(12);
   }
 
   &.ngu-large {
+    padding: map.get(spaces.$spaces, sm) map.get(spaces.$spaces, xl);
+    font-size: functions.toRem(16);
   }
 
   &.ngu-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: map.get(spaces.$spaces, xs);
+
+    svg {
+      flex: none;
+      width: 1.1em;
+      height: 1.1em;
+    }
+  }
+
+  &.ngu-icon-only {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: map.get(spaces.$spaces, xs);
+    aspect-ratio: 1;
+
+    svg {
+      width: 1.25em;
+      height: 1.25em;
+    }
+  }
+
+  &.ngu-pill {
+    border-radius: 999px;
   }
 }

@@ -1,0 +1,12 @@
+<section>
+  <h2>Gauge chart</h2>
+  <p>Un singolo valore rispetto a un intervallo: indicatore a progresso e quadrante a zone di colore. Ogni grafico è disegnato sia con ECharts sia con Highcharts.</p>
+  <article ksChartCompare heading="Progresso">
+    <div echarts [options]="simpleChartOptions"></div>
+    <div highchartsChart [options]="simpleHighchartsOptions"></div>
+  </article>
+  <article ksChartCompare heading="Quadrante a zone">
+    <div echarts [options]="zonesChartOptions"></div>
+    <div highchartsChart [options]="zonesHighchartsOptions"></div>
+  </article>
+</section>

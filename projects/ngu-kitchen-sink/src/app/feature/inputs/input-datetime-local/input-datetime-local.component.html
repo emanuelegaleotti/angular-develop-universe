@@ -1,6 +1,8 @@
-<section class="ngu-grid">
-  <h2>Input date time</h2>
-  <form [formGroup]="test">
+<section>
+  <h2>Input datetime-local</h2>
+  <p>Selettore di data e ora locali. Il valore è una stringa <code>yyyy-mm-ddThh:mm</code>.</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
     <ngu-input-datetime-local
       formControlName="datetime"
       [id]="'datetime'"
@@ -11,16 +13,5 @@
       [autocomplete]="'bday'"
     ></ngu-input-datetime-local>
   </form>
-  <article>
-    <dl>
-      <dt>Value:</dt>
-      <dd>{{ test.controls['datetime'].value }}</dd>
-      <dt>Valid:</dt>
-      <dd>{{ test.controls['datetime'].valid }}</dd>
-      <dt>Invalid:</dt>
-      <dd>{{ test.controls['datetime'].invalid }}</dd>
-    </dl>
-    <button type="button" (click)="disable()">Disable</button>
-  </article>
-  <!--<input type="datetime-local" [max]="'2025-02-11T14:41:07+01:00'">-->
+  <article ksControlState [control]="form.controls.datetime"></article>
 </section>

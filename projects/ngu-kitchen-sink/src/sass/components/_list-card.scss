@@ -1,0 +1,124 @@
+// Scheda delle liste: toolbar, tabella e footer in un'unica superficie.
+// Le regole specifiche di ogni pagina stanno nel suo scss, sotto il suo id.
+.ks-crud-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  align-self: start;
+  overflow: hidden;
+  border: 1px solid var(--ngu-gray-300);
+  border-radius: .75rem;
+  background: var(--ngu-gray-100);
+}
+
+.ks-crud-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ngu-space-md);
+  padding: var(--ngu-space-md) var(--ngu-space-lg);
+  border-bottom: 1px solid var(--ngu-gray-300);
+
+  form[role='search'] {
+    display: flex;
+    flex: 1 1 18rem;
+    align-items: flex-end;
+    gap: var(--ngu-space-xs);
+    max-width: 36rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    // La label resta solo per gli screen reader: il placeholder spiega il campo
+    --ngu-input-label-position: absolute;
+    --ngu-input-label-width: 1px;
+    --ngu-input-label-height: 1px;
+    --ngu-input-label-overflow: hidden;
+    --ngu-input-label-clip-path: inset(50%);
+    --ngu-input-label-white-space: nowrap;
+
+    ngu-input-search {
+      flex: 1;
+    }
+  }
+
+  > .ngu-button {
+    margin-inline-start: auto;
+  }
+}
+
+.ks-crud-table {
+  overflow-x: auto;
+
+  .ngu-table {
+    td,
+    th {
+      padding: var(--ngu-space-2xs) var(--ngu-space-lg);
+    }
+
+    th:last-child,
+    td:last-child {
+      text-align: end;
+      white-space: nowrap;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td.ks-crud-index {
+      width: 4rem;
+      color: var(--ngu-gray-500);
+      font-family: 'DM Mono', monospace;
+      font-size: .8125rem;
+    }
+
+    td.ks-crud-name {
+      font-weight: 500;
+      color: var(--ngu-gray-900);
+      text-transform: capitalize;
+    }
+  }
+}
+
+.ks-crud-empty {
+  padding: var(--ngu-space-xl) var(--ngu-space-lg);
+  text-align: center;
+  color: var(--ngu-gray-600);
+}
+
+.ks-crud-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: var(--ngu-space-md);
+  padding: var(--ngu-space-md) var(--ngu-space-lg);
+  border-top: 1px solid var(--ngu-gray-300);
+  font-size: .875rem;
+  color: var(--ngu-gray-600);
+
+  @media (min-width: 48rem) {
+    grid-template-columns: 1fr auto 1fr;
+
+    > :first-child {
+      justify-self: start;
+    }
+
+    > :last-child {
+      justify-self: end;
+    }
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    gap: var(--ngu-space-xs);
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    select {
+      min-width: 5rem;
+    }
+  }
+}

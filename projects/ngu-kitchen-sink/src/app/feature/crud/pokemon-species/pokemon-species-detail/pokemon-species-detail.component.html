@@ -1,50 +1,49 @@
-<article class="ngu-offcanvas-body">
+<article class="ks-detail" id="species-detail">
   @if (species(); as s) {
-    <hgroup id="offcanvas-species-title">
-      <p>#{{ s.id }}</p>
-      <h3>{{ s.name }}</h3>
-    </hgroup>
+    <header class="ks-detail-hero">
+      <div>
+        <p>#{{ s.id }}</p>
+        <h3>{{ s.name }}</h3>
+      </div>
+    </header>
 
-    <section id="info-pokemon-species-section">
-      <dl id="info-pokemon-species">
-        <div class="info-pokemon">
-          <dt>Color</dt>
-          <dd>{{ s.color.name }}</dd>
-        </div>
-        <div class="info-pokemon">
-          <dt>Habitat</dt>
-          <dd>{{ s.habitat?.name ?? 'None' }}</dd>
-        </div>
-        <div class="info-pokemon">
-          <dt>Capture Rate</dt>
-          <dd>{{ s.capture_rate }}</dd>
-        </div>
-        <div class="info-pokemon">
-          <dt>Base Happiness</dt>
-          <dd>{{ s.base_happiness }}</dd>
-        </div>
-        <div class="info-pokemon">
-          <dt>Gender Rate</dt>
-          <dd>{{ s.gender_rate }}</dd>
-        </div>
-        <div class="info-pokemon">
-          <dt>Is Legendary</dt>
-          <dd>{{ s.is_legendary }}</dd>
-        </div>
-        <div class="info-pokemon">
-          <dt>Is Mythical</dt>
-          <dd>{{ s.is_mythical }}</dd>
-        </div>
-        <div class="info-pokemon">
-          <dt>Evolves From</dt>
-          <dd>{{ s.evolves_from_species?.name ?? 'None' }}</dd>
-        </div>
-      </dl>
-    </section>
+    <dl class="ks-detail-facts">
+      <div>
+        <dt>Colore</dt>
+        <dd>{{ s.color.name }}</dd>
+      </div>
+      <div>
+        <dt>Habitat</dt>
+        <dd>{{ s.habitat?.name ?? '—' }}</dd>
+      </div>
+      <div>
+        <dt>Cattura</dt>
+        <dd>{{ s.capture_rate }}</dd>
+      </div>
+      <div>
+        <dt>Felicità base</dt>
+        <dd>{{ s.base_happiness }}</dd>
+      </div>
+      <div>
+        <dt>Rapporto sessi</dt>
+        <dd>{{ s.gender_rate }}</dd>
+      </div>
+      <div>
+        <dt>Si evolve da</dt>
+        <dd>{{ s.evolves_from_species?.name ?? '—' }}</dd>
+      </div>
+    </dl>
 
-    <section id="egg-groups">
-      <h3>Egg Groups</h3>
-      <ul>
+    @if (s.is_legendary || s.is_mythical) {
+      <ul class="ks-detail-chips">
+        @if (s.is_legendary) { <li>Leggendario</li> }
+        @if (s.is_mythical) { <li>Misterioso</li> }
+      </ul>
+    }
+
+    <section>
+      <h4>Gruppi uova</h4>
+      <ul class="ks-detail-chips">
         @for (eg of s.egg_groups; track eg.name) {
           <li>{{ eg.name }}</li>
         }
@@ -56,4 +55,3 @@
     }
   }
 </article>
-

@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { CardComponent } from 'components'
 import { JsonPipe } from '@angular/common'
 import { download, generateCsv, mkConfig } from 'export-to-csv'
 
 @Component({
   selector: 'ngu-kitchensink-csv',
   imports: [
-    CardComponent,
     JsonPipe
   ],
   templateUrl: './csv.component.html',

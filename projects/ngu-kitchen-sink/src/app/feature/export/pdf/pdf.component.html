@@ -1,0 +1,27 @@
+<section class="ngu-grid-main">
+  <h2>Export PDF</h2>
+  <article>
+    <h3>Data</h3>
+    <table>
+      <thead>
+        <tr>
+          @for (c of columns; track c) {
+            <th>{{ c }}</th>
+          }
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of rows; track row[0]) {
+          <tr>
+            @for (cell of row; track $index) {
+              <td>{{ cell }}</td>
+            }
+          </tr>
+        }
+      </tbody>
+    </table>
+    <button type="button"
+            (click)="exportPDF()"
+            class="ngu-button ngu-primary">Export PDF</button>
+  </article>
+</section>

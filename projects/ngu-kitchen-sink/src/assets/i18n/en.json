@@ -2,7 +2,25 @@
   "button": {
     "send": "Send"
   },
+  "ngu": {
+    "chat": {
+      "help": "Answers may contain mistakes. Always verify important information."
+    },
+    "chat-form": {
+      "textarea": {
+        "label": "Write a message",
+        "placeholder": "Write a message…"
+      }
+    }
+  },
   "crud": {
+    "search": {
+      "label": "Search",
+      "placeholder": "Search by name…"
+    },
+    "pageSize": {
+      "label": "Rows per page"
+    },
     "name": {
       "label": "Name",
       "placeholder": "e.g. bulbasaur",
@@ -40,6 +58,188 @@
       "label": "Gender Rate",
       "placeholder": "e.g. 4",
       "required": "Gender Rate is required"
+    }
+  },
+  "input": {
+    "text": {
+      "label": "Username",
+      "help": "Up to 36 characters.",
+      "success": "Great, the username is valid.",
+      "placeholder": "e.g. john.doe",
+      "required": "Username is required.",
+      "maxlength": "You exceeded the maximum length."
+    },
+    "number": {
+      "label": "Age",
+      "help": "A number between 0 and 15.",
+      "success": "Valid value.",
+      "placeholder": "e.g. 10",
+      "required": "Age is required.",
+      "min": "The minimum value is 0.",
+      "max": "The maximum value is 15."
+    },
+    "email": {
+      "label": "Email",
+      "help": "We will only use this address to contact you.",
+      "success": "Valid email address.",
+      "placeholder": "name@example.com",
+      "required": "Email is required.",
+      "email": "Enter a valid email address.",
+      "maxlength": "The email is too long."
+    },
+    "password": {
+      "label": "Password",
+      "help": "Up to 30 characters.",
+      "success": "Valid password.",
+      "placeholder": "Enter your password",
+      "required": "Password is required.",
+      "maxlength": "The password is too long."
+    },
+    "search": {
+      "label": "Search",
+      "help": "Type at least one character.",
+      "success": "Search ready.",
+      "placeholder": "Search…",
+      "required": "Enter a search term.",
+      "maxlength": "The search term is too long."
+    },
+    "tel": {
+      "label": "Phone",
+      "help": "Include the international prefix.",
+      "success": "Valid number.",
+      "placeholder": "+1 555 123 4567",
+      "required": "Phone number is required.",
+      "maxlength": "The number is too long."
+    },
+    "time": {
+      "label": "Time",
+      "help": "Pick a time.",
+      "success": "Valid time.",
+      "placeholder": "hh:mm",
+      "required": "Time is required."
+    },
+    "date": {
+      "label": "Birth date",
+      "help": "Pick a date from the calendar.",
+      "success": "Valid date.",
+      "placeholder": "dd/mm/yyyy",
+      "required": "Date is required."
+    },
+    "datetime": {
+      "label": "Date and time",
+      "help": "Pick a local date and time.",
+      "success": "Valid date and time.",
+      "placeholder": "dd/mm/yyyy hh:mm",
+      "required": "Date and time are required."
+    },
+    "month": {
+      "label": "Month",
+      "help": "Pick a month and a year.",
+      "success": "Valid month.",
+      "placeholder": "mm/yyyy",
+      "required": "Month is required."
+    },
+    "week": {
+      "label": "Week",
+      "help": "Pick a week of the year.",
+      "success": "Valid week.",
+      "placeholder": "Week",
+      "required": "Week is required."
+    },
+    "url": {
+      "label": "Website",
+      "help": "The address must start with http://",
+      "success": "Valid URL.",
+      "placeholder": "http://example.com",
+      "required": "URL is required.",
+      "pattern": "The URL must start with http://"
+    },
+    "range": {
+      "label": "Volume",
+      "help": "Drag the slider to change the value.",
+      "success": "Value set.",
+      "placeholder": "Volume",
+      "required": "Value is required."
+    },
+    "hidden": {
+      "label": "Hidden field",
+      "help": "This field is not visible to the user.",
+      "success": "Hidden value present.",
+      "placeholder": "",
+      "required": "The hidden field is required."
+    },
+    "color": {
+      "label": "Favourite colour",
+      "help": "Pick a colour from the picker.",
+      "success": "Colour selected.",
+      "placeholder": "Colour",
+      "required": "Colour is required."
+    },
+    "datalist": {
+      "label": "Browser",
+      "help": "Start typing to see suggestions.",
+      "success": "Valid browser.",
+      "placeholder": "e.g. Firefox",
+      "required": "Browser is required.",
+      "maxlength": "The value is too long."
+    },
+    "datalistObject": {
+      "label": "Browser (object)",
+      "help": "The stored value is the id of the chosen option.",
+      "success": "Valid browser.",
+      "placeholder": "e.g. Firefox",
+      "required": "Browser is required.",
+      "maxlength": "The value is too long."
+    },
+    "file": {
+      "label": "Attachment",
+      "help": "Select or drop a file.",
+      "success": "File uploaded.",
+      "placeholder": "Choose a file",
+      "required": "Select at least one file.",
+      "dropMessage": "Drop files here or"
+    },
+    "select": {
+      "label": "Colour",
+      "help": "Choose a value from the list.",
+      "success": "Valid selection.",
+      "placeholder": "Select…",
+      "required": "Select a value."
+    },
+    "selectObject": {
+      "label": "Colour (object)",
+      "help": "The stored value is the id of the chosen option.",
+      "success": "Valid selection.",
+      "placeholder": "Select…",
+      "required": "Select a value."
+    },
+    "textarea": {
+      "label": "Message",
+      "help": "Up to 256 characters.",
+      "success": "Valid message.",
+      "placeholder": "Write your message here",
+      "required": "Message is required.",
+      "maxlength": "The message is too long."
+    },
+    "checkbox": {
+      "label": "I accept the terms and conditions",
+      "help": "You must accept to continue.",
+      "success": "Thanks for accepting.",
+      "placeholder": "",
+      "required": "You must accept the terms."
+    },
+    "radio": {
+      "label": "Colour",
+      "help": "Choose a single option.",
+      "success": "Valid option.",
+      "placeholder": "",
+      "required": "Choose an option.",
+      "options": {
+        "white": "White",
+        "red": "Red",
+        "black": "Black",
+        "blue": "Blue"
+      }
     }
   }
 }

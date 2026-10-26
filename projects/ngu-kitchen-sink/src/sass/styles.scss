@@ -10,11 +10,11 @@
 @use "base/reset" as reset;
 @use "layouts/root" as root;
 @use "layouts/body" as body;
+@use "layouts/page" as page;
 
 
-@use "components/radios" as radios;
-@use "components/checkboxes" as checkboxes;
 @use "components/buttons" as buttons;
+@use "components/actions" as actions;
 @use "components/inputs" as inputs;
 @use "components/carousel" as carousel;
 @use "components/offcanvas" as offcanvas;
@@ -26,5 +26,9 @@
 @use "components/chats" as chats;
 @use "components/toast" as toast;
 @use "components/popover" as popover;
+@use "components/list-card" as listCard;
+@use "components/form-page" as formPage;
+@use "components/detail-card" as detailCard;
+@use "components/confirm" as confirm;
 
 @use "./themes/universe" as universe;

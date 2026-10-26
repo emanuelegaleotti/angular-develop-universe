@@ -20,17 +20,17 @@
 
   input[type="week"] {
     width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
+    padding: var(--ngu-input-padding, 0.5rem);
+    font-size: var(--ngu-input-font-size, 1rem);
     line-height: var(--ngu-input-line-height, 1.5);
     font-weight: var(--ngu-input-font-weight, normal);
     font-style: var(--ngu-input-font-style, normal);
     letter-spacing: var(--ngu-input-letter-spacing);
     font-family: var(--ngu-input-font-family);
     background: var(--ngu-input-background);
-    border: 1px solid var(--ngu-input-border, #ccc);
+    border: var(--ngu-input-border, 1px solid #ccc);
     border-color: var(--ngu-input-border-color);
-    border-radius: 4px;
+    border-radius: var(--ngu-input-border-radius, 4px);
     @media (prefers-reduced-motion: no-preference) {
       transition: all 0.3s;
     }
@@ -68,10 +68,31 @@
         display: none;
       }
     }
+
+    &::placeholder {
+      color: var(--ngu-input-placeholder-color, #757575);
+    }
+
+    &:hover:not(:disabled) {
+      border-color: var(--ngu-input-hover-border-color, var(--ngu-input-border-color));
+    }
+
+    &:focus-visible {
+      outline: var(--ngu-input-focus-outline, revert);
+      border-color: var(--ngu-input-focus-border-color, var(--ngu-input-border-color));
+      box-shadow: var(--ngu-input-focus-box-shadow, none);
+    }
+
+    &:disabled {
+      background: var(--ngu-input-disabled-background, var(--ngu-input-background));
+      cursor: var(--ngu-input-disabled-cursor, default);
+      opacity: var(--ngu-input-disabled-opacity, 1);
+    }
   }
 
   .ngu-valid-feedback {
     display: none;
+    margin-top: var(--ngu-input-feedback-margin-top, 0);
     font-size: 0.85em;
     line-height: var(--ngu-input-valid-feedback-line-height, 1.5);
     font-weight: var(--ngu-input-valid-feedback-font-weight, normal);
@@ -83,6 +104,7 @@
 
   .ngu-invalid-feedback {
     display: none;
+    margin-top: var(--ngu-input-feedback-margin-top, 0);
     font-size: 0.85em;
     line-height: var(--ngu-input-invalid-feedback-line-height, 1.5);
     font-weight: var(--ngu-input-invalid-feedback-font-weight, normal);
@@ -94,6 +116,7 @@
 
   .ngu-help-feedback {
     display: none;
+    margin-top: var(--ngu-input-feedback-margin-top, 0);
     font-size: 0.85em;
     line-height: var(--ngu-input-help-feedback-line-height, 1.5);
     font-weight: var(--ngu-input-help-feedback-font-weight, normal);

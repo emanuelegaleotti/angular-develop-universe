@@ -2,7 +2,8 @@ import {Component, inject, OnInit} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {Store} from '@ngrx/store';
-import {PagerComponent} from 'angular-develop-universe/components';
+import { CrudPagerComponent } from '../../shared/crud-pager/crud-pager.component';
+import { CrudRowActionsComponent } from '../../shared/crud-row-actions/crud-row-actions.component';
 import {InputSearchComponent, SelectComponent} from 'angular-develop-universe/inputs';
 import {NguOffcanvasService, NguDialogService} from 'angular-develop-universe/dialogs';
 import {TypeActions} from '../state/type.actions';
@@ -20,7 +21,7 @@ import {NamedApiResource} from '../../shared/pokeapi.utils';
 @Component({
   selector: 'app-types',
   standalone: true,
-  imports: [RouterLink, PagerComponent, ReactiveFormsModule, InputSearchComponent, SelectComponent],
+  imports: [RouterLink, CrudPagerComponent, CrudRowActionsComponent, ReactiveFormsModule, InputSearchComponent, SelectComponent],
   templateUrl: './types.component.html',
   styleUrl: './types.component.scss',
 })

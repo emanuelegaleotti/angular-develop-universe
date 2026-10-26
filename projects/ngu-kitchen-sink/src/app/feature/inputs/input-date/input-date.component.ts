@@ -1,26 +1,17 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
-import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 import { InputDateComponent } from 'angular-develop-universe/inputs'
+import { ControlStateComponent } from '../../../shared/control-state/control-state.component'
 
 @Component({
   selector: 'ngu-kitchensink-input-date',
   templateUrl: './input-date.component.html',
   styleUrl: './input-date.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    InputDateComponent,
-    ReactiveFormsModule
-  ]
+  imports: [ReactiveFormsModule, InputDateComponent, ControlStateComponent]
 })
 export class InputDateDemoComponent {
-  test: FormGroup = new FormGroup<{ date: AbstractControl<string | null> }>({
-    date: new FormControl('', [Validators.required]),
+  readonly form = new FormGroup({
+    date: new FormControl('', [Validators.required])
   })
-  disable (): void {
-    if (this.test.controls['date'].disabled) {
-      this.test.controls['date'].enable()
-    } else {
-      this.test.controls['date'].disable()
-    }
-  }
 }

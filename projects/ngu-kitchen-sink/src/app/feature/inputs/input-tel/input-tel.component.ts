@@ -1,20 +1,17 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
-import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 import { InputTelComponent } from 'angular-develop-universe/inputs'
+import { ControlStateComponent } from '../../../shared/control-state/control-state.component'
 
 @Component({
   selector: 'ngu-kitchensink-input-tel',
   templateUrl: './input-tel.component.html',
   styleUrl: './input-tel.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-
-  imports: [
-    ReactiveFormsModule,
-    InputTelComponent
-  ]
+  imports: [ReactiveFormsModule, InputTelComponent, ControlStateComponent]
 })
 export class InputTelDemoComponent {
-  test: FormGroup = new FormGroup<{ tel: AbstractControl<string | null> }>({
-    tel: new FormControl('', [Validators.required]),
+  readonly form = new FormGroup({
+    tel: new FormControl('', [Validators.required])
   })
 }

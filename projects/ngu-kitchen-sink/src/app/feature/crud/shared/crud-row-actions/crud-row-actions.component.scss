@@ -1,0 +1,20 @@
+:host {
+  display: inline-flex;
+  gap: var(--ngu-space-4xs);
+}
+
+.ngu-button {
+  color: var(--ngu-gray-600);
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--ngu-gray-900);
+  }
+
+  &[data-action='delete']:hover,
+  &[data-action='delete']:focus-visible {
+    background: rgb(241 22 83 / 10%);
+    color: #f11653;
+  }
+}

@@ -1,20 +1,17 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
-import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 import { InputTimeComponent } from 'angular-develop-universe/inputs'
+import { ControlStateComponent } from '../../../shared/control-state/control-state.component'
 
 @Component({
   selector: 'ngu-kitchensink-input-time',
   templateUrl: './input-time.component.html',
   styleUrl: './input-time.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-
-  imports: [
-    InputTimeComponent,
-    ReactiveFormsModule
-  ]
+  imports: [ReactiveFormsModule, InputTimeComponent, ControlStateComponent]
 })
 export class InputTimeDemoComponent {
-  test: FormGroup = new FormGroup<{ time: AbstractControl<string | null> }>({
-    time: new FormControl('', [Validators.required]),
+  readonly form = new FormGroup({
+    time: new FormControl('', [Validators.required])
   })
 }

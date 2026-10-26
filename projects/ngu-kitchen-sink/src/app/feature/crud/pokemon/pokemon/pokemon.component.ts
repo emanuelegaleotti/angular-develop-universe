@@ -1,7 +1,6 @@
 import {Component, computed, inject, OnInit, signal} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {PagerComponent} from 'angular-develop-universe/components';
 import {InputSearchComponent, SelectComponent} from 'angular-develop-universe/inputs';
 import { NguOffcanvasService, NguDialogService } from 'angular-develop-universe/dialogs';
 import {PokemonService} from '../pokemon.service';
@@ -10,12 +9,13 @@ import {NgOptimizedImage} from "@angular/common";
 import {PokeApiPage} from "../../shared/pokeapi.utils";
 import {PokemonDetailComponent} from '../pokemon-detail/pokemon-detail.component';
 import { PokemonDeleteComponent } from '../pokemon-delete/pokemon-delete.component';
-import {TranslocoDirective} from "@jsverse/transloco";
+import {CrudPagerComponent} from '../../shared/crud-pager/crud-pager.component';
+import {CrudRowActionsComponent} from '../../shared/crud-row-actions/crud-row-actions.component';
 
 @Component({
   selector: 'app-pokemon',
   standalone: true,
-  imports: [RouterLink, PagerComponent, ReactiveFormsModule, InputSearchComponent, SelectComponent, NgOptimizedImage, TranslocoDirective],
+  imports: [RouterLink, CrudPagerComponent, CrudRowActionsComponent, ReactiveFormsModule, InputSearchComponent, SelectComponent, NgOptimizedImage],
   templateUrl: './pokemon.component.html',
   styleUrl: './pokemon.component.scss',
 })

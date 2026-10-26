@@ -1,7 +1,12 @@
 <section>
   <h2>Area chart</h2>
-  <article>
-    <h3>Weekly sales</h3>
-    <div echarts [options]="chartOptions" style="display: block; width: 100%; max-width: 600px; height: 600px;"></div>
+  <p>Una linea con l'area sottostante riempita: utile per volumi e per serie impilate. Ogni grafico è disegnato sia con ECharts sia con Highcharts.</p>
+  <article ksChartCompare heading="Visite mensili">
+    <div echarts [options]="simpleChartOptions"></div>
+    <div highchartsChart [options]="simpleHighchartsOptions"></div>
+  </article>
+  <article ksChartCompare heading="Aree impilate">
+    <div echarts [options]="stackedChartOptions"></div>
+    <div highchartsChart [options]="stackedHighchartsOptions"></div>
   </article>
 </section>

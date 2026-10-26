@@ -4,8 +4,46 @@
   border-radius: var(--ngu-dialog-border-radius);
   border-color: var(--ngu-dialog-border-color);
   padding: var(--ngu-dialog-padding, 0);
+  width: var(--ngu-dialog-width, fit-content);
+  max-width: var(--ngu-dialog-max-width, none);
+  overflow: var(--ngu-dialog-overflow, visible);
+  box-shadow: var(--ngu-dialog-box-shadow, none);
+  color: var(--ngu-dialog-color, inherit);
 
   &::backdrop {
     background: var(--ngu-dialog-backdrop-background);
+    backdrop-filter: var(--ngu-dialog-backdrop-filter, none);
+  }
+}
+
+.ngu-dialog ::ng-deep {
+  .ngu-dialog-header {
+    padding: var(--ngu-dialog-header-padding, 1rem);
+
+    h4 {
+      margin: var(--ngu-dialog-title-margin, 0);
+      font-size: var(--ngu-dialog-title-font-size, 1.25rem);
+      font-weight: var(--ngu-dialog-title-font-weight, 600);
+      color: var(--ngu-dialog-title-color, inherit);
+    }
+
+    p {
+      margin: var(--ngu-dialog-description-margin, 0);
+      line-height: var(--ngu-dialog-description-line-height, 1.5);
+      color: var(--ngu-dialog-description-color, inherit);
+    }
+  }
+
+  .ngu-dialog-body {
+    padding: var(--ngu-dialog-body-padding, 1rem);
+  }
+
+  .ngu-dialog-footer {
+    display: flex;
+    justify-content: var(--ngu-dialog-footer-justify, flex-end);
+    gap: var(--ngu-dialog-footer-gap, 0.5rem);
+    padding: var(--ngu-dialog-footer-padding, 1rem);
+    border-top: var(--ngu-dialog-footer-border-top, none);
+    background: var(--ngu-dialog-footer-background, transparent);
   }
 }

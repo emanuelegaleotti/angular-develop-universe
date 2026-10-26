@@ -1,11 +1,5 @@
+@use '../../../../sass/components/playground' as playground;
+
 section {
-  h2 {
-    grid-column: 1/-1;
-  }
-  form {
-    grid-column: 1/4
-  }
-  article {
-    grid-column: 1/4;
-  }
+  @include playground.layout;
 }

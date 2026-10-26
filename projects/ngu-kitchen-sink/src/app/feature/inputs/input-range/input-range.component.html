@@ -1,6 +1,8 @@
 <section>
   <h2>Input range</h2>
-  <form [formGroup]="test">
+  <p>Cursore per scegliere un valore numerico in un intervallo.</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
     <ngu-input-range
       formControlName="range"
       [id]="'range'"
@@ -11,4 +13,5 @@
       [autocomplete]="'range'"
     ></ngu-input-range>
   </form>
+  <article ksControlState [control]="form.controls.range"></article>
 </section>

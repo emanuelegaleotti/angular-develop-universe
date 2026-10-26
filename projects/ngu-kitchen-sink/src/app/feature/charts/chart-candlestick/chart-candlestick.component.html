@@ -1,0 +1,12 @@
+<section>
+  <h2>Candlestick chart</h2>
+  <p>Apertura, chiusura, minimo e massimo per periodo. Verde quando il valore sale, rosso quando scende. Ogni grafico è disegnato sia con ECharts sia con Highcharts (Stock).</p>
+  <article ksChartCompare heading="Andamento giornaliero">
+    <div echarts [options]="chartOptions"></div>
+    <div highchartsChart constructorType="stockChart" [options]="highchartsOptions"></div>
+  </article>
+  <article ksChartCompare heading="Con volumi">
+    <div echarts [options]="volumeChartOptions"></div>
+    <div highchartsChart constructorType="stockChart" [options]="volumeHighchartsOptions"></div>
+  </article>
+</section>

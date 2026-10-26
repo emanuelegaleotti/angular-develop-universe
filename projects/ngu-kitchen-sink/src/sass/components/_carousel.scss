@@ -6,8 +6,8 @@
 
 .ngu-carousel {
   --ngu-carousel-width: 100%;
-  --ngu-carousel-items-gap: #{functions.toRem(48)};
-  --ngu-carousel-padding: #{functions.toRem(50)};
+  --ngu-carousel-items-gap: #{map.get(spaces.$spaces, '3xl')};
+  --ngu-carousel-padding: #{map.get(spaces.$spaces, '3xl')};
 
   //Container carousel
   --ngu-carousel-border: 1px solid;
@@ -24,7 +24,7 @@
   --ngu-scroll-buttons-border-color: #{map.get(palette.$grays, 600)};
   --ngu-scroll-buttons-border-radius: 0px;
   --ngu-scroll-buttons-font-size: #{functions.toRem(18)};
-  --ngu-scroll-buttons-margin: -50px;
+  --ngu-scroll-buttons-margin: calc(-1 * #{map.get(spaces.$spaces, '3xl')});
 
   //Scroll buttons carousel disabled
   --ngu-scroll-buttons-disabled-opacity: 0;

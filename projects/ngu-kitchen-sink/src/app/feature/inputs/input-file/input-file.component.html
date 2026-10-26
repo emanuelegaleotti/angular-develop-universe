@@ -1,39 +1,17 @@
-<section class="ngu-grid-main">
+<section>
   <h2>Input file</h2>
-  <form [formGroup]="test1">
+  <p>Caricamento di un singolo file tramite pulsante o drag &amp; drop.</p>
+  <form [formGroup]="single">
+    <h3>Singolo file</h3>
     <ngu-input-file
       formControlName="file"
-      [id]="'file1'"
+      [id]="'file-single'"
       [feature]="'input'"
       [helpMsg]="true"
       [successMsg]="true"
       [errorMsg]="true"
-      [autocomplete]="'file'"
+      [autocomplete]="'off'"
       [multiple]="false"
-      [autofocus]="true"
-    >
-      <ng-template #removeIcon>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-            <path
-              d="M267.33-120q-27.5 0-47.08-19.58-19.58-19.59-19.58-47.09V-740H160v-66.67h192V-840h256v33.33h192V-740h-40.67v553.33q0 27-19.83 46.84Q719.67-120 692.67-120H267.33Zm425.34-620H267.33v553.33h425.34V-740Zm-328 469.33h66.66v-386h-66.66v386Zm164 0h66.66v-386h-66.66v386ZM267.33-740v553.33V-740Z"/>
-          </svg>
-      </ng-template>
-
-      <span add-btn>Add file</span>
-    </ngu-input-file>
-  </form>
-  <h2>Input file (multiple)</h2>
-  <form [formGroup]="test2">
-    <ngu-input-file
-      formControlName="file"
-      [id]="'file2'"
-      [feature]="'input'"
-      [helpMsg]="true"
-      [successMsg]="true"
-      [errorMsg]="true"
-      [autocomplete]="'file'"
-      [multiple]="true"
-      [autofocus]="true"
     >
       <ng-template #removeIcon>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
@@ -41,8 +19,35 @@
             d="M267.33-120q-27.5 0-47.08-19.58-19.58-19.59-19.58-47.09V-740H160v-66.67h192V-840h256v33.33h192V-740h-40.67v553.33q0 27-19.83 46.84Q719.67-120 692.67-120H267.33Zm425.34-620H267.33v553.33h425.34V-740Zm-328 469.33h66.66v-386h-66.66v386Zm164 0h66.66v-386h-66.66v386ZM267.33-740v553.33V-740Z"/>
         </svg>
       </ng-template>
-      <span add-btn>Add file</span>
+      <span add-btn>Aggiungi file</span>
     </ngu-input-file>
   </form>
+  <article ksControlState [control]="single.controls.file"></article>
+</section>
 
+<section>
+  <h2>Input file (multiple)</h2>
+  <p>Con <code>multiple</code> attivo il controllo contiene l'elenco di tutti i file selezionati.</p>
+  <form [formGroup]="multiple">
+    <h3>File multipli</h3>
+    <ngu-input-file
+      formControlName="file"
+      [id]="'file-multiple'"
+      [feature]="'input'"
+      [helpMsg]="true"
+      [successMsg]="true"
+      [errorMsg]="true"
+      [autocomplete]="'off'"
+      [multiple]="true"
+    >
+      <ng-template #removeIcon>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+          <path
+            d="M267.33-120q-27.5 0-47.08-19.58-19.58-19.59-19.58-47.09V-740H160v-66.67h192V-840h256v33.33h192V-740h-40.67v553.33q0 27-19.83 46.84Q719.67-120 692.67-120H267.33Zm425.34-620H267.33v553.33h425.34V-740Zm-328 469.33h66.66v-386h-66.66v386Zm164 0h66.66v-386h-66.66v386ZM267.33-740v553.33V-740Z"/>
+        </svg>
+      </ng-template>
+      <span add-btn>Aggiungi file</span>
+    </ngu-input-file>
+  </form>
+  <article ksControlState [control]="multiple.controls.file"></article>
 </section>

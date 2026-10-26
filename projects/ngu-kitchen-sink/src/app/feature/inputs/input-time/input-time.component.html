@@ -1,6 +1,8 @@
 <section>
   <h2>Input time</h2>
-  <form [formGroup]="test">
+  <p>Selettore di orario nativo del browser, con validazione di campo obbligatorio.</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
     <ngu-input-time
       formControlName="time"
       [id]="'time'"
@@ -11,4 +13,5 @@
       [autocomplete]="'time'"
     ></ngu-input-time>
   </form>
+  <article ksControlState [control]="form.controls.time"></article>
 </section>

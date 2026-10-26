@@ -1,26 +1,18 @@
-<section class="ks-grid">
+<section>
   <h2>Select</h2>
-  <form [formGroup]="test">
+  <p>Menu a tendina alimentato da un array di stringhe.</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
     <ngu-select
       formControlName="select"
-      [id]="'text'"
+      [id]="'select'"
       [feature]="'input'"
       [helpMsg]="true"
       [successMsg]="true"
       [errorMsg]="true"
-      [autocomplete]="'username'"
+      [autocomplete]="'off'"
       [options]="options"
     ></ngu-select>
   </form>
-  <article>
-    <dl>
-      <dt>Value:</dt>
-      <dd>{{ test.controls['select'].value }}</dd>
-      <dt>Valid:</dt>
-      <dd>{{ test.controls['select'].valid }}</dd>
-      <dt>Invalid:</dt>
-      <dd>{{ test.controls['select'].invalid }}</dd>
-    </dl>
-    <button type="button" (click)="disable()">Disable</button>
-  </article>
+  <article ksControlState [control]="form.controls.select"></article>
 </section>

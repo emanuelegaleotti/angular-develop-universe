@@ -1,15 +1,17 @@
 <section>
   <h2>Input search</h2>
-    <form [formGroup]="test" role="search">
-      <ngu-input-search
-        formControlName="search"
-        [id]="'search'"
-        [feature]="'input'"
-        [helpMsg]="true"
-        [successMsg]="true"
-        [errorMsg]="true"
-        [maxLength]="36"
-      ></ngu-input-search>
-    </form>
+  <p>Campo di ricerca con ruolo <code>search</code> e pulsante di cancellazione.</p>
+  <form [formGroup]="form" role="search">
+    <h3>Esempio</h3>
+    <ngu-input-search
+      formControlName="search"
+      [id]="'search'"
+      [feature]="'input'"
+      [helpMsg]="true"
+      [successMsg]="true"
+      [errorMsg]="true"
+      [maxLength]="36"
+    ></ngu-input-search>
+  </form>
+  <article ksControlState [control]="form.controls.search"></article>
 </section>
-

@@ -1,30 +1,21 @@
-import { Component } from '@angular/core'
-import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 import { InputFileComponent } from 'angular-develop-universe/inputs'
+import { ControlStateComponent } from '../../../shared/control-state/control-state.component'
 
 @Component({
   selector: 'ngu-kitchensink-input-file',
   templateUrl: './input-file.component.html',
   styleUrl: './input-file.component.scss',
-  imports: [
-    ReactiveFormsModule,
-    InputFileComponent
-  ]
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [ReactiveFormsModule, InputFileComponent, ControlStateComponent]
 })
 export class InputFileDemoComponent {
-  test1: FormGroup = new FormGroup<{ file: AbstractControl<any> }>({
-    file: new FormControl(null, [Validators.required]),
+  readonly single = new FormGroup({
+    file: new FormControl<unknown>(null, [Validators.required])
   })
 
-  test2: FormGroup = new FormGroup<{ file: AbstractControl<any> }>({
-    file: new FormControl(null, [Validators.required]),
+  readonly multiple = new FormGroup({
+    file: new FormControl<unknown>(null, [Validators.required])
   })
-
-  // disable (): void {
-  //   if (this.test.controls['file'].disabled) {
-  //     this.test.controls['file'].enable()
-  //   } else {
-  //     this.test.controls['file'].disable()
-  //   }
-  // }
 }

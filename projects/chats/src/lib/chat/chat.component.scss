@@ -8,4 +8,26 @@
     overflow-y: scroll;
     padding: var(--ngu-chat-body-padding, 1rem);
   }
+
+  .ngu-chat-footer {
+    font-family: var(--ngu-chat-footer-font-family, inherit);
+    font-size: var(--ngu-chat-footer-font-size, .875rem);
+    font-weight: var(--ngu-chat-footer-font-weight, normal);
+    line-height: var(--ngu-chat-footer-line-height, 1.5);
+    text-align: var(--ngu-chat-footer-text-align, center);
+    color: var(--ngu-chat-footer-color, inherit);
+  }
+}
+
+.ngu-chat .ngu-chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ngu-chat-messages-gap, 0.5rem);
+  max-height: var(--ngu-chat-messages-max-height, 26rem);
+  overflow-y: auto;
+  padding: var(--ngu-chat-messages-padding, 1rem);
+  margin: var(--ngu-chat-messages-margin, 0);
+  border: var(--ngu-chat-messages-border, 0);
+  border-radius: var(--ngu-chat-messages-border-radius, 0);
+  background: var(--ngu-chat-messages-background, transparent);
 }

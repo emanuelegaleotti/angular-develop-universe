@@ -1,6 +1,8 @@
 <section>
   <h2>Input color</h2>
-  <form [formGroup]="test">
+  <p>Selettore di colore nativo. Il valore è una stringa esadecimale <code>#rrggbb</code>.</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
     <ngu-input-color
       formControlName="color"
       [id]="'color'"
@@ -11,4 +13,5 @@
       [autocomplete]="'color'"
     ></ngu-input-color>
   </form>
+  <article ksControlState [control]="form.controls.color"></article>
 </section>

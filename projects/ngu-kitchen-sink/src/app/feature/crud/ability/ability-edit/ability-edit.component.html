@@ -1,33 +1,20 @@
-<section class="ngu-grid-main">
-  <hgroup>
-    <h2>{{ title() }}</h2>
-    <p>
-      @if (isCreateMode()) {
-        Esempio di creazione di una ability tramite <strong>reactive form</strong>. La chiamata al servizio è uno stub.
-      } @else {
-        Esempio di modifica di una ability tramite <strong>reactive form</strong>. La chiamata al servizio è uno stub.
-      }
-    </p>
-  </hgroup>
-  <form [formGroup]="editForm"
-        (ngSubmit)="onSubmit()">
-    <ngu-input-text
-      formControlName="name"
-      [id]="'name'"
-      [feature]="'crud'"
-      [errorMsg]="true"
-    />
-    <fieldset class="form-actions">
-      <button class="ngu-button ngu-light"
-              type="button"
-              [routerLink]="['/crud/ability']">
-        Annulla
-      </button>
-      <button class="ngu-button ngu-primary"
-              type="submit"
-              [disabled]="editForm.invalid">
+<section id="ability-edit">
+  <h2>{{ title() }}</h2>
+  <p>
+    {{ isCreateMode() ? 'Creazione' : 'Modifica' }} di un'abilità tramite <strong>reactive form</strong>.
+    La chiamata al servizio è uno stub: i dati non vengono salvati.
+  </p>
+
+  <form class="ks-crud-form" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <h3>Dati dell'abilità</h3>
+    <div class="ks-crud-fields">
+      <ngu-input-text formControlName="name" [id]="'name'" [feature]="'crud'" [errorMsg]="true" />
+    </div>
+    <div class="ks-crud-form-actions">
+      <button class="ngu-button ngu-secondary" type="button" [routerLink]="['/crud/ability']">Annulla</button>
+      <button class="ngu-button ngu-primary" type="submit" [disabled]="editForm.invalid">
         {{ isCreateMode() ? 'Crea' : 'Salva' }}
       </button>
-    </fieldset>
+    </div>
   </form>
 </section>

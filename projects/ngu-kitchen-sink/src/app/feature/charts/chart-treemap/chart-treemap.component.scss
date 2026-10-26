@@ -1,0 +1,6 @@
+@use '../../../../sass/components/chart' as chart;
+
+[echarts],
+[highchartsChart] {
+  @include chart.canvas;
+}

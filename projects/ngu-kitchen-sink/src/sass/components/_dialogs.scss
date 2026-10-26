@@ -6,8 +6,23 @@
 .ngu-dialog {
   --ngu-dialog-background: #{palette.$white};
   --ngu-dialog-border: 1px solid;
-  --ngu-dialog-border-radius: #{functions.toRem(8)};
-  --ngu-dialog-border-color: #{palette.$primary-contrast};
-  --ngu-dialog-padding: #{functions.toRem(16)};
-  --ngu-dialog-backdrop-background: rgba(0, 0, 0, 0.1);
+  --ngu-dialog-border-radius: #{functions.toRem(12)};
+  --ngu-dialog-border-color: var(--ngu-gray-300);
+  --ngu-dialog-padding: 0;
+  --ngu-dialog-backdrop-background: rgb(15 15 20 / 40%);
+  --ngu-dialog-width: min(28rem, calc(100vw - 2rem));
+  --ngu-dialog-overflow: hidden;
+  --ngu-dialog-box-shadow: 0 24px 64px rgb(0 0 0 / 18%);
+  --ngu-dialog-color: var(--ngu-gray-900);
+  --ngu-dialog-backdrop-filter: blur(2px);
+  --ngu-dialog-header-padding: var(--ngu-space-lg) var(--ngu-space-lg) var(--ngu-space-xs);
+  --ngu-dialog-title-margin: 0 0 var(--ngu-space-3xs);
+  --ngu-dialog-title-font-size: 1.125rem;
+  --ngu-dialog-title-color: var(--ngu-gray-900);
+  --ngu-dialog-description-color: var(--ngu-gray-700);
+  --ngu-dialog-body-padding: var(--ngu-space-xs) var(--ngu-space-lg) var(--ngu-space-lg);
+  --ngu-dialog-footer-padding: var(--ngu-space-md) var(--ngu-space-lg);
+  --ngu-dialog-footer-gap: var(--ngu-space-xs);
+  --ngu-dialog-footer-border-top: 1px solid var(--ngu-gray-300);
+  --ngu-dialog-footer-background: var(--ngu-gray-200);
 }

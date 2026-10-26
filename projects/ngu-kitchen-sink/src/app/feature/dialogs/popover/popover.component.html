@@ -1,7 +1,9 @@
 <section class="ngu-grid-main">
   <h2>Popover</h2>
 
-  <div class="popover-demo">
+  <article>
+    <h3>Posizioni</h3>
+    <div class="popover-demo">
     <button class="ngu-button ngu-primary"
             type="button"
             nguPopoverId="popover-bottom"
@@ -32,12 +34,16 @@
             nguPopoverPosition="left">Left</button>
     <ng-template #left>Popover a sinistra</ng-template>
   </div>
+  </article>
 
-  <div class="popover-bottom">
-    <button class="ngu-button ngu-tertiary"
+  <article>
+    <h3>Flip verso l'alto</h3>
+    <div class="popover-bottom">
+    <button class="ngu-button ngu-primary"
             type="button"
             nguPopoverId="popover-flip"
             [nguPopover]="flip">Flip verso l'alto</button>
     <ng-template #flip>Non c'è spazio sotto: il popover si ribalta sopra.</ng-template>
   </div>
+  </article>
 </section>

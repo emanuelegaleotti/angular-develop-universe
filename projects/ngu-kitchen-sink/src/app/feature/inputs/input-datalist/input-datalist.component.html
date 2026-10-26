@@ -1,6 +1,8 @@
 <section>
-  <h2>Input Datalist</h2>
-  <form [formGroup]="test">
+  <h2>Input datalist</h2>
+  <p>Campo di testo con suggerimenti: l'utente può scegliere un valore dall'elenco o scrivere liberamente.</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
     <ngu-input-datalist
       formControlName="datalist"
       [id]="'datalist'"
@@ -10,11 +12,8 @@
       [successMsg]="true"
       [errorMsg]="true"
       [autocomplete]="'datalist'"
-      [options]="datalist"
+      [options]="options"
     ></ngu-input-datalist>
   </form>
-  <dl>
-    <dt>Value:</dt>
-    <dd>{{ test.controls['datalist'].value }}</dd>
-  </dl>
+  <article ksControlState [control]="form.controls.datalist"></article>
 </section>

@@ -1,3 +1,5 @@
-section {
+@use '../../../../sass/components/playground' as playground;
 
+section {
+  @include playground.layout;
 }

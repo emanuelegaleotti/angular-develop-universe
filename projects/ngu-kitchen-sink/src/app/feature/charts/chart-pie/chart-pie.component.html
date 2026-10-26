@@ -1,7 +1,16 @@
 <section>
   <h2>Pie chart</h2>
-  <article>
-    <h3>Product sales</h3>
-    <div echarts [options]="chartOptions" style="display: block; width: 100%; max-width: 600px; height: 600px;"></div>
+  <p>Proporzioni di un totale: torta classica, ciambella e grafico a rosa. Ogni grafico è disegnato sia con ECharts sia con Highcharts.</p>
+  <article ksChartCompare heading="Torta">
+    <div echarts [options]="pieOptions"></div>
+    <div highchartsChart [options]="pieHighchartsOptions"></div>
+  </article>
+  <article ksChartCompare heading="Ciambella">
+    <div echarts [options]="donutOptions"></div>
+    <div highchartsChart [options]="donutHighchartsOptions"></div>
+  </article>
+  <article ksChartCompare heading="Rosa dei venti">
+    <div echarts [options]="roseOptions"></div>
+    <div highchartsChart [options]="roseHighchartsOptions"></div>
   </article>
 </section>

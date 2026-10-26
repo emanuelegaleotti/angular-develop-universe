@@ -28,6 +28,9 @@ main {
 
 ngu-kitchensink-header {
   grid-area: h;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 ngu-kitchensink-aside {
@@ -38,22 +41,19 @@ ngu-kitchensink-aside {
   }
 }
 
+// The wrapper reuses the tracks of <main> through a subgrid, so every routed
+// page lines up with the same 4/6/10 column grid without redefining it.
 #ngu-kitchensink-wrapper {
   grid-area: m;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-auto-rows: max-content;
+  align-content: start;
+  row-gap: var(--ngu-space-lg);
+  padding-block: var(--ngu-space-xl);
   min-height: calc(100vh - var(--ngu-header-height-xs));
+  padding-inline: var(--ngu-space-md);
   @include breakpoints.media-breakpoint-up(sm) {
-    min-height: calc(100vh - var(--ngu-header-height-sm));
-  }
-  @include breakpoints.media-breakpoint-up(md) {
-    min-height: calc(100vh - var(--ngu-header-height-md));
-  }
-  @include breakpoints.media-breakpoint-up(lg) {
-    min-height: calc(100vh - var(--ngu-header-height-lg));
-  }
-  @include breakpoints.media-breakpoint-up(xl) {
-    min-height: calc(100vh - var(--ngu-header-height-xl));
-  }
-  @include breakpoints.media-breakpoint-up('2xl') {
-    min-height: calc(100vh - var(--ngu-header-height-2xl));
+    padding-inline: 0 var(--ngu-space-lg);
   }
 }

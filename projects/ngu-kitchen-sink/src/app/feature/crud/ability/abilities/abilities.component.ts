@@ -1,7 +1,8 @@
 import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { PagerComponent } from 'angular-develop-universe/components';
+import { CrudPagerComponent } from '../../shared/crud-pager/crud-pager.component';
+import { CrudRowActionsComponent } from '../../shared/crud-row-actions/crud-row-actions.component';
 import { InputSearchComponent, SelectComponent } from 'angular-develop-universe/inputs';
 import { NguOffcanvasService, NguDialogService } from 'angular-develop-universe/dialogs';
 import { AbilityService } from '../ability.service';
@@ -13,7 +14,7 @@ import { AbilityDeleteComponent } from '../ability-delete/ability-delete.compone
 @Component({
   selector: 'app-abilities',
   standalone: true,
-  imports: [RouterLink, PagerComponent, ReactiveFormsModule, InputSearchComponent, SelectComponent],
+  imports: [RouterLink, CrudPagerComponent, CrudRowActionsComponent, ReactiveFormsModule, InputSearchComponent, SelectComponent],
   templateUrl: './abilities.component.html',
   styleUrl: './abilities.component.scss',
 })

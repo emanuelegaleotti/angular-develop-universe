@@ -1,7 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { PagerComponent } from 'angular-develop-universe/components';
+import { CrudPagerComponent } from '../../shared/crud-pager/crud-pager.component';
+import { CrudRowActionsComponent } from '../../shared/crud-row-actions/crud-row-actions.component';
 import { NguDialogService, NguOffcanvasService } from 'angular-develop-universe/dialogs';
 import { InputSearchComponent, SelectComponent } from 'angular-develop-universe/inputs';
 import { LocationStore } from '../location.store';
@@ -12,7 +13,7 @@ import { LocationDeleteComponent } from '../location-delete/location-delete.comp
 @Component({
   selector: 'app-locations',
   standalone: true,
-  imports: [RouterLink, PagerComponent, ReactiveFormsModule, InputSearchComponent, SelectComponent],
+  imports: [RouterLink, CrudPagerComponent, CrudRowActionsComponent, ReactiveFormsModule, InputSearchComponent, SelectComponent],
   templateUrl: './locations.component.html',
   styleUrl: './locations.component.scss',
 })

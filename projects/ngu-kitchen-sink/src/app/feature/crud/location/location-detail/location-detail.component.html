@@ -1,29 +1,29 @@
-<article class="ngu-offcanvas-body">
+<article class="ks-detail" id="location-detail">
   @if (locationStore.selectedLocation(); as loc) {
-    <hgroup id="offcanvas-location-title">
-      <p>#{{ loc.id }}</p>
-      <h3>{{ getLocalName(loc) }}</h3>
-    </hgroup>
+    <header class="ks-detail-hero">
+      <div>
+        <p>#{{ loc.id }}</p>
+        <h3>{{ getLocalName(loc) }}</h3>
+      </div>
+    </header>
 
-    <section id="info-location-section">
-      <dl id="info-location">
-        <div class="info-location">
-          <dt>Name</dt>
-          <dd>{{ loc.name }}</dd>
+    <dl class="ks-detail-facts">
+      <div>
+        <dt>Nome</dt>
+        <dd>{{ loc.name }}</dd>
+      </div>
+      @if (loc.region) {
+        <div>
+          <dt>Regione</dt>
+          <dd>{{ loc.region.name }}</dd>
         </div>
-        @if (loc.region) {
-          <div class="info-location">
-            <dt>Region</dt>
-            <dd>{{ loc.region.name }}</dd>
-          </div>
-        }
-      </dl>
-    </section>
+      }
+    </dl>
 
     @if (loc.areas.length > 0) {
-      <section id="location-areas">
-        <h3>Areas ({{ loc.areas.length }})</h3>
-        <ul>
+      <section>
+        <h4>Aree ({{ loc.areas.length }})</h4>
+        <ul class="ks-detail-chips">
           @for (area of loc.areas; track area.name) {
             <li>{{ area.name }}</li>
           }
@@ -32,11 +32,11 @@
     }
 
     @if (loc.game_indices.length > 0) {
-      <section id="location-games">
-        <h3>Game appearances</h3>
-        <ul>
+      <section>
+        <h4>Apparizioni nei giochi</h4>
+        <ul class="ks-detail-list">
           @for (gi of loc.game_indices; track gi.generation.name) {
-            <li>{{ gi.generation.name }} — index {{ gi.game_index }}</li>
+            <li><span>{{ gi.generation.name }}</span><span>indice {{ gi.game_index }}</span></li>
           }
         </ul>
       </section>

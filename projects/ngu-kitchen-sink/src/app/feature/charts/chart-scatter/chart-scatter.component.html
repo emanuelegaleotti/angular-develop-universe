@@ -1,7 +1,16 @@
 <section>
   <h2>Scatter chart</h2>
-  <article>
-    <h3>Sales</h3>
-    <div echarts [options]="chartOptions" style="display: block; width: 100%; max-width: 600px; height: 600px;"></div>
+  <p>Correlazione tra due variabili: punti semplici, gruppi di dati e bolle con una terza dimensione. Ogni grafico è disegnato sia con ECharts sia con Highcharts.</p>
+  <article ksChartCompare heading="Punti">
+    <div echarts [options]="simpleChartOptions"></div>
+    <div highchartsChart [options]="simpleHighchartsOptions"></div>
+  </article>
+  <article ksChartCompare heading="Gruppi">
+    <div echarts [options]="clustersOptions"></div>
+    <div highchartsChart [options]="clustersHighchartsOptions"></div>
+  </article>
+  <article ksChartCompare heading="Bolle">
+    <div echarts [options]="bubbleOptions"></div>
+    <div highchartsChart [options]="bubbleHighchartsOptions"></div>
   </article>
 </section>

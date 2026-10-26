@@ -1,6 +1,8 @@
-<section class="ngu-grid">
+<section>
   <h2>Input date</h2>
-  <form [formGroup]="test">
+  <p>Selettore di data nativo del browser. Il valore è una stringa ISO <code>yyyy-mm-dd</code>.</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
     <ngu-input-date
       formControlName="date"
       [id]="'date'"
@@ -11,15 +13,5 @@
       [autocomplete]="'bday'"
     ></ngu-input-date>
   </form>
-  <article>
-    <dl>
-      <dt>Value:</dt>
-      <dd>{{ test.controls['date'].value }}</dd>
-      <dt>Valid:</dt>
-      <dd>{{ test.controls['date'].valid }}</dd>
-      <dt>Invalid:</dt>
-      <dd>{{ test.controls['date'].invalid }}</dd>
-    </dl>
-    <button type="button" (click)="disable()">Disable</button>
-  </article>
+  <article ksControlState [control]="form.controls.date"></article>
 </section>

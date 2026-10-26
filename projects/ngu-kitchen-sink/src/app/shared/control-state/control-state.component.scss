@@ -1,0 +1,34 @@
+:host {
+  --ks-card-background: var(--ngu-gray-200);
+}
+
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--ngu-space-3xs) var(--ngu-space-lg);
+  font-size: .875rem;
+
+  dt {
+    color: var(--ngu-gray-600);
+    font-weight: 500;
+  }
+
+  dd {
+    margin: 0;
+    font-family: 'DM Mono', monospace;
+    color: var(--ngu-gray-900);
+    overflow-wrap: anywhere;
+
+    &[data-tone='ok'] {
+      color: #00826f;
+    }
+
+    &[data-tone='ko'] {
+      color: #f11653;
+    }
+
+    &[data-tone='muted'] {
+      color: var(--ngu-gray-600);
+    }
+  }
+}

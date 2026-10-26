@@ -3,13 +3,43 @@
 @use '../base/spaces' as spaces;
 @use '../abstract/functions' as functions;
 
+// Compact, centered pager: icon buttons on the sides, numbered pills in the middle
 .ngu-pager {
-  --ngu-pager-li-font-size: #{functions.toRem(24)};
+  --ngu-pager-display: flex;
+  --ngu-pager-flex-wrap: wrap;
+  --ngu-pager-li-font-size: #{functions.toRem(15)};
+  --ngu-pager-li-font-weight: 500;
   --ngu-pager-font-family: Inter, sans-serif;
-  --ngu-pager-disabled-button: 0.7;
-  --ngu-pager-gap: #{functions.toRem(16)};
-  --ngu-page-pagination-gap: #{functions.toRem(16)};
+  --ngu-pager-disabled-button: 0.4;
+  --ngu-pager-gap: #{map.get(spaces.$spaces, '3xs')};
+  --ngu-page-pagination-gap: #{map.get(spaces.$spaces, '4xs')};
+  --ngu-pager-pagination-padding-inline: 0;
+  --ngu-pager-pagination-margin: 0;
+  --ngu-pager-pagination-justify: center;
+  --ngu-pager-li-display: block;
+  --ngu-pager-li-padding: 0;
+  --ngu-pager-li-border-color: #{map.get(palette.$grays, 300)};
+  --ngu-pager-li-border-radius: .5rem;
+  --ngu-pager-li-transition: background-color .2s ease, border-color .2s ease;
+  --ngu-pager-li-link-display: grid;
+  --ngu-pager-li-link-min-width: 2.5rem;
+  --ngu-pager-li-link-height: 2.5rem;
+  --ngu-pager-li-link-padding-inline: #{map.get(spaces.$spaces, '3xs')};
+  --ngu-pager-li-link-color: var(--ngu-gray-800);
+  --ngu-pager-li-hover-background: var(--ngu-gray-200);
+  --ngu-pager-li-hover-border-color: #{map.get(palette.$grays, 500)};
   --ngu-pager-li-active-background: #{palette.$electric-violet};
-  --ngu-pager-li-padding: 0.5rem;
-  --ngu-pager-li-border-color: #{palette.$primary-contrast}
+  --ngu-pager-li-active-border-color: #{palette.$electric-violet};
+  --ngu-pager-li-active-color: #{palette.$white};
+  --ngu-pager-li-active-cursor: default;
+  --ngu-pager-button-display: grid;
+  --ngu-pager-button-width: 2.5rem;
+  --ngu-pager-button-height: 2.5rem;
+  --ngu-pager-button-padding: 0;
+  --ngu-pager-icon-size: 24px;
+  --ngu-pager-icon-color: #{palette.$white};
+
+  @media (max-width: 30rem) {
+    --ngu-pager-edge-button-display: none;
+  }
 }

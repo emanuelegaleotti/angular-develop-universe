@@ -1,0 +1,110 @@
+// Contenuto base dei pannelli di dettaglio (offcanvas): hero, fatti, liste e chip.
+// Meter, sprite, citazioni e relazioni di danno sono nello scss della singola pagina.
+.ks-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: var(--ngu-space-lg);
+  padding: var(--ngu-space-lg);
+
+  &-hero {
+    display: flex;
+    align-items: center;
+    gap: var(--ngu-space-md);
+    padding: var(--ngu-space-md);
+    border: 1px solid var(--ngu-gray-300);
+    border-radius: .75rem;
+    background: var(--ngu-gray-200);
+
+    h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      text-transform: capitalize;
+      color: var(--ngu-gray-900);
+    }
+
+    p {
+      margin: 0;
+      font-family: 'DM Mono', monospace;
+      font-size: .8125rem;
+      color: var(--ngu-gray-600);
+    }
+  }
+
+  h4 {
+    margin: 0 0 var(--ngu-space-xs);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--ngu-gray-600);
+  }
+
+  &-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    gap: var(--ngu-space-xs);
+    margin: 0;
+
+    > div {
+      padding: var(--ngu-space-xs) var(--ngu-space-md);
+      border: 1px solid var(--ngu-gray-300);
+      border-radius: .5rem;
+    }
+
+    dt {
+      font-size: .75rem;
+      color: var(--ngu-gray-600);
+    }
+
+    dd {
+      margin: .125rem 0 0;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--ngu-gray-900);
+      overflow-wrap: anywhere;
+      text-transform: capitalize;
+    }
+  }
+
+  &-list {
+    display: grid;
+    gap: var(--ngu-space-2xs);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--ngu-space-md);
+      padding: var(--ngu-space-2xs) var(--ngu-space-md);
+      border: 1px solid var(--ngu-gray-300);
+      border-radius: .5rem;
+      font-size: .9375rem;
+      text-transform: capitalize;
+    }
+  }
+
+  &-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ngu-space-3xs);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      padding: .125rem .75rem;
+      border: 1px solid color-mix(in srgb, #8514f5 25%, white);
+      border-radius: 999px;
+      background: var(--ngu-gray-200);
+      font-size: .8125rem;
+      font-weight: 500;
+      text-transform: capitalize;
+      color: #8514f5;
+    }
+  }
+}

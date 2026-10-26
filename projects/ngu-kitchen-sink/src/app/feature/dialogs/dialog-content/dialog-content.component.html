@@ -1,11 +1,16 @@
- <div class="ngu-dialog-header">
-   <h4>Example Dialog</h4>
- </div>
- <div class="ngu-dialog-body">
-{{dialogData()?.['test']}}
-
- </div>
- <div class="ngu-dialog-footer">
-<button class="ngu-button ngu-primary" type="button"
-        (click)="onClose()">chiudi</button>
- </div>
+<div class="ngu-dialog-header">
+  <h4>Esempio di dialog</h4>
+  <p>Finestra modale per conferme e azioni che richiedono attenzione.</p>
+</div>
+<div class="ngu-dialog-body">
+  <dl>
+    <div>
+      <dt>Dati ricevuti</dt>
+      <dd>{{ dialogData()?.['test'] }}</dd>
+    </div>
+  </dl>
+</div>
+<div class="ngu-dialog-footer">
+  <button class="ngu-button ngu-secondary" type="button" (click)="onClose()">Annulla</button>
+  <button class="ngu-button ngu-primary" type="button" (click)="onClose()">Conferma</button>
+</div>

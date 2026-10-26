@@ -1,6 +1,8 @@
-<section class="ngu-grid">
+<section>
   <h2>Input week</h2>
-  <form [formGroup]="test">
+  <p>Selettore di settimana dell'anno. Il valore è una stringa <code>yyyy-Www</code>.</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
     <ngu-input-week
       formControlName="week"
       [id]="'week'"
@@ -10,4 +12,5 @@
       [errorMsg]="true"
     ></ngu-input-week>
   </form>
+  <article ksControlState [control]="form.controls.week"></article>
 </section>

@@ -2,7 +2,8 @@ import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { PagerComponent } from 'angular-develop-universe/components';
+import { CrudPagerComponent } from '../../shared/crud-pager/crud-pager.component';
+import { CrudRowActionsComponent } from '../../shared/crud-row-actions/crud-row-actions.component';
 import { InputSearchComponent, SelectComponent } from 'angular-develop-universe/inputs';
 import { NguOffcanvasService, NguDialogService } from 'angular-develop-universe/dialogs';
 import { PokemonSpeciesService } from '../pokemon-species.service';
@@ -15,7 +16,7 @@ import { PokemonSpeciesDeleteComponent } from '../pokemon-species-delete/pokemon
 @Component({
   selector: 'app-pokemon-species',
   standalone: true,
-  imports: [RouterLink, PagerComponent, ReactiveFormsModule, InputSearchComponent, SelectComponent],
+  imports: [RouterLink, CrudPagerComponent, CrudRowActionsComponent, ReactiveFormsModule, InputSearchComponent, SelectComponent],
   templateUrl: './pokemon-species.component.html',
   styleUrl: './pokemon-species.component.scss',
 })

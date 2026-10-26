@@ -1,6 +1,8 @@
 <section>
   <h2>Input checkbox</h2>
-  <form [formGroup]="test">
+  <p>Casella booleana. Per obbligare l'utente a spuntarla si usa <code>Validators.requiredTrue</code>, perché <code>required</code> considera valido anche <code>false</code>.</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
     <ngu-input-checkbox
       formControlName="checkbox"
       [id]="'checkbox'"
@@ -8,13 +10,8 @@
       [helpMsg]="true"
       [successMsg]="true"
       [errorMsg]="true"
-      [autocomplete]="'checkbox'"
+      [autocomplete]="'off'"
     ></ngu-input-checkbox>
   </form>
-  <dl>
-    <dt>Value:</dt>
-    <dd>
-      {{ test.controls['checkbox'].value }}
-    </dd>
-  </dl>
+  <article ksControlState [control]="form.controls.checkbox"></article>
 </section>

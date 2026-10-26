@@ -1,6 +1,8 @@
 <section>
-  <h2>Input Hidden</h2>
-  <form [formGroup]="test">
+  <h2>Input hidden</h2>
+  <p>Campo nascosto: non è visibile all'utente ma partecipa alla validazione del form. Usa il pulsante per impostarne il valore.</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
     <ngu-input-hidden
       formControlName="hidden"
       [id]="'hidden'"
@@ -9,6 +11,11 @@
       [errorMsg]="true"
       [autocomplete]="'hidden'"
     ></ngu-input-hidden>
+    <button class="ngu-button ngu-primary"
+            type="button"
+            (click)="fill()">
+      Imposta valore
+    </button>
   </form>
+  <article ksControlState [control]="form.controls.hidden"></article>
 </section>
-

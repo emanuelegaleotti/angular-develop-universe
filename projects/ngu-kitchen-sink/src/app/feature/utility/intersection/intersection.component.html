@@ -1,14 +1,16 @@
 <section>
   <h2>Intersection observer</h2>
   <article>
+    <h3>Lista di 200 elementi</h3>
+    <p>Apri la console: ogni riga logga l'ingresso e l'uscita dal viewport.</p>
     <ul>
       @for (i of list; track $index) {
         <li>
-          <h1 iotIntersection
+          <div iotIntersection
               (whenItemIn)="log($index, 'in')"
               (whenItemOut)="log($index, 'out')">
-            {{ $index }}
-          </h1>
+            Elemento {{ $index }}
+          </div>
         </li>
       }
     </ul>

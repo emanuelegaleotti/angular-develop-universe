@@ -1,4 +1,4 @@
-<div class="ngu-input-checkbox">
+<fieldset class="ngu-input-checkbox">
   <input type="checkbox"
          [id]="id()"
          [name]="name()"
@@ -14,7 +14,7 @@
   >
   <label [htmlFor]="id()"
          [id]="id()+'-visible-checkbox'"
-         class="visible-checkbox"></label>
+         class="ngu-visible-checkbox"></label>
   @if (labelIsVisible()) {
     <label [htmlFor]="id()"
            [id]="id()+'-label'">
@@ -36,4 +36,4 @@
   @if (helpMsg()) {
     <div class="ngu-help-feedback">{{ _helpMsg() | transloco }}</div>
   }
-</div>
+</fieldset>

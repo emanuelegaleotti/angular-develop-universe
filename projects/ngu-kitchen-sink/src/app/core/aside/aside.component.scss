@@ -1,25 +1,129 @@
 @use '../../../sass/abstract/breakpoints' as breakpoints;
 
-aside {
-  padding: var(--ngu-space-md) var(--ngu-space-lg);
-  height: 100%;
-  background: var(--ngu-gray-100);
+:host {
+  display: block;
+  position: sticky;
+  top: var(--ngu-header-height-sm);
+  align-self: start;
+  height: calc(100vh - var(--ngu-header-height-sm));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
   border-right: 1px solid var(--ngu-gray-300);
+  @include breakpoints.media-breakpoint-up(md) {
+    top: var(--ngu-header-height-md);
+    height: calc(100vh - var(--ngu-header-height-md));
+  }
+}
 
-  #ngu-aside-close {
-    display: inline-block;
-    @include breakpoints.media-breakpoint-up(ms) {
-      display: none;
+aside {
+  padding: var(--ngu-space-lg) var(--ngu-space-md);
+}
+
+nav {
+  display: grid;
+  gap: var(--ngu-space-4xs);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+details {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (interpolate-size: allow-keywords) {
+      interpolate-size: allow-keywords;
+
+      &::details-content {
+        block-size: 0;
+        overflow: clip;
+        transition: block-size .25s ease, content-visibility .25s ease allow-discrete;
+      }
+
+      &[open]::details-content {
+        block-size: auto;
+      }
     }
   }
 
-  menu {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--ngu-space-3xs) var(--ngu-space-xs);
+    border-radius: .5rem;
+    color: var(--ngu-gray-900);
+    cursor: pointer;
+    font-family: 'Inter Tight', Inter, sans-serif;
+    font-size: .9375rem;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    list-style: none;
+    user-select: none;
+    transition: background-color .2s ease, color .2s ease;
 
-    menu {
-      padding-left: 1rem;
+    &::-webkit-details-marker {
+      display: none;
     }
+
+    &::after {
+      content: '';
+      flex: none;
+      width: .5rem;
+      height: .5rem;
+      border-right: 2px solid var(--ngu-gray-500);
+      border-bottom: 2px solid var(--ngu-gray-500);
+      transform: translateY(-15%) rotate(45deg);
+      transition: transform .25s ease, border-color .2s ease;
+    }
+
+    &:hover {
+      background: var(--ngu-gray-200);
+    }
+  }
+
+  &[open] > summary::after {
+    transform: translateY(15%) rotate(-135deg);
+  }
+
+  &:has(a.active) > summary {
+    color: var(--ngu-color-primary);
+
+    &::after {
+      border-color: var(--ngu-color-primary);
+    }
+  }
+
+  ul {
+    margin-left: var(--ngu-space-md);
+    padding: var(--ngu-space-4xs) 0 var(--ngu-space-3xs) var(--ngu-space-xs);
+    border-left: 1px solid var(--ngu-gray-300);
+  }
+}
+
+li a {
+  display: block;
+  margin-left: -1px;
+  padding: var(--ngu-space-4xs) var(--ngu-space-xs);
+  border-left: 2px solid transparent;
+  border-radius: 0 .375rem .375rem 0;
+  color: var(--ngu-gray-700);
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+
+  &:hover {
+    background: var(--ngu-gray-200);
+    color: var(--ngu-gray-900);
+  }
+
+  &.active {
+    background: var(--ngu-gray-200);
+    border-left-color: var(--ngu-color-primary);
+    color: var(--ngu-color-primary);
+    font-weight: 500;
   }
 }

@@ -1,3 +1,29 @@
 .ngu-table {
   width: 100%;
+  border-collapse: collapse;
+  font-size: .9375rem;
+
+  th,
+  td {
+    padding: .75rem 1rem;
+    border-bottom: 1px solid var(--ngu-gray-300);
+    vertical-align: middle;
+  }
+
+  th {
+    color: var(--ngu-gray-600);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-align: start;
+    text-transform: uppercase;
+  }
+
+  tbody tr {
+    transition: background-color .2s ease;
+
+    &:hover {
+      background: var(--ngu-gray-200);
+    }
+  }
 }

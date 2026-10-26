@@ -697,13 +697,8 @@ export const appConfig: ApplicationConfig = {
 ### Componenti Disponibili
 
 - `ChatComponent` - Container principale della chat
-- `ChatAiComponent` - Chat con AI/bot
 - `ChatFormComponent` - Form per l'invio di messaggi
 - `ChatMessageComponent` - Singolo messaggio
-- `ChatMessageAiComponent` - Messaggio AI con formattazione Markdown
-- `ChatLikeFeedbackComponent` - Feedback positivo
-- `ChatDislikeFeedbackComponent` - Feedback negativo
-- `ChatKnowledgeBaseComponent` - Knowledge base per AI
 
 ### Esempio: Chat Standard
 
@@ -763,29 +758,6 @@ export class SupportChatComponent implements OnInit {
   }
 }
 ```
-
-### Esempio: Chat AI con Markdown
-
-```html
-<ngu-chat-ai
-  [id]="'ai-assistant'"
-  [chatId]="'ai-session-456'"
-  [messages]="aiMessages"
-  [isTyping]="isAiTyping"
->
-  <ng-template #chatSendIcon>
-    <!-- Icona personalizzata -->
-  </ng-template>
-</ngu-chat-ai>
-```
-
-Il componente `ChatMessageAiComponent` supporta la renderizzazione di Markdown, permettendo di visualizzare:
-- Testo formattato (grassetto, corsivo)
-- Liste puntate e numerate
-- Codice inline e blocchi di codice
-- Link e immagini
-- Tabelle
-- Citazioni
 
 ### State Management
 
@@ -1282,54 +1254,6 @@ export class UserListComponent implements OnInit {
   onPageChange(page: number): void {
     this.currentPage = page
     this.loadUsers()
-  }
-}
-```
-
-#### Esempio con TanStack Query
-
-```typescript
-import { Component, computed, signal } from '@angular/core'
-import { injectQuery } from '@tanstack/angular-query-experimental'
-import { PagerComponent } from 'angular-develop-universe/components'
-
-@Component({
-  selector: 'app-posts',
-  standalone: true,
-  imports: [PagerComponent],
-  template: `
-    <div *ngIf="query.data() as data">
-      <article *ngFor="let post of data.posts">
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.content }}</p>
-      </article>
-      
-      <ngu-pager
-        [totalItems]="data.total"
-        [pageIndex]="page()"
-        (whenPageSelected)="setPage($event)"
-      ></ngu-pager>
-    </div>
-    
-    <div *ngIf="query.isLoading()">Caricamento...</div>
-  `
-})
-export class PostsComponent {
-  page = signal(1)
-  pageSize = 10
-  
-  query = injectQuery(() => ({
-    queryKey: ['posts', this.page()],
-    queryFn: () => this.fetchPosts(this.page(), this.pageSize)
-  }))
-  
-  setPage(page: number): void {
-    this.page.set(page)
-  }
-  
-  private fetchPosts(page: number, size: number): Promise<any> {
-    return fetch(`/api/posts?page=${page}&size=${size}`)
-      .then(res => res.json())
   }
 }
 ```

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core'
+import { RouterLink } from '@angular/router'
 
 
 @Component({
     selector: 'ngu-kitchensink-home',
-    imports: [],
+    imports: [RouterLink],
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss'
 })

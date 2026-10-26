@@ -1,25 +1,19 @@
-import { Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 import { InputRadioComponent } from 'angular-develop-universe/inputs'
+import { ControlStateComponent } from '../../../shared/control-state/control-state.component'
 
 @Component({
   selector: 'ngu-kitchensink-input-radio',
   templateUrl: './input-radio.component.html',
   styleUrl: './input-radio.component.scss',
-
-  imports: [
-    ReactiveFormsModule,
-    InputRadioComponent
-  ]
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [ReactiveFormsModule, InputRadioComponent, ControlStateComponent]
 })
 export class InputRadioDemoComponent {
-  test: FormGroup = new FormGroup<{ radio: AbstractControl<string | null> }>({
-    radio: new FormControl('value-0', [Validators.required]),
+  readonly options: string[] = ['white', 'red', 'black', 'blue']
+
+  readonly form = new FormGroup({
+    radio: new FormControl<string | null>('white', [Validators.required])
   })
-  options: {[key:string]: string | number}[] = [
-    {id: 1, color: 'white'},
-    {id: 2, color: 'red'},
-    {id: 3, color: 'black'},
-    {id: 4, color: 'blue'}
-  ]
 }

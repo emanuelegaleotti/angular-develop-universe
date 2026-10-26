@@ -1,23 +1,22 @@
 <section>
   <h2>Input radio</h2>
-  <form [formGroup]="test">
-    @for (o of options; let i = $index; track i) {
-    <ngu-input-radio
-      formControlName="radio"
-      [id]="'text-'+i"
-      [name]="'radio'"
-      [radioLabel]="'label-'+i"
-      [radioValue]="'value-'+i"
-      [feature]="'input'"
-      [helpMsg]="true"
-      [successMsg]="true"
-      [errorMsg]="true"
-      [autocomplete]="'radio'"
-    ></ngu-input-radio>
+  <p>Gruppo di radio button collegati allo stesso <code>FormControl</code>: il valore è quello dell'opzione selezionata.</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
+    @for (o of options; track o) {
+      <ngu-input-radio
+        formControlName="radio"
+        [id]="'radio-' + o"
+        [name]="'radio'"
+        [radioLabel]="'input.radio.options.' + o"
+        [radioValue]="o"
+        [feature]="'input'"
+        [helpMsg]="$last"
+        [successMsg]="$last"
+        [errorMsg]="$last"
+        [autocomplete]="'off'"
+      ></ngu-input-radio>
     }
   </form>
-  <dl>
-    <dt>Value:</dt>
-    <dd>{{ test.controls['radio'].value }}</dd>
-  </dl>
+  <article ksControlState [control]="form.controls.radio"></article>
 </section>

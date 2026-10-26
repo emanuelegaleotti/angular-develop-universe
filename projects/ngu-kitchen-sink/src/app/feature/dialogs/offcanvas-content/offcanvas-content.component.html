@@ -1,16 +1,17 @@
-<div class="ngu-offcanvas-body">
-  {{ offcanvasData()?.['test'] }}
+<div class="ngu-offcanvas-body" id="offcanvas-demo">
+  <p>Pannello laterale per contenuti secondari: dettagli, filtri o moduli brevi, senza lasciare la pagina.</p>
+  <dl>
+    <div>
+      <dt>Dati ricevuti</dt>
+      <dd>{{ offcanvasData()?.['test'] }}</dd>
+    </div>
+    <div>
+      <dt>Chiusura</dt>
+      <dd>Pulsante in alto, tasto Esc o click sullo sfondo</dd>
+    </div>
+  </dl>
 </div>
 <div class="ngu-offcanvas-footer">
-  <button class="ngu-button ngu-primary"
-          type="button"
-          title="primary">
-    Submit
-  </button>
-  <button (click)="onClose()">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-      <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-    </svg>
-  </button>
+  <button class="ngu-button ngu-secondary" type="button" (click)="onClose()">Annulla</button>
+  <button class="ngu-button ngu-primary" type="button" (click)="onClose()">Conferma</button>
 </div>
-

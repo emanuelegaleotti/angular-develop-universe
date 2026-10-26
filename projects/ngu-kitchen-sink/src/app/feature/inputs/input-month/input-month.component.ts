@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { InputMonthComponent } from 'angular-develop-universe/inputs';
+import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
+import { InputMonthComponent } from 'angular-develop-universe/inputs'
+import { ControlStateComponent } from '../../../shared/control-state/control-state.component'
 
 @Component({
   selector: 'ngu-kitchensink-input-month',
-  standalone: true,
-  imports: [ReactiveFormsModule, InputMonthComponent],
   templateUrl: './input-month.component.html',
   styleUrl: './input-month.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [ReactiveFormsModule, InputMonthComponent, ControlStateComponent]
 })
 export class InputMonthDemoComponent {
-  test: FormGroup = new FormGroup<{ month: AbstractControl<string | null> }>({
-    month: new FormControl('', Validators.required),
-  });
+  readonly form = new FormGroup({
+    month: new FormControl('', [Validators.required])
+  })
 }

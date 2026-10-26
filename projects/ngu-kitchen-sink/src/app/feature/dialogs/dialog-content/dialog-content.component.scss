@@ -1,0 +1,20 @@
+dl {
+  margin: 0;
+
+  > div {
+    padding: var(--ngu-space-xs) var(--ngu-space-md);
+    border: 1px solid var(--ngu-gray-300);
+    border-radius: .5rem;
+  }
+
+  dt {
+    font-size: .75rem;
+    color: var(--ngu-gray-600);
+  }
+
+  dd {
+    margin: 0;
+    font-weight: 500;
+    color: var(--ngu-gray-900);
+  }
+}

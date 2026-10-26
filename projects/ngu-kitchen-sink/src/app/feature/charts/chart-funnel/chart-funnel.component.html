@@ -1,0 +1,12 @@
+<section>
+  <h2>Funnel chart</h2>
+  <p>Fasi consecutive di un processo, con la perdita a ogni passaggio: ideale per le conversioni. Ogni grafico è disegnato sia con ECharts sia con Highcharts.</p>
+  <article ksChartCompare heading="Funnel di conversione">
+    <div echarts [options]="simpleChartOptions"></div>
+    <div highchartsChart [options]="simpleHighchartsOptions"></div>
+  </article>
+  <article ksChartCompare heading="Piramide">
+    <div echarts [options]="pyramidChartOptions"></div>
+    <div highchartsChart [options]="pyramidHighchartsOptions"></div>
+  </article>
+</section>

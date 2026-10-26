@@ -1,0 +1,12 @@
+<h3>Stato del controllo</h3>
+<dl>
+  @for (row of rows(); track row.label) {
+    <dt>{{ row.label }}</dt>
+    <dd [attr.data-tone]="row.tone">{{ row.value }}</dd>
+  }
+</dl>
+<button class="ngu-button ngu-secondary"
+        type="button"
+        (click)="toggle()">
+  {{ disabled() ? 'Abilita' : 'Disabilita' }}
+</button>

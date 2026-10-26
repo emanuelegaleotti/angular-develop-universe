@@ -1,6 +1,5 @@
 import { Route } from '@angular/router'
 import { IntersectionComponent } from './intersection/intersection.component'
-import { TanstackComponent } from './tanstack/tanstack.component'
 import {KSPictureComponent} from "./picture/picture.component";
 import {KSPagerComponent} from "./pager/pager.component";
 import {KSCarouselComponent} from "./carousel/carousel.component";
@@ -8,7 +7,6 @@ import {KSCardComponent} from "./card/card.component";
 
 export const routes: Route[] = [
   { path: 'intersection', component: IntersectionComponent },
-  { path: 'tanstack', component: TanstackComponent },
   {
     path: 'notification',
     loadComponent: () => import('./notification/notification.component').then((c) => c.NotificationComponent)

@@ -8,21 +8,25 @@ import { provideEffects } from '@ngrx/effects'
 import { AppReducer } from './app-state/app-reducers/app.reducers'
 import { LocaleService } from 'angular-develop-universe/utility'
 import { TranslocoHttpLoader } from './transloco-loader'
-import { provideTanStackQuery, QueryClient } from '@tanstack/angular-query-experimental'
 import { provideServiceWorker } from '@angular/service-worker'
 import { provideNgxWebstorage, withLocalStorage, withSessionStorage } from 'ngx-webstorage'
 import { provideAssetsDialogs } from 'angular-develop-universe/dialogs'
 import { provideTransloco } from '@jsverse/transloco'
 import { PlotlyModule } from 'angular-plotly.js'
 import { provideHighcharts } from 'highcharts-angular'
+import { highchartsTheme } from './feature/charts/highcharts-theme'
 import * as PlotlyJS from 'plotly.js-dist-min'
+import { registerLocaleData } from '@angular/common'
+import localeIt from '@angular/common/locales/it'
 // import { provideAssetsKeycloak } from 'angular-develop-universe/keycloak'
+
+registerLocaleData(localeIt)
 
 // PlotlyModule.plotlyjs = PlotlyJS
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideHighcharts(),
+    provideHighcharts({ options: highchartsTheme }),
     importProvidersFrom(PlotlyModule.forRoot(PlotlyJS)),
     provideRouter(appRoutes),
     provideHttpClient(withInterceptorsFromDi(), withFetch()),
@@ -87,9 +91,8 @@ export const appConfig: ApplicationConfig = {
     }),
 
     // Other providers
-    { provide: LOCALE_ID, deps: [LocaleService], useFactory: (s: LocaleService) => s.getLocale() },
+    { provide: LOCALE_ID, deps: [LocaleService], useFactory: (s: LocaleService) => s.getLocale('it') },
     TranslocoHttpLoader,
-    provideTanStackQuery(new QueryClient()),
     provideNgxWebstorage(
       withLocalStorage(),
       withSessionStorage()

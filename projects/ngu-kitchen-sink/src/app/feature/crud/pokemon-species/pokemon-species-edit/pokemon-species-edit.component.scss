@@ -1,23 +1,11 @@
-@use 'sass:map';
-@use '../../../../../sass/base/spaces' as spaces;
+#species-edit {
+  .ks-crud-fields {
+    @media (min-width: 40rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
 
-section {
-  hgroup {
-    grid-column: 1 / -1;
-  }
-
-  form {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-direction: column;
-    gap: map.get(spaces.$spaces, 'md');
-    max-width: 480px;
-
-    .form-actions {
-      display: flex;
-      flex-direction: row;
-      gap: map.get(spaces.$spaces, 'md');
-      justify-content: flex-end;
+      ngu-input-text {
+        grid-column: 1 / -1;
+      }
     }
   }
 }

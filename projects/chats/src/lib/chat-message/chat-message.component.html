@@ -1,3 +1,7 @@
-<div class="ngu-chat-message">
-  <div>{{message()}}</div>
+<div class="ngu-chat-message"
+     [class.ngu-chat-message-user]="author() === 'user'">
+  @if (time()) {
+    <time>{{ time() }}</time>
+  }
+  <p>{{ message() }}</p>
 </div>

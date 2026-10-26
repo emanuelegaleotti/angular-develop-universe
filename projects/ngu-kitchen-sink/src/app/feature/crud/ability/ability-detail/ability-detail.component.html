@@ -1,43 +1,43 @@
-<article class="ngu-offcanvas-body">
+<article class="ks-detail" id="ability-detail">
   @if (ability(); as a) {
-    <hgroup id="offcanvas-ability-title">
-      <p>#{{ a.id }}</p>
-      <h3>{{ a.name }}</h3>
-    </hgroup>
+    <header class="ks-detail-hero">
+      <div>
+        <p>#{{ a.id }}</p>
+        <h3>{{ a.name }}</h3>
+      </div>
+    </header>
 
-    <section id="info-ability-section">
-      <dl id="info-ability">
-        <div class="info-ability">
-          <dt>Generation</dt>
-          <dd>{{ a.generation.name }}</dd>
-        </div>
-        <div class="info-ability">
-          <dt>Main Series</dt>
-          <dd>{{ a.is_main_series }}</dd>
-        </div>
-      </dl>
-    </section>
+    <dl class="ks-detail-facts">
+      <div>
+        <dt>Generazione</dt>
+        <dd>{{ a.generation.name }}</dd>
+      </div>
+      <div>
+        <dt>Serie principale</dt>
+        <dd>{{ a.is_main_series ? 'Sì' : 'No' }}</dd>
+      </div>
+    </dl>
 
     @if (a.effect_entries.length > 0) {
-      <section id="ability-effects">
-        <h3>Effects</h3>
+      <section>
+        <h4>Effetto</h4>
         @for (entry of a.effect_entries; track entry.language.name) {
           @if (entry.language.name === 'en') {
-            <p><strong>Short:</strong> {{ entry.short_effect }}</p>
+            <p><strong>{{ entry.short_effect }}</strong></p>
             <p>{{ entry.effect }}</p>
           }
         }
       </section>
     }
 
-    <section id="pokemon-with-ability">
-      <h3>Pokémon with this ability ({{ a.pokemon.length }})</h3>
-      <ul>
+    <section>
+      <h4>Pokémon con questa abilità ({{ a.pokemon.length }})</h4>
+      <ul class="ks-detail-chips">
         @for (ap of a.pokemon.slice(0, 10); track ap.pokemon.name) {
-          <li>{{ ap.pokemon.name }}@if (ap.is_hidden) { (hidden)}</li>
+          <li>{{ ap.pokemon.name }}@if (ap.is_hidden) { · nascosta }</li>
         }
         @if (a.pokemon.length > 10) {
-          <li>... and {{ a.pokemon.length - 10 }} more</li>
+          <li>+{{ a.pokemon.length - 10 }} altri</li>
         }
       </ul>
     </section>

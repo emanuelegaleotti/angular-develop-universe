@@ -1,0 +1,55 @@
+// Dialog di conferma eliminazione: struttura comune, ogni pagina rifinisce nel proprio scss.
+.ks-confirm {
+  display: grid;
+
+  &-body {
+    display: flex;
+    gap: var(--ngu-space-md);
+    padding: var(--ngu-space-lg);
+
+    h4 {
+      margin: 0 0 var(--ngu-space-3xs);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--ngu-gray-900);
+    }
+
+    p {
+      margin: 0;
+      color: var(--ngu-gray-700);
+      line-height: 1.5;
+    }
+
+    p + p {
+      margin-top: var(--ngu-space-3xs);
+      font-size: .875rem;
+      color: var(--ngu-gray-600);
+    }
+  }
+
+  &-icon {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgb(241 22 83 / 10%);
+    color: #f11653;
+
+    svg {
+      width: 1.375rem;
+      height: 1.375rem;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--ngu-space-xs);
+    padding: var(--ngu-space-md) var(--ngu-space-lg);
+    border-top: 1px solid var(--ngu-gray-300);
+    background: var(--ngu-gray-200);
+    border-radius: 0 0 .75rem .75rem;
+  }
+}

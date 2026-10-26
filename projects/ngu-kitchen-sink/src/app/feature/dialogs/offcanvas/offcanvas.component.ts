@@ -26,7 +26,7 @@ export class OffcanvasComponent {
         id: 'test-offcanvas',
         className: 'test-offcanvas-class',
         offcanvasData: { test: 'data to offcanvas' },
-        offcanvasTitle: 'Offcanvas example'
+        offcanvasTitle: 'Esempio di offcanvas'
       }
     )
     o.whenOpen.subscribe(() => {
@@ -61,7 +61,7 @@ export class OffcanvasComponent {
         id: 'test-offcanvas',
         className: 'test-offcanvas-class',
         offcanvasData: { test: 'data to offcanvas' },
-        offcanvasTitle: 'Offcanvas example'
+        offcanvasTitle: 'Esempio di offcanvas'
       }
     )
     d.whenOpen.subscribe(() => {

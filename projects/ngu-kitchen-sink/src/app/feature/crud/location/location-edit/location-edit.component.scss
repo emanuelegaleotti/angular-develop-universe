@@ -1,23 +1,5 @@
-@use 'sass:map';
-@use '../../../../../sass/base/spaces' as spaces;
-
-section {
-  hgroup {
-    grid-column: 1 / -1;
-  }
-
-  form {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-direction: column;
-    gap: map.get(spaces.$spaces, 'md');
-    max-width: 480px;
-
-    .form-actions {
-      display: flex;
-      flex-direction: row;
-      gap: map.get(spaces.$spaces, 'md');
-      justify-content: flex-end;
-    }
+#location-edit {
+  .ks-crud-fields {
+    max-width: 32rem;
   }
 }

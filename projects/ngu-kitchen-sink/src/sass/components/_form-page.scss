@@ -1,0 +1,24 @@
+@use '../abstract/breakpoints' as breakpoints;
+
+// Form di creazione/modifica: larghezza, campi e barra delle azioni.
+.ks-crud-form {
+  @include breakpoints.media-breakpoint-up(md) {
+    grid-column: 1 / span 6;
+  }
+}
+
+.ks-crud-fields {
+  display: grid;
+  gap: var(--ngu-space-md);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.ks-crud-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--ngu-space-xs);
+  padding-top: var(--ngu-space-md);
+  border-top: 1px solid var(--ngu-gray-300);
+}

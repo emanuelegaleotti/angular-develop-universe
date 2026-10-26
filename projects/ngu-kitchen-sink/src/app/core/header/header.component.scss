@@ -1,12 +1,14 @@
 @use '../../../sass/abstract/breakpoints' as breakpoints;
 
 header {
-  padding: var(--ngu-space-md) var(--ngu-space-lg);
+  height: var(--ngu-header-height-xs);
+  padding: 0 var(--ngu-space-lg);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--ngu-space-xs);
-  background: var(--ngu-gray-100);
+  background: color-mix(in srgb, var(--ngu-gray-100) 85%, transparent);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--ngu-gray-300);
   @include breakpoints.media-breakpoint-up(sm) {
     justify-content: flex-start;

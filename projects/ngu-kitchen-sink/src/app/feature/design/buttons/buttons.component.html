@@ -1,78 +1,109 @@
-<section class="ngu-grid-main">
+<section>
   <h2>Buttons</h2>
-  <button class="ngu-button ngu-primary"
-          type="button"
-          title="primary">
-    Primary
-  </button>
-  <button class="ngu-button ngu-secondary"
-          type="button"
-          title="secondary">
-    Secondary
-  </button>
-  <button class="ngu-button ngu-tertiary"
-          type="button"
-          title="tertiary">
-    Tertiary
-  </button>
-  <button class="ngu-button ngu-success"
-          type="button"
-          title="success">
-    Success
-  </button>
-  <button class="ngu-button ngu-warning"
-          type="button"
-          title="warning">
-    Warning
-  </button>
-  <button class="ngu-button ngu-error"
-          type="button"
-          title="error">
-    Error
-  </button>
-  <button class="ngu-button ngu-dark"
-          type="button"
-          title="dark">
-    Dark
-  </button>
-  <button class="ngu-button ngu-light"
-          type="button"
-          title="Light">
-    Light
-  </button>
-  <button class="ngu-button ngu-info"
-          type="button"
-          title="Info">
-    Info
-  </button>
-  <button class="ngu-button ngu-accent"
-          type="button"
-          title="Accent">
-    Accent
-  </button>
-  <button class="ngu-button ngu-link"
-          type="button"
-          title="link">
-    Link
-  </button>
-  <button class="ngu-button ngu-primary ngu-large"
-          type="button"
-          title="Large">
-    Large
-  </button>
-  <button class="ngu-button ngu-primary ngu-small"
-          type="button"
-          title="Small">
-    Small
-  </button>
-  <button class="ngu-button ngu-primary ngu-icon ngu-left"
-          type="button"
-          title="Icon left">
-    Icon left
-  </button>
-  <button class="ngu-button ngu-primary ngu-icon ngu-right"
-          type="button"
-          title="Icon right">
-    Icon right
-  </button>
+  <p>
+    Pulsanti della libreria <code>utility</code>: una classe base <code>ngu-button</code>
+    più modificatori per variante, dimensione e contenuto.
+  </p>
+
+  <article>
+    <h3>Varianti principali</h3>
+    <p>Gerarchia delle azioni: una sola azione primaria per vista, le altre in secondario o terziario.</p>
+    <div class="ks-actions">
+      <button class="ngu-button ngu-primary" type="button">Primary</button>
+      <button class="ngu-button ngu-secondary" type="button">Secondary</button>
+      <button class="ngu-button ngu-tertiary" type="button">Tertiary</button>
+      <button class="ngu-button ngu-ghost" type="button">Ghost</button>
+      <button class="ngu-button ngu-link" type="button">Link</button>
+    </div>
+    <pre><code>&lt;button class="ngu-button ngu-primary"&gt;Primary&lt;/button&gt;</code></pre>
+  </article>
+
+  <article>
+    <h3>Varianti semantiche</h3>
+    <p>Colori legati al significato: conferma, attenzione, errore, informazione.</p>
+    <div class="ks-actions">
+      <button class="ngu-button ngu-success" type="button">Success</button>
+      <button class="ngu-button ngu-warning" type="button">Warning</button>
+      <button class="ngu-button ngu-error" type="button">Error</button>
+      <button class="ngu-button ngu-info" type="button">Info</button>
+      <button class="ngu-button ngu-accent" type="button">Accent</button>
+      <button class="ngu-button ngu-dark" type="button">Dark</button>
+      <button class="ngu-button ngu-light" type="button">Light</button>
+    </div>
+  </article>
+
+  <article>
+    <h3>Dimensioni</h3>
+    <p>Tre misure: <code>ngu-small</code>, predefinita e <code>ngu-large</code>.</p>
+    <div class="ks-actions">
+      <button class="ngu-button ngu-primary ngu-small" type="button">Small</button>
+      <button class="ngu-button ngu-primary" type="button">Default</button>
+      <button class="ngu-button ngu-primary ngu-large" type="button">Large</button>
+    </div>
+    <div class="ks-actions">
+      <button class="ngu-button ngu-secondary ngu-small" type="button">Small</button>
+      <button class="ngu-button ngu-secondary" type="button">Default</button>
+      <button class="ngu-button ngu-secondary ngu-large" type="button">Large</button>
+    </div>
+  </article>
+
+  <article>
+    <h3>Con icona</h3>
+    <p>
+      <code>ngu-icon</code> allinea testo e SVG; <code>ngu-icon-only</code> crea un pulsante quadrato
+      (ricordati di aggiungere <code>aria-label</code>).
+    </p>
+    <div class="ks-actions">
+      <button class="ngu-button ngu-primary ngu-icon" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+        Crea
+      </button>
+      <button class="ngu-button ngu-secondary ngu-icon" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14" /></svg>
+        Scarica
+      </button>
+      <button class="ngu-button ngu-tertiary ngu-icon" type="button">
+        Avanti
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-6-6m6 6-6 6" /></svg>
+      </button>
+      <button class="ngu-button ngu-primary ngu-icon-only" type="button" aria-label="Aggiungi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+      </button>
+      <button class="ngu-button ngu-secondary ngu-icon-only" type="button" aria-label="Modifica">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" /></svg>
+      </button>
+      <button class="ngu-button ngu-ghost ngu-icon-only" type="button" aria-label="Elimina">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m-9 0 1 14h8l1-14" /></svg>
+      </button>
+      <button class="ngu-button ngu-error ngu-icon-only ngu-pill" type="button" aria-label="Elimina">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m-9 0 1 14h8l1-14" /></svg>
+      </button>
+    </div>
+  </article>
+
+  <article>
+    <h3>Stati</h3>
+    <p>Normale e <code>disabled</code> a confronto: il pulsante disabilitato perde hover e cursore.</p>
+    <div class="ks-actions">
+      <button class="ngu-button ngu-primary" type="button">Primary</button>
+      <button class="ngu-button ngu-primary" type="button" disabled>Primary</button>
+      <button class="ngu-button ngu-secondary" type="button">Secondary</button>
+      <button class="ngu-button ngu-secondary" type="button" disabled>Secondary</button>
+      <button class="ngu-button ngu-tertiary" type="button" disabled>Tertiary</button>
+      <button class="ngu-button ngu-error" type="button" disabled>Error</button>
+    </div>
+  </article>
+
+  <article>
+    <h3>Azioni di un form</h3>
+    <p>Combinazione tipica: annulla in secondario, conferma in primario.</p>
+    <div class="ks-actions">
+      <button class="ngu-button ngu-secondary" type="button">Annulla</button>
+      <button class="ngu-button ngu-primary" type="button">Salva</button>
+    </div>
+    <div class="ks-actions">
+      <button class="ngu-button ngu-ghost" type="button">Indietro</button>
+      <button class="ngu-button ngu-error" type="button">Elimina</button>
+    </div>
+  </article>
 </section>

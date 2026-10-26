@@ -1,0 +1,32 @@
+:host {
+  display: contents;
+}
+
+.ngu-chat-message {
+  align-self: flex-start;
+  max-width: var(--ngu-chat-max-width, 70%);
+  padding: var(--ngu-chat-message-padding, 0.625rem 1rem);
+  border-radius: var(--ngu-chat-border-radius, 0.5rem) var(--ngu-chat-border-radius, 0.5rem) var(--ngu-chat-border-radius, 0.5rem) 0.125rem;
+  background: var(--ngu-chat-primary-background);
+  color: var(--ngu-chat-primary-text-color);
+
+  p {
+    margin: 0;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+  }
+
+  time {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: var(--ngu-chat-message-time-font-size, 0.75rem);
+    opacity: var(--ngu-chat-message-time-opacity, 0.6);
+  }
+
+  &.ngu-chat-message-user {
+    align-self: flex-end;
+    border-radius: var(--ngu-chat-border-radius, 0.5rem) var(--ngu-chat-border-radius, 0.5rem) 0.125rem var(--ngu-chat-border-radius, 0.5rem);
+    background: var(--ngu-chat-secondary-background);
+    color: var(--ngu-chat-secondary-text-color);
+  }
+}

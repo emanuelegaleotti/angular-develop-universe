@@ -1,0 +1,17 @@
+<h3>{{ heading() }}</h3>
+<div class="panels">
+  <div class="panel" data-lib="echarts">
+    <header>
+      <strong>ECharts</strong>
+      <span>Canvas</span>
+    </header>
+    <ng-content select="[echarts]" />
+  </div>
+  <div class="panel" data-lib="highcharts">
+    <header>
+      <strong>Highcharts</strong>
+      <span>SVG</span>
+    </header>
+    <ng-content select="[highchartsChart]" />
+  </div>
+</div>

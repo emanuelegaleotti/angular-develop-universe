@@ -1,15 +1,27 @@
-.ngu-table {
-  grid-column: -1/1;
-  td {
-    text-align: center;
+@use '../../../../sass/abstract/card' as card;
+
+// Table shown edge to edge inside its card
+figure {
+  @include card.card;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+
+  figcaption {
+    padding: var(--ngu-space-sm) var(--ngu-space-lg);
+    border-top: 1px solid var(--ngu-gray-300);
+    font-size: .875rem;
+    color: var(--ngu-gray-600);
   }
-}
 
-ngu-pager {
-  grid-column: 4/7;
+  .ngu-table {
+    td,
+    th {
+      padding-inline: var(--ngu-space-lg);
+    }
 
-  svg {
-    height: 24px;
-    width: 24px;
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
   }
 }

@@ -1,5 +1,6 @@
 .ngu-pager {
-  display: grid;
+  display: var(--ngu-pager-display, grid);
+  flex-wrap: var(--ngu-pager-flex-wrap, nowrap);
   grid-template-rows: auto auto;
   grid-template-columns: auto auto 2fr auto auto;
   align-items: center;
@@ -14,25 +15,68 @@
     list-style: none;
     display: flex;
     align-items: center;
-    padding-inline: 40px;
-    justify-content: space-between;
+    padding-inline: var(--ngu-pager-pagination-padding-inline, 40px);
+    margin: var(--ngu-pager-pagination-margin, 1em 0);
+    justify-content: var(--ngu-pager-pagination-justify, space-between);
     gap: var(--ngu-page-pagination-gap, 1rem);
 
     li {
-      display: inline-block;
+      display: var(--ngu-pager-li-display, inline-block);
       font-size: var(--ngu-pager-li-font-size, 1rem);
       font-family: var(--ngu-pager-font-family);
+      font-weight: var(--ngu-pager-li-font-weight, inherit);
       padding: var(--ngu-pager-li-padding, 0.5rem);
       border: 1px solid var(--ngu-pager-li-border-color);
+      border-radius: var(--ngu-pager-li-border-radius, 0);
+      transition: var(--ngu-pager-li-transition, none);
+
+      a {
+        display: var(--ngu-pager-li-link-display, inline);
+        place-items: center;
+        min-width: var(--ngu-pager-li-link-min-width, 0);
+        height: var(--ngu-pager-li-link-height, auto);
+        padding-inline: var(--ngu-pager-li-link-padding-inline, 0);
+        color: var(--ngu-pager-li-link-color, inherit);
+        text-decoration: var(--ngu-pager-li-link-text-decoration, none);
+        cursor: var(--ngu-pager-li-link-cursor, pointer);
+      }
+
+      &:hover:not(.active) {
+        background-color: var(--ngu-pager-li-hover-background, transparent);
+        border-color: var(--ngu-pager-li-hover-border-color, var(--ngu-pager-li-border-color));
+      }
+
       &.active {
         background-color: var(--ngu-pager-li-active-background);
+        border-color: var(--ngu-pager-li-active-border-color, var(--ngu-pager-li-border-color));
+
+        a {
+          color: var(--ngu-pager-li-active-color, inherit);
+          cursor: var(--ngu-pager-li-active-cursor, pointer);
+        }
       }
     }
   }
 
   button {
+    display: var(--ngu-pager-button-display, inline-block);
+    place-items: center;
+    width: var(--ngu-pager-button-width, auto);
+    height: var(--ngu-pager-button-height, auto);
+    padding: var(--ngu-pager-button-padding, 0.5rem 1rem);
+
+    &:is(:first-of-type, :last-of-type) {
+      display: var(--ngu-pager-edge-button-display, var(--ngu-pager-button-display, inline-block));
+    }
+
     &:disabled {
       opacity: var(--ngu-pager-disabled-button);
+    }
+
+    ::ng-deep svg {
+      width: var(--ngu-pager-icon-size, 1em);
+      height: var(--ngu-pager-icon-size, 1em);
+      fill: var(--ngu-pager-icon-color, currentColor);
     }
   }
 }

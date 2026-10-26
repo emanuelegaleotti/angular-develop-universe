@@ -2,7 +2,25 @@
   "button": {
     "send": "Invia"
   },
+  "ngu": {
+    "chat": {
+      "help": "Le risposte possono contenere errori. Verifica sempre le informazioni importanti."
+    },
+    "chat-form": {
+      "textarea": {
+        "label": "Scrivi un messaggio",
+        "placeholder": "Scrivi un messaggio…"
+      }
+    }
+  },
   "crud": {
+    "search": {
+      "label": "Cerca",
+      "placeholder": "Cerca per nome…"
+    },
+    "pageSize": {
+      "label": "Righe per pagina"
+    },
     "name": {
       "label": "Nome",
       "placeholder": "es. bulbasaur",
@@ -40,6 +58,188 @@
       "label": "Tasso di genere",
       "placeholder": "es. 4",
       "required": "Il tasso di genere è obbligatorio"
+    }
+  },
+  "input": {
+    "text": {
+      "label": "Nome utente",
+      "help": "Massimo 36 caratteri.",
+      "success": "Perfetto, il nome utente è valido.",
+      "placeholder": "es. mario.rossi",
+      "required": "Il nome utente è obbligatorio.",
+      "maxlength": "Hai superato il numero massimo di caratteri."
+    },
+    "number": {
+      "label": "Età",
+      "help": "Un numero tra 0 e 15.",
+      "success": "Valore valido.",
+      "placeholder": "es. 10",
+      "required": "L'età è obbligatoria.",
+      "min": "Il valore minimo è 0.",
+      "max": "Il valore massimo è 15."
+    },
+    "email": {
+      "label": "Email",
+      "help": "Useremo questo indirizzo solo per contattarti.",
+      "success": "Indirizzo email valido.",
+      "placeholder": "nome@esempio.it",
+      "required": "L'email è obbligatoria.",
+      "email": "Inserisci un indirizzo email valido.",
+      "maxlength": "L'email è troppo lunga."
+    },
+    "password": {
+      "label": "Password",
+      "help": "Massimo 30 caratteri.",
+      "success": "Password valida.",
+      "placeholder": "Inserisci la password",
+      "required": "La password è obbligatoria.",
+      "maxlength": "La password è troppo lunga."
+    },
+    "search": {
+      "label": "Cerca",
+      "help": "Digita almeno un carattere.",
+      "success": "Ricerca pronta.",
+      "placeholder": "Cerca…",
+      "required": "Inserisci un termine di ricerca.",
+      "maxlength": "Il termine di ricerca è troppo lungo."
+    },
+    "tel": {
+      "label": "Telefono",
+      "help": "Includi il prefisso internazionale.",
+      "success": "Numero valido.",
+      "placeholder": "+39 333 1234567",
+      "required": "Il numero di telefono è obbligatorio.",
+      "maxlength": "Il numero è troppo lungo."
+    },
+    "time": {
+      "label": "Orario",
+      "help": "Scegli un orario.",
+      "success": "Orario valido.",
+      "placeholder": "hh:mm",
+      "required": "L'orario è obbligatorio."
+    },
+    "date": {
+      "label": "Data di nascita",
+      "help": "Scegli una data dal calendario.",
+      "success": "Data valida.",
+      "placeholder": "gg/mm/aaaa",
+      "required": "La data è obbligatoria."
+    },
+    "datetime": {
+      "label": "Data e ora",
+      "help": "Scegli data e ora locali.",
+      "success": "Data e ora valide.",
+      "placeholder": "gg/mm/aaaa hh:mm",
+      "required": "Data e ora sono obbligatorie."
+    },
+    "month": {
+      "label": "Mese",
+      "help": "Scegli un mese e un anno.",
+      "success": "Mese valido.",
+      "placeholder": "mm/aaaa",
+      "required": "Il mese è obbligatorio."
+    },
+    "week": {
+      "label": "Settimana",
+      "help": "Scegli una settimana dell'anno.",
+      "success": "Settimana valida.",
+      "placeholder": "Settimana",
+      "required": "La settimana è obbligatoria."
+    },
+    "url": {
+      "label": "Sito web",
+      "help": "L'indirizzo deve iniziare con http://",
+      "success": "URL valido.",
+      "placeholder": "http://esempio.it",
+      "required": "L'URL è obbligatorio.",
+      "pattern": "L'URL deve iniziare con http://"
+    },
+    "range": {
+      "label": "Volume",
+      "help": "Trascina il cursore per cambiare il valore.",
+      "success": "Valore impostato.",
+      "placeholder": "Volume",
+      "required": "Il valore è obbligatorio."
+    },
+    "hidden": {
+      "label": "Campo nascosto",
+      "help": "Questo campo non è visibile all'utente.",
+      "success": "Valore nascosto presente.",
+      "placeholder": "",
+      "required": "Il campo nascosto è obbligatorio."
+    },
+    "color": {
+      "label": "Colore preferito",
+      "help": "Scegli un colore dal selettore.",
+      "success": "Colore selezionato.",
+      "placeholder": "Colore",
+      "required": "Il colore è obbligatorio."
+    },
+    "datalist": {
+      "label": "Browser",
+      "help": "Inizia a scrivere per vedere i suggerimenti.",
+      "success": "Browser valido.",
+      "placeholder": "es. Firefox",
+      "required": "Il browser è obbligatorio.",
+      "maxlength": "Il valore è troppo lungo."
+    },
+    "datalistObject": {
+      "label": "Browser (oggetto)",
+      "help": "Il valore salvato è l'id dell'opzione scelta.",
+      "success": "Browser valido.",
+      "placeholder": "es. Firefox",
+      "required": "Il browser è obbligatorio.",
+      "maxlength": "Il valore è troppo lungo."
+    },
+    "file": {
+      "label": "Allegato",
+      "help": "Seleziona o trascina un file.",
+      "success": "File caricato.",
+      "placeholder": "Scegli un file",
+      "required": "Devi selezionare almeno un file.",
+      "dropMessage": "Trascina qui i file oppure"
+    },
+    "select": {
+      "label": "Colore",
+      "help": "Scegli un valore dall'elenco.",
+      "success": "Selezione valida.",
+      "placeholder": "Seleziona…",
+      "required": "Devi selezionare un valore."
+    },
+    "selectObject": {
+      "label": "Colore (oggetto)",
+      "help": "Il valore salvato è l'id dell'opzione scelta.",
+      "success": "Selezione valida.",
+      "placeholder": "Seleziona…",
+      "required": "Devi selezionare un valore."
+    },
+    "textarea": {
+      "label": "Messaggio",
+      "help": "Massimo 256 caratteri.",
+      "success": "Messaggio valido.",
+      "placeholder": "Scrivi qui il tuo messaggio",
+      "required": "Il messaggio è obbligatorio.",
+      "maxlength": "Il messaggio è troppo lungo."
+    },
+    "checkbox": {
+      "label": "Accetto i termini e le condizioni",
+      "help": "Devi accettare per proseguire.",
+      "success": "Grazie per aver accettato.",
+      "placeholder": "",
+      "required": "Devi accettare i termini."
+    },
+    "radio": {
+      "label": "Colore",
+      "help": "Scegli una sola opzione.",
+      "success": "Opzione valida.",
+      "placeholder": "",
+      "required": "Devi scegliere un'opzione.",
+      "options": {
+        "white": "Bianco",
+        "red": "Rosso",
+        "black": "Nero",
+        "blue": "Blu"
+      }
     }
   }
 }

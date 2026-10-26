@@ -1,22 +1,21 @@
 <section>
-<h2>Input Datalist Object</h2>
-  <form [formGroup]="test">
+  <h2>Input datalist object</h2>
+  <p>Datalist alimentata da un array di oggetti: il testo mostrato viene da <code>optionKey</code>, il valore salvato da <code>valueKey</code>.</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
     <ngu-input-datalist-object
       formControlName="datalistObject"
-      [id]="'datalist'"
+      [id]="'datalistObject'"
       [maxLength]="36"
       [feature]="'input'"
       [helpMsg]="true"
       [successMsg]="true"
       [errorMsg]="true"
       [autocomplete]="'datalist'"
-      [options]="datalist"
+      [options]="options"
       [optionKey]="'browser'"
       [valueKey]="'id'"
     ></ngu-input-datalist-object>
   </form>
-  <dl>
-    <dt>Value:</dt>
-    <dd>{{ test.controls['datalistObject'].value }}</dd>
-  </dl>
+  <article ksControlState [control]="form.controls.datalistObject"></article>
 </section>

@@ -1,9 +1,11 @@
-<section class="ngu-grid-fluid">
-<h2>Textarea</h2>
-  <form [formGroup]="test">
+<section>
+  <h2>Textarea</h2>
+  <p>Area di testo multilinea con limite di caratteri.</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
     <ngu-textarea
       formControlName="textarea"
-      [id]="'text'"
+      [id]="'textarea'"
       [feature]="'input'"
       [maxLength]="256"
       [cols]="5"
@@ -13,4 +15,5 @@
       [errorMsg]="true"
     ></ngu-textarea>
   </form>
+  <article ksControlState [control]="form.controls.textarea"></article>
 </section>

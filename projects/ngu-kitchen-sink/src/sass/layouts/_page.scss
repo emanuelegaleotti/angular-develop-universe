@@ -1,0 +1,145 @@
+@use '../abstract/card' as card;
+
+// Keep the same width whether the page scrolls or not
+html {
+  scrollbar-gutter: stable;
+}
+
+// Default placement of a page block, with no specificity so pages can place their own blocks
+:where(#ngu-kitchensink-wrapper > :not(router-outlet) > section > *) {
+  grid-column: 1 / -1;
+}
+
+// Demo page layout. Every routed page is a subgrid of the main grid, and the
+// <section> inside it is a subgrid of the page: all of them share the same tracks.
+// Only what is common to every page lives here; page and section specific rules
+// belong to the stylesheet of the component that renders them.
+#ngu-kitchensink-wrapper {
+  > router-outlet {
+    display: none;
+  }
+
+  > :not(router-outlet) {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-auto-rows: max-content;
+    align-content: start;
+    row-gap: var(--ngu-space-lg);
+    min-width: 0;
+
+    > * {
+      grid-column: 1 / -1;
+      min-width: 0;
+      margin-block: 0;
+    }
+
+    > section {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-auto-rows: max-content;
+      align-content: start;
+      row-gap: var(--ngu-space-lg);
+      max-width: none;
+      margin: 0;
+      padding: 0;
+
+      > * {
+        min-width: 0;
+        margin-block: 0;
+      }
+
+      > h1,
+      > h2 {
+        padding-bottom: var(--ngu-space-md);
+        border-bottom: 1px solid var(--ngu-gray-300);
+        font-family: 'Inter Tight', Inter, sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: -.02em;
+        line-height: 1.2;
+        color: var(--ngu-gray-900);
+      }
+
+      > h2 ~ h2 {
+        margin-top: var(--ngu-space-lg);
+      }
+
+      // Short intro under the page title
+      > h2 + p {
+        max-width: 70ch;
+        margin: 0;
+        color: var(--ngu-gray-700);
+        line-height: 1.6;
+      }
+
+      // Every block of a demo page is a card, so all pages look the same
+      > form,
+      > article,
+      > .ks-card {
+        @include card.card;
+        display: grid;
+        align-content: start;
+        align-self: start;
+        gap: var(--ngu-space-md);
+        grid-template-columns: minmax(0, 1fr);
+
+        > button,
+        > a {
+          justify-self: start;
+        }
+
+        > h3 {
+          margin: 0;
+          font-size: 1.125rem;
+          font-weight: 600;
+          letter-spacing: -.01em;
+          color: var(--ngu-gray-900);
+        }
+
+        > p {
+          margin: 0;
+          color: var(--ngu-gray-700);
+          line-height: 1.6;
+        }
+
+        > ul {
+          margin: 0;
+          padding-inline-start: 1.25rem;
+          display: grid;
+          gap: var(--ngu-space-2xs);
+          color: var(--ngu-gray-700);
+        }
+
+        pre {
+          margin: 0;
+          padding: var(--ngu-space-md);
+          max-height: 420px;
+          overflow: auto;
+          scrollbar-width: thin;
+          border-radius: .5rem;
+          background: var(--ngu-gray-200);
+          font-family: 'DM Mono', monospace;
+          font-size: .8125rem;
+          line-height: 1.6;
+        }
+
+        code {
+          padding: .1em .35em;
+          border-radius: .25rem;
+          background: var(--ngu-gray-200);
+          font-family: 'DM Mono', monospace;
+          font-size: .875em;
+        }
+      }
+
+      > article {
+        overflow-x: auto;
+      }
+
+      > form {
+        gap: var(--ngu-space-lg);
+      }
+    }
+  }
+}

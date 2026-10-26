@@ -1,6 +1,8 @@
 <section>
   <h2>Input tel</h2>
-  <form [formGroup]="test">
+  <p>Campo per numeri di telefono, con tastiera numerica sui dispositivi mobili.</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
     <ngu-input-tel
       formControlName="tel"
       [id]="'tel'"
@@ -12,4 +14,5 @@
       [autocomplete]="'tel'"
     ></ngu-input-tel>
   </form>
+  <article ksControlState [control]="form.controls.tel"></article>
 </section>

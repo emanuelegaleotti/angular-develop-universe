@@ -1,14 +1,11 @@
 <section class="ngu-grid-main">
-  <ngu-card>
-    <div card-header>
-      <h2>Export CSV</h2>
-    </div>
-    <div card-body>
-      <pre>{{frontendTechnologies | json}}</pre>
-      <button type="button"
-              (click)="exportCSV()"
-              class="ngu-button ngu-primary">Export CSV</button>
-    </div>
-  </ngu-card>
+  <h2>Export CSV</h2>
+  <article>
+    <h3>Data</h3>
+    <pre>{{frontendTechnologies | json}}</pre>
+    <button type="button"
+            (click)="exportCSV()"
+            class="ngu-button ngu-primary">Export CSV</button>
+  </article>
 
 </section>

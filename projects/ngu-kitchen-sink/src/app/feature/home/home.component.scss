@@ -1,0 +1,41 @@
+.ks-lead {
+  max-width: 60ch;
+  margin: 0;
+  color: var(--ngu-gray-700);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.ks-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: var(--ngu-space-md);
+
+  a {
+    display: grid;
+    gap: var(--ngu-space-3xs);
+    align-content: start;
+    padding: var(--ngu-space-lg);
+    border: 1px solid var(--ngu-gray-300);
+    border-radius: .75rem;
+    color: var(--ngu-gray-900);
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+
+    &:hover {
+      border-color: var(--ngu-color-primary);
+      box-shadow: 0 4px 16px rgb(133 20 245 / 15%);
+      transform: translateY(-2px);
+    }
+
+    h3,
+    p {
+      margin: 0;
+    }
+
+    p {
+      color: var(--ngu-gray-600);
+      font-size: .875rem;
+      line-height: 1.5;
+    }
+  }
+}

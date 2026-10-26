@@ -1,16 +1,17 @@
-import { Component } from '@angular/core'
-import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 import { InputWeekComponent } from 'angular-develop-universe/inputs'
+import { ControlStateComponent } from '../../../shared/control-state/control-state.component'
 
 @Component({
   selector: 'ngu-kitchensink-input-week',
-  standalone: true,
-  imports: [ReactiveFormsModule, InputWeekComponent],
   templateUrl: './input-week.component.html',
   styleUrl: './input-week.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [ReactiveFormsModule, InputWeekComponent, ControlStateComponent]
 })
 export class InputWeekDemoComponent {
-  test: FormGroup = new FormGroup<{ week: AbstractControl<string | null> }>({
-    week: new FormControl('', Validators.required),
+  readonly form = new FormGroup({
+    week: new FormControl('', [Validators.required])
   })
 }

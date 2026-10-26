@@ -1,6 +1,8 @@
 <section>
   <h2>Input url</h2>
-  <form [formGroup]="test">
+  <p>Campo per indirizzi web, con validazione tramite <code>Validators.pattern</code> (deve iniziare con <code>http://</code>).</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
     <ngu-input-url
       formControlName="url"
       [id]="'url'"
@@ -11,4 +13,5 @@
       [autocomplete]="'url'"
     ></ngu-input-url>
   </form>
+  <article ksControlState [control]="form.controls.url"></article>
 </section>

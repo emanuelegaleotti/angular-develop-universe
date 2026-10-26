@@ -1,6 +1,12 @@
 .ngu-input-search {
 
   label {
+    position: var(--ngu-input-label-position, static);
+    width: var(--ngu-input-label-width, auto);
+    height: var(--ngu-input-label-height, auto);
+    overflow: var(--ngu-input-label-overflow, visible);
+    clip-path: var(--ngu-input-label-clip-path, none);
+    white-space: var(--ngu-input-label-white-space, normal);
     display: inline-block;
     margin-bottom: var(--ngu-input-label-margin-bottom);
     font-size: var(--ngu-input-label-font-size, 1rem);
@@ -66,10 +72,31 @@
         display: none;
       }
     }
+
+    &::placeholder {
+      color: var(--ngu-input-placeholder-color, #757575);
+    }
+
+    &:hover:not(:disabled) {
+      border-color: var(--ngu-input-hover-border-color, var(--ngu-input-border-color));
+    }
+
+    &:focus-visible {
+      outline: var(--ngu-input-focus-outline, revert);
+      border-color: var(--ngu-input-focus-border-color, var(--ngu-input-border-color));
+      box-shadow: var(--ngu-input-focus-box-shadow, none);
+    }
+
+    &:disabled {
+      background: var(--ngu-input-disabled-background, var(--ngu-input-background));
+      cursor: var(--ngu-input-disabled-cursor, default);
+      opacity: var(--ngu-input-disabled-opacity, 1);
+    }
   }
 
   .ngu-valid-feedback {
     display: none;
+    margin-top: var(--ngu-input-feedback-margin-top, 0);
     font-size: 0.85em;
     line-height: var(--ngu-input-valid-feedback-line-height, 1.5);
     font-weight: var(--ngu-input-valid-feedback-font-weight, normal);
@@ -81,6 +108,7 @@
 
   .ngu-invalid-feedback {
     display: none;
+    margin-top: var(--ngu-input-feedback-margin-top, 0);
     font-size: 0.85em;
     line-height: var(--ngu-input-invalid-feedback-line-height, 1.5);
     font-weight: var(--ngu-input-invalid-feedback-font-weight, normal);
@@ -92,6 +120,7 @@
 
   .ngu-help-feedback {
     display: none;
+    margin-top: var(--ngu-input-feedback-margin-top, 0);
     font-size: 0.85em;
     line-height: var(--ngu-input-help-feedback-line-height, 1.5);
     font-weight: var(--ngu-input-help-feedback-font-weight, normal);

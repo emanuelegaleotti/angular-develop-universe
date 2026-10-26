@@ -1,0 +1,12 @@
+<section>
+  <h2>Radar chart</h2>
+  <p>Profilo multi-dimensionale: più indicatori sulla stessa scala, utile per confrontare entità. Ogni grafico è disegnato sia con ECharts sia con Highcharts.</p>
+  <article ksChartCompare heading="Profilo singolo">
+    <div echarts [options]="simpleChartOptions"></div>
+    <div highchartsChart [options]="simpleHighchartsOptions"></div>
+  </article>
+  <article ksChartCompare heading="Confronto">
+    <div echarts [options]="compareChartOptions"></div>
+    <div highchartsChart [options]="compareHighchartsOptions"></div>
+  </article>
+</section>

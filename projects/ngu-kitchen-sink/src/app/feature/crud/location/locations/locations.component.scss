@@ -1,78 +1,21 @@
-@use 'sass:map';
-@use '../../../../../sass/base/spaces' as spaces;
+#location-list {
+  .ks-crud-table .ngu-table td.ks-crud-name {
+    width: 100%;
+    // I nomi delle località sono composti da più parole separate da trattino
+    overflow-wrap: anywhere;
+  }
 
-section {
-  grid-template-rows: repeat(4, min-content);
+  @media (max-width: 40rem) {
+    .ks-crud-table .ngu-table {
+      th:first-child,
+      td.ks-crud-index {
+        display: none;
+      }
 
-  #header-locations {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: map.get(spaces.$spaces, 'md');
-
-    hgroup {
-      flex: 1;
-    }
-
-    button {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      white-space: nowrap;
-      flex-shrink: 0;
-
-      svg {
-        width: 24px;
-        height: 24px;
+      td,
+      th {
+        padding-inline: var(--ngu-space-xs);
       }
     }
-  }
-
-  search {
-    grid-column: 1 / -1;
-    form {
-      display: flex;
-      gap: map.get(spaces.$spaces, 'md');
-      align-items: flex-end;
-      flex-wrap: nowrap;
-      ngu-input-search {
-        flex-basis: 100%;
-      }
-    }
-  }
-
-  .ngu-table {
-    th {
-      font-size: 2rem;
-      text-align: start;
-    }
-    td {
-      font-size: 1.5rem;
-      text-align: start;
-
-      svg {
-        width: 24px;
-        height: 24px;
-      }
-    }
-  }
-
-  figure {
-    grid-column: 1 / -1;
-  }
-
-  ngu-pager {
-    grid-column: 4 / 7;
-
-    svg {
-      width: 24px;
-      height: 24px;
-    }
-  }
-
-  #pageSizeForm {
-    grid-column: 9 / 11;
   }
 }

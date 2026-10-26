@@ -1,30 +1,35 @@
-<section class="ngu-grid-main">
+<section>
   <h2>Dropdown</h2>
 
-  <div class="dropdown-demo">
-    <ngu-dropdown id="actions" label="Actions">
-      <ul class="menu-list">
-        <li><button type="button" (click)="select('Edit')">Edit</button></li>
-        <li><button type="button" (click)="select('Duplicate')">Duplicate</button></li>
-        <li><button type="button" (click)="select('Delete')">Delete</button></li>
-      </ul>
-    </ngu-dropdown>
+  <article>
+    <h3>Menu</h3>
+    <div class="dropdown-demo">
+      <ngu-dropdown id="actions" label="Actions">
+        <ul class="menu-list">
+          <li><button type="button" (click)="select('Edit')">Edit</button></li>
+          <li><button type="button" (click)="select('Duplicate')">Duplicate</button></li>
+          <li><button type="button" (click)="select('Delete')">Delete</button></li>
+        </ul>
+      </ngu-dropdown>
 
-    <ngu-dropdown id="custom-content" label="Custom content">
-      <p>Qualsiasi contenuto passato con ng-content.</p>
-      <a href="https://angular.dev" target="_blank" rel="noopener">Angular docs</a>
-    </ngu-dropdown>
-  </div>
+      <ngu-dropdown id="custom-content" label="Custom content">
+        <p>Qualsiasi contenuto passato con ng-content.</p>
+        <a href="https://angular.dev" target="_blank" rel="noopener">Angular docs</a>
+      </ngu-dropdown>
+    </div>
+    <p>Ultima azione: <strong>{{ lastAction || '-' }}</strong></p>
+  </article>
 
-  <p>Ultima azione: <strong>{{ lastAction || '-' }}</strong></p>
-
-  <div class="dropdown-bottom">
-    <ngu-dropdown id="flip" label="Flip verso l'alto">
-      <ul class="menu-list">
-        <li><button type="button" (click)="select('Bottom A')">Voce A</button></li>
-        <li><button type="button" (click)="select('Bottom B')">Voce B</button></li>
-        <li><button type="button" (click)="select('Bottom C')">Voce C</button></li>
-      </ul>
-    </ngu-dropdown>
-  </div>
+  <article>
+    <h3>Flip verso l'alto</h3>
+    <div class="dropdown-bottom">
+      <ngu-dropdown id="flip" label="Flip verso l'alto">
+        <ul class="menu-list">
+          <li><button type="button" (click)="select('Bottom A')">Voce A</button></li>
+          <li><button type="button" (click)="select('Bottom B')">Voce B</button></li>
+          <li><button type="button" (click)="select('Bottom C')">Voce C</button></li>
+        </ul>
+      </ngu-dropdown>
+    </div>
+  </article>
 </section>

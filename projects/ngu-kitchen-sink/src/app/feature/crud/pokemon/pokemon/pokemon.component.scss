@@ -1,76 +1,37 @@
-@use 'sass:map';
-@use '../../../../../sass/base/spaces' as spaces;
+#pokemon-list {
+  .ks-crud-table .ngu-table {
+    td.ks-crud-media {
+      width: 4.5rem;
+    }
+  }
 
-section {
-  grid-template-rows: repeat(4, min-content);
+  .ks-crud-sprite {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: .5rem;
+    background: var(--ngu-gray-200);
 
-  #header-pokemon {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    img {
+      width: 2.25rem;
+      height: 2.25rem;
+      object-fit: contain;
+      image-rendering: pixelated;
+    }
+  }
 
-    button {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: map.get(spaces.$spaces, 'xs');
-      flex-shrink: 0;
+  @media (max-width: 40rem) {
+    .ks-crud-table .ngu-table {
+      th:first-child,
+      td.ks-crud-index {
+        display: none;
+      }
 
-      svg {
-        width: 24px;
-        height: 24px;
+      td,
+      th {
+        padding-inline: var(--ngu-space-xs);
       }
     }
-  }
-
-  search {
-    grid-column: 1 / -1;
-    form {
-      display: flex;
-      gap: map.get(spaces.$spaces, 'md');
-      align-items: flex-end;
-      flex-wrap: nowrap;
-      ngu-input-search {
-        flex-basis: 100%;
-      }
-    }
-  }
-
-  .ngu-table {
-    th {
-      font-size: 2rem;
-      text-align: start;
-    }
-    td {
-      font-size: 1.5rem;
-      text-align: start;
-
-      svg {
-        width: 24px;
-        height: 24px;
-      }
-      &:last-child {
-        text-align: right;
-      }
-    }
-  }
-
-  figure {
-    grid-column: 1 / -1;
-  }
-
-  ngu-pager {
-    grid-column: 4 / 7;
-
-    svg {
-      width: 24px;
-      height: 24px;
-    }
-  }
-
-  #pageSizeForm {
-    grid-column: 9 / 11;
   }
 }

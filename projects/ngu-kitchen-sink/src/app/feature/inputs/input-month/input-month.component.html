@@ -1,6 +1,8 @@
-<section class="ngu-grid">
+<section>
   <h2>Input month</h2>
-  <form [formGroup]="test">
+  <p>Selettore di mese e anno. Il valore è una stringa <code>yyyy-mm</code>.</p>
+  <form [formGroup]="form">
+    <h3>Esempio</h3>
     <ngu-input-month
       formControlName="month"
       [id]="'month'"
@@ -10,4 +12,5 @@
       [errorMsg]="true"
     ></ngu-input-month>
   </form>
+  <article ksControlState [control]="form.controls.month"></article>
 </section>
