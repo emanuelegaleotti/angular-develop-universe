@@ -29,15 +29,27 @@ header {
   }
 
   #ngu-header-logo {
-    font-family: 'Inter Tight', Inter, sans-serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    background: var(--ngu-gradient-brand);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ngu-space-xs);
+    text-decoration: none;
+
+    svg {
+      height: 2rem;
+      width: auto;
+    }
+
+    span {
+      font-family: 'Inter Tight', Inter, sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      background: var(--ngu-gradient-brand);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
   }
 
   .ngu-header-user {

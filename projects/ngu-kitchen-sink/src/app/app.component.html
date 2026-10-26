@@ -6,5 +6,8 @@
     <router-outlet></router-outlet>
   </div>
 </main>
+@if (loaderStore.isLoading()) {
+  <ngu-kitchensink-loader></ngu-kitchensink-loader>
+}
 
 

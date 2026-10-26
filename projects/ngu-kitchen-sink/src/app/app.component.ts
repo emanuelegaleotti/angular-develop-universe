@@ -1,5 +1,7 @@
-import { Component } from '@angular/core'
+import { Component, inject } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
+import { LoaderStore } from 'angular-develop-universe/dialogs'
+import { LoaderComponent } from './core/loader/loader.component'
 import { AsideComponent } from './core/aside/aside.component'
 import { HeaderComponent } from './core/header/header.component'
 // import {IsAuthenticatedDirective} from "keycloak";
@@ -13,9 +15,11 @@ import { HeaderComponent } from './core/header/header.component'
     RouterOutlet,
     AsideComponent,
     HeaderComponent,
+    LoaderComponent
     // IsAuthenticatedDirective
   ]
 })
 export class AppComponent {
+  protected readonly loaderStore = inject(LoaderStore)
   title: string = 'Angular Kitchen Sink'
 }
